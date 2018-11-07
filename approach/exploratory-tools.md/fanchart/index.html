@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Project setup :: the Forvision project</title>
+<title>Fanchart :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/set-up/">
+  <body data-url="/approach/exploratory-tools.md/fanchart/">
     
       <header>
   <div class="logo">
@@ -74,7 +74,7 @@
       <a href="/project-summary/"> Project summary</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/set-up/" class="dd-item parent active alwaysopen
+    <li data-nav-id="/set-up/" class="dd-item alwaysopen
         ">
       <div>
       <a href="/set-up/">Project setup</a><i class="fa fa-circle-thin read-icon"></i>
@@ -86,7 +86,7 @@
       <a href="/audience/">Target audience</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/">Our approach</a>
@@ -145,7 +145,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/exploratory-tools.md/">Exploratory analysis tools</a>
@@ -159,7 +159,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item">
+      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item active">
         <div>
           <a href="/approach/exploratory-tools.md/fanchart/">
             Fanchart
@@ -284,7 +284,7 @@
     <option value="/project-summary/" >
     Project summary</option> 
   
-    <option value="/set-up/"  selected>
+    <option value="/set-up/" >
    Project setup</option> 
   
     <option value="/audience/" >
@@ -312,7 +312,7 @@
   - 
    Exploratory analysis tools</option> 
       <option value="/approach/exploratory-tools.md/prd/" >-- Prediction-Realization Diagram</option>
-      <option value="/approach/exploratory-tools.md/fanchart/" >-- Fanchart</option>
+      <option value="/approach/exploratory-tools.md/fanchart/"  selected>-- Fanchart</option>
   
     <option value="/approach/accuracy-tools/" >
   - 
@@ -363,33 +363,21 @@
       </div>
     
 
-    <h1>Project setup</h1>
+    <h1>Fanchart</h1>
     
     
     
-
-<p><strong>We consider the following setup.</strong></p>
-
-<ol>
-<li><p>Suppose we have a set of time series. In general, the set can contain from one to a relatively large number of series (say, tens of thousands).</p></li>
-
-<li><p>For each time series  we  want  to  store  actuals  and  to  calculate and store forecasts. In particular, it is needed to store out-of-sample    forecasts    produced  from    different    origins    (rolling-origin   forecasts)   and   with   different   horizons   and,   perhaps, using different methods. We also may want not only to store  point  forecasts,  but  prediction  intervals  (PIs),  density  forecasts,  and  additional  information  related  to  forecasting  process  (such  as  model  coefficients,  reasons  for  judgmental  adjustments, etc.).</p></li>
-
-<li><p>We  assume  that  both  actuals  and  forecasts  may  be  frequently updated as new data becomes available.</p></li>
-</ol>
-
-<p>Given  the  above  settings,  we  need  to  have  a  convenient  means  to  store  and  access  (and,  perhaps,  to  distribute  or  exchange) forecasting data including actuals, forecasts, and the related information. We would like to find a means that would be fast, cross-platform, easy to learn and to implement.</p>
-
-<p>Eventually,  the  storage  of  forecasting  data  is  needed  to  perform   adequate   out-of-sample   evaluation   of   forecasting   accuracy. In the case of forecasting competitions, a well-defined approach  to  store  forecasting  data  should  enable  a  credible  approach for forecasting accuracy comparisons.</p>
-
+    <p>Using this function we can see how forecasts made for a specified origin correspond to actuals:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">plottf<span style="color:#111">(</span>ts<span style="color:#111">,</span> fc<span style="color:#111">,</span> series_id<span style="color:#f92672">=</span><span style="color:#d88200">&#34;M1&#34;</span><span style="color:#111">,</span> origin<span style="color:#f92672">=</span><span style="color:#d88200">&#34;Jun 1989&#34;</span><span style="color:#111">)</span></code></pre></div>
+<p><img src="/images/fanchart.PNG" alt="" /></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/project-summary/" title=" Project summary"> <i class="fa fa-chevron-left"></i><label> Project summary</label></a>
-    <a class="nav nav-next" href="/audience/" title="Target audience" style="margin-right: 0px;"><label>Target audience</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/approach/exploratory-tools.md/prd/" title="Prediction-Realization Diagram"> <i class="fa fa-chevron-left"></i><label>Prediction-Realization Diagram</label></a>
+    <a class="nav nav-next" href="/approach/accuracy-tools/" title="Accuracy evaluation tools" style="margin-right: 0px;"><label>Accuracy evaluation tools</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

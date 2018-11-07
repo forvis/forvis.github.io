@@ -159,6 +159,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fanchart/">
+            Fanchart
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen
@@ -305,6 +312,7 @@
   - 
    Exploratory analysis tools</option> 
       <option value="/approach/exploratory-tools.md/prd/"  selected>-- Prediction-Realization Diagram</option>
+      <option value="/approach/exploratory-tools.md/fanchart/" >-- Fanchart</option>
   
     <option value="/approach/accuracy-tools/" >
   - 
@@ -361,7 +369,7 @@
     
     
 
-<h2 id="read-dataset-example1-afts-csv-from-url">Read dataset <strong>example1_AFTS.csv</strong> from URL:</h2>
+<h4 id="read-dataset-example1-afts-csv-from-url">Read dataset <strong>example1_AFTS.csv</strong> from URL:</h4>
 
 <pre><code>data &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv&quot;)
 </code></pre>
@@ -372,7 +380,7 @@
 
 <p>We can use the following code to see the prediction-realization diagram:</p>
 
-<pre><code>library(FORA)
+<pre><code>library(forvision)
 plotPRD(data)
 </code></pre>
 
@@ -382,7 +390,7 @@ plotPRD(data)
 
 <pre><code># For the methods &quot;A&quot; and &quot;B&quot;
 data1 &lt;- subset(data, method == c(&quot;A&quot;, &quot;B&quot;))
-library(FORA)
+library(forvision)
 plotPRD(data1)
 </code></pre>
 
@@ -392,7 +400,7 @@ plotPRD(data1)
 
 <pre><code># For the horizons 1, 2
 data2 &lt;- subset(data, horizon == 1:2)
-library(FORA)
+library(forvision)
 plotPRD(data2)
 </code></pre>
 
@@ -404,7 +412,7 @@ plotPRD(data2)
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/approach/exploratory-tools.md/" title="Exploratory analysis tools"> <i class="fa fa-chevron-left"></i><label>Exploratory analysis tools</label></a>
-    <a class="nav nav-next" href="/approach/accuracy-tools/" title="Accuracy evaluation tools" style="margin-right: 0px;"><label>Accuracy evaluation tools</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/approach/exploratory-tools.md/fanchart/" title="Fanchart" style="margin-right: 0px;"><label>Fanchart</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

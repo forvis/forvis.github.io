@@ -17,9 +17,19 @@
       
       <guid>/approach/exploratory-tools.md/prd/</guid>
       <description> Read dataset example1_AFTS.csv from URL: data &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv&amp;quot;)  Prediction-realization diagram We can use the following code to see the prediction-realization diagram:
-library(FORA) plotPRD(data)  The prediction-realization diagram for the selected methods:
-# For the methods &amp;quot;A&amp;quot; and &amp;quot;B&amp;quot; data1 &amp;lt;- subset(data, method == c(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;)) library(FORA) plotPRD(data1)  The prediction-realization diagram for the selected horizon:
-# For the horizons 1, 2 data2 &amp;lt;- subset(data, horizon == 1:2) library(FORA) plotPRD(data2)  </description>
+library(forvision) plotPRD(data)  The prediction-realization diagram for the selected methods:
+# For the methods &amp;quot;A&amp;quot; and &amp;quot;B&amp;quot; data1 &amp;lt;- subset(data, method == c(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;)) library(forvision) plotPRD(data1)  The prediction-realization diagram for the selected horizon:
+# For the horizons 1, 2 data2 &amp;lt;- subset(data, horizon == 1:2) library(forvision) plotPRD(data2)  </description>
+    </item>
+    
+    <item>
+      <title>Fanchart</title>
+      <link>/approach/exploratory-tools.md/fanchart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/approach/exploratory-tools.md/fanchart/</guid>
+      <description>Using this function we can see how forecasts made for a specified origin correspond to actuals:
+plottf(ts, fc, series_id=&amp;#34;M1&amp;#34;, origin=&amp;#34;Jun 1989&amp;#34;) </description>
     </item>
     
   </channel>

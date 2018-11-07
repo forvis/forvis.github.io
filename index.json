@@ -88,7 +88,14 @@
 	"title": "Prediction-Realization Diagram",
 	"tags": [],
 	"description": "",
-	"content": " Read dataset example1_AFTS.csv from URL: data \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv\u0026quot;)  Prediction-realization diagram We can use the following code to see the prediction-realization diagram:\nlibrary(FORA) plotPRD(data)  The prediction-realization diagram for the selected methods:\n# For the methods \u0026quot;A\u0026quot; and \u0026quot;B\u0026quot; data1 \u0026lt;- subset(data, method == c(\u0026quot;A\u0026quot;, \u0026quot;B\u0026quot;)) library(FORA) plotPRD(data1)  The prediction-realization diagram for the selected horizon:\n# For the horizons 1, 2 data2 \u0026lt;- subset(data, horizon == 1:2) library(FORA) plotPRD(data2)  "
+	"content": " Read dataset example1_AFTS.csv from URL: data \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv\u0026quot;)  Prediction-realization diagram We can use the following code to see the prediction-realization diagram:\nlibrary(forvision) plotPRD(data)  The prediction-realization diagram for the selected methods:\n# For the methods \u0026quot;A\u0026quot; and \u0026quot;B\u0026quot; data1 \u0026lt;- subset(data, method == c(\u0026quot;A\u0026quot;, \u0026quot;B\u0026quot;)) library(forvision) plotPRD(data1)  The prediction-realization diagram for the selected horizon:\n# For the horizons 1, 2 data2 \u0026lt;- subset(data, horizon == 1:2) library(forvision) plotPRD(data2)  "
+},
+{
+	"uri": "/approach/exploratory-tools.md/fanchart/",
+	"title": "Fanchart",
+	"tags": [],
+	"description": "",
+	"content": "Using this function we can see how forecasts made for a specified origin correspond to actuals:\nplottf(ts, fc, series_id=\u0026#34;M1\u0026#34;, origin=\u0026#34;Jun 1989\u0026#34;) "
 },
 {
 	"uri": "/approach/accuracy-tools/",
