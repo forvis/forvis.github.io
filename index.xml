@@ -56,10 +56,11 @@ In order to obtain data in the AFTS format, we can use a query to link actual va
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/approach/exploratory-tools.md/prd/</guid>
-      <description> Read dataset example1_AFTS.csv from URL: data &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv&amp;quot;)  Prediction-realization diagram We can use the following code to see the prediction-realization diagram:
-library(forvision) plotPRD(data)  The prediction-realization diagram for the selected methods:
-# For the methods &amp;quot;A&amp;quot; and &amp;quot;B&amp;quot; data1 &amp;lt;- subset(data, method == c(&amp;quot;A&amp;quot;, &amp;quot;B&amp;quot;)) library(forvision) plotPRD(data1)  The prediction-realization diagram for the selected horizon:
-# For the horizons 1, 2 data2 &amp;lt;- subset(data, horizon == 1:2) library(forvision) plotPRD(data2)  </description>
+      <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns actual, forecast, and method (AFTS).
+Here’s a prediction-realization diagram created by the function plotPRD:
+library(forvision) plotPRD(AFTS)  The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog ==TRUE:
+library(forvision) plotPRD(AFTS, useLogs = TRUE)  The prediction-realization diagram for the selected methods:
+# For the methods &amp;quot;ARARMA&amp;quot;, &amp;quot;Auto-ANN&amp;quot;, and &amp;quot;DAMPEN&amp;quot; data1 &amp;lt;- subset(AFTS, method == c(&amp;quot;ARARMA&amp;quot;, &amp;quot;Auto-ANN&amp;quot;, &amp;quot;DAMPEN&amp;quot;)) library(forvision) plotPRD(data1)  The prediction-realization diagram for the selected horizon:</description>
     </item>
     
     <item>
@@ -68,8 +69,10 @@ library(forvision) plotPRD(data)  The prediction-realization diagram for the sel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/approach/exploratory-tools.md/fanchart/</guid>
-      <description>Using this function we can see how forecasts made for a specified origin correspond to actuals:
-plottf(ts, fc, series_id=&amp;#34;M1&amp;#34;, origin=&amp;#34;Jun 1989&amp;#34;) </description>
+      <description>The function plot_fs of the forvision package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.
+Here’s a fanchart created by the function plot_fs for time series of id == &amp;ldquo;M1&amp;rdquo;:
+library(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = &amp;quot;M1&amp;quot;)  The fanchart with the forecasts of the single forecast method by using the option setting method:
+library(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = &amp;quot;M1&amp;quot;, method = &amp;quot;AutoBox1&amp;quot;)  The fanchart with the forecasts of the multiple forecast methods by using the option setting method:</description>
     </item>
     
     <item>

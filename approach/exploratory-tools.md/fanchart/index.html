@@ -152,20 +152,6 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item">
-        <div>
-          <a href="/approach/exploratory-tools.md/prd/">
-            Prediction-Realization Diagram
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item active">
-        <div>
-          <a href="/approach/exploratory-tools.md/fanchart/">
-            Fanchart
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen
@@ -367,9 +353,31 @@
     
     
     
-    <p>Using this function we can see how forecasts made for a specified origin correspond to actuals:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">plottf<span style="color:#111">(</span>ts<span style="color:#111">,</span> fc<span style="color:#111">,</span> series_id<span style="color:#f92672">=</span><span style="color:#d88200">&#34;M1&#34;</span><span style="color:#111">,</span> origin<span style="color:#f92672">=</span><span style="color:#d88200">&#34;Jun 1989&#34;</span><span style="color:#111">)</span></code></pre></div>
-<p><img src="/images/fanchart.PNG" alt="" /></p>
+    <p>The function <strong>plot_fs</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.</p>
+
+<p>Here’s a fanchart created by the function <strong>plot_fs</strong> for time series of id == &ldquo;M1&rdquo;:</p>
+
+<pre><code>library(forvision)
+plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;)
+</code></pre>
+
+<p><img src="/images/fanchart/1.png" alt="" /></p>
+
+<p>The fanchart with the forecasts of the single forecast method by using the option setting <em>method</em>:</p>
+
+<pre><code>library(forvision)
+plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quot;)
+</code></pre>
+
+<p><img src="/images/fanchart/2.png" alt="" /></p>
+
+<p>The fanchart with the forecasts of the multiple forecast methods by using the option setting <em>method</em>:</p>
+
+<pre><code>library(forvision)
+plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;))  
+</code></pre>
+
+<p><img src="/images/fanchart/3.png" alt="" /></p>
 
 
     
