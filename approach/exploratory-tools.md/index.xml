@@ -29,10 +29,29 @@ library(forvision) plotPRD(AFTS, useLogs = TRUE)  The prediction-realization dia
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/approach/exploratory-tools.md/fanchart/</guid>
-      <description>The function plot_fs of the forvision package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.
+      <description>The function plot_fan of the forvision package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.
 Here’s a fanchart created by the function plot_fs for time series of id == &amp;ldquo;M1&amp;rdquo;:
-library(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = &amp;quot;M1&amp;quot;)  The fanchart with the forecasts of the single forecast method by using the option setting method:
-library(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = &amp;quot;M1&amp;quot;, method = &amp;quot;AutoBox1&amp;quot;)  The fanchart with the forecasts of the multiple forecast methods by using the option setting method:</description>
+library(forvision) plot_fan(ts = TSTS, fc = AFTS, id = &amp;quot;M1&amp;quot;)  </description>
+    </item>
+    
+    <item>
+      <title>Fixed origin graph</title>
+      <link>/approach/exploratory-tools.md/fixed-origin-graph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/approach/exploratory-tools.md/fixed-origin-graph/</guid>
+      <description>The function plot_fs of the forvision package plots the fixed origin graph for the given data from dataset containing 2 dataframes TSTS and AFTS.
+Here’s a fixed origin graph created by the function plot_fs for time series of id == &amp;ldquo;M1&amp;rdquo;:
+library(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = &amp;quot;M1&amp;quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:</description>
+    </item>
+    
+    <item>
+      <title>Fixed horizon graph</title>
+      <link>/approach/exploratory-tools.md/fixed-horizon-graph/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/approach/exploratory-tools.md/fixed-horizon-graph/</guid>
+      <description>Fixed horizon graph</description>
     </item>
     
   </channel>

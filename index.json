@@ -94,8 +94,22 @@
 	"uri": "/approach/exploratory-tools.md/fanchart/",
 	"title": "Fanchart",
 	"tags": [],
+	"description": "15",
+	"content": "The function plot_fan of the forvision package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.\nHere’s a fanchart created by the function plot_fs for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plot_fan(ts = TSTS, fc = AFTS, id = \u0026quot;M1\u0026quot;)  "
+},
+{
+	"uri": "/approach/exploratory-tools.md/fixed-origin-graph/",
+	"title": "Fixed origin graph",
+	"tags": [],
 	"description": "",
-	"content": "The function plot_fs of the forvision package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.\nHere’s a fanchart created by the function plot_fs for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;)  The fanchart with the forecasts of the single forecast method by using the option setting method:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = \u0026quot;AutoBox1\u0026quot;)  The fanchart with the forecasts of the multiple forecast methods by using the option setting method:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = c(\u0026quot;AutoBox1\u0026quot;, \u0026quot;AutoBox3\u0026quot;))  "
+	"content": "The function plot_fs of the forvision package plots the fixed origin graph for the given data from dataset containing 2 dataframes TSTS and AFTS.\nHere’s a fixed origin graph created by the function plot_fs for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = \u0026quot;AutoBox1\u0026quot;)  The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting method:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = c(\u0026quot;AutoBox1\u0026quot;, \u0026quot;AutoBox3\u0026quot;))  "
+},
+{
+	"uri": "/approach/exploratory-tools.md/fixed-horizon-graph/",
+	"title": "Fixed horizon graph",
+	"tags": [],
+	"description": "",
+	"content": "Fixed horizon graph\n"
 },
 {
 	"uri": "/approach/accuracy-tools/",
@@ -172,7 +186,7 @@
 	"title": "Our publications",
 	"tags": [],
 	"description": "",
-	"content": "Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (2018, November). The Forvision Project. Retrieved from https://forvis.github.io/\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends. Moradabad, India.\nDavydenko, A., \u0026amp; Fildes, R. (2016, January). Forecast Error Measures: Critical Review and Practical Recommendations. Business Forecasting: Practical Problems and Solutions.\nShcherbakov, M., Brebels, A., Shcherbakova, N., Tyukov, A., Janovsky, T., \u0026amp; Kamaev, V. (2013, September). A Survey of Forecast Error Measures. Information Technologies in Modern Industry, Education \u0026amp; Society.\nDavydenko, A., \u0026amp; Fildes, R. (2013, September). Measuring forecasting accuracy: The case of judgmental adjustments to SKU-level demand forecasts. International Journal of Forecasting.\nDavydenko, A. (2010, June). How to Measure the Quality of Demand Forecasts Efficiently: a New Class of Forecasting Performance Metrics. LUMS\u0026rsquo; Inaugural Research Conference. Lancaster, UK.\n"
+	"content": "Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (2018, November). The Forvision Project. Retrieved from https://forvis.github.io/\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends. Moradabad, India.\nDavydenko, A., \u0026amp; Fildes, R. (2016). Forecast Error Measures: Critical Review and Practical Recommendations. Business Forecasting: Practical Problems and Solutions.\nDavydenko, A., \u0026amp; Fildes, R. (2014). Measuring Forecasting Accuracy: Problems and Recommendations (by the Example of SKU-Level Judgmental Adjustments).. In Intelligent Fashion Forecasting Systems: Models and Applications, 43-70. Springer Berlin Heidelberg\nShcherbakov, M., Brebels, A., Shcherbakova, N., Tyukov, A., Janovsky, T., \u0026amp; Kamaev, V. (2013). A Survey of Forecast Error Measures. Information Technologies in Modern Industry, Education \u0026amp; Society.\nDavydenko, A., \u0026amp; Fildes, R. (2013). Measuring forecasting accuracy: The case of judgmental adjustments to SKU-level demand forecasts. International Journal of Forecasting.\nDavydenko, A. (2010). How to Measure the Quality of Demand Forecasts Efficiently: a New Class of Forecasting Performance Metrics. LUMS\u0026rsquo; Inaugural Research Conference. Lancaster, UK.\n"
 },
 {
 	"uri": "/glossary/",

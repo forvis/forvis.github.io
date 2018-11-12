@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Data sets :: the Forvision project</title>
+<title>Fixed origin graph :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/datasets/">
+  <body data-url="/approach/exploratory-tools.md/fixed-origin-graph/">
     
       <header>
   <div class="logo">
@@ -86,7 +86,7 @@
       <a href="/audience/">Target audience</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/">Our approach</a>
@@ -145,7 +145,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/exploratory-tools.md/">Exploratory analysis tools</a>
@@ -166,7 +166,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/approach/exploratory-tools.md/fixed-origin-graph/" class="dd-item">
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-origin-graph/" class="dd-item active">
         <div>
           <a href="/approach/exploratory-tools.md/fixed-origin-graph/">
             Fixed origin graph
@@ -190,7 +190,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/datasets/" class="dd-item parent active alwaysopen haschildren
+    <li data-nav-id="/datasets/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/datasets/">Data sets</a>
@@ -327,7 +327,7 @@
    Exploratory analysis tools</option> 
       <option value="/approach/exploratory-tools.md/prd/" >-- Prediction-Realization Diagram</option>
       <option value="/approach/exploratory-tools.md/fanchart/" >-- Fanchart</option>
-      <option value="/approach/exploratory-tools.md/fixed-origin-graph/" >-- Fixed origin graph</option>
+      <option value="/approach/exploratory-tools.md/fixed-origin-graph/"  selected>-- Fixed origin graph</option>
       <option value="/approach/exploratory-tools.md/fixed-horizon-graph/" >-- Fixed horizon graph</option>
   
     <option value="/approach/accuracy-tools/" >
@@ -335,7 +335,7 @@
    Accuracy evaluation tools</option> 
   
   
-    <option value="/datasets/"  selected>
+    <option value="/datasets/" >
    Data sets</option> 
       <option value="/datasets/test-cases/" >- Test cases</option>
       <option value="/datasets/m3-data/" >- M3-Competition data</option>
@@ -379,21 +379,43 @@
       </div>
     
 
-    <h1>Data sets</h1>
+    <h1>Fixed origin graph</h1>
     
     
     
+    <p>The function <strong>plot_fs</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fixed origin graph for the given data from dataset containing 2 dataframes TSTS and AFTS.</p>
 
-<p>Data sets</p>
+<p>Here’s a fixed origin graph created by the function <strong>plot_fs</strong> for time series of id == &ldquo;M1&rdquo;:</p>
 
+<pre><code>library(forvision)
+plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;)
+</code></pre>
+
+<p><img src="/images/fanchart/1.png" alt="" /></p>
+
+<p>The fixed origin graph with the forecasts of the single forecast method by using the option setting <em>method</em>:</p>
+
+<pre><code>library(forvision)
+plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quot;)
+</code></pre>
+
+<p><img src="/images/fanchart/2.png" alt="" /></p>
+
+<p>The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting <em>method</em>:</p>
+
+<pre><code>library(forvision)
+plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;))  
+</code></pre>
+
+<p><img src="/images/fanchart/3.png" alt="" /></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/approach/accuracy-tools/" title="Accuracy evaluation tools"> <i class="fa fa-chevron-left"></i><label>Accuracy evaluation tools</label></a>
-    <a class="nav nav-next" href="/datasets/test-cases/" title="Test cases" style="margin-right: 0px;"><label>Test cases</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/approach/exploratory-tools.md/fanchart/" title="Fanchart"> <i class="fa fa-chevron-left"></i><label>Fanchart</label></a>
+    <a class="nav nav-next" href="/approach/exploratory-tools.md/fixed-horizon-graph/" title="Fixed horizon graph" style="margin-right: 0px;"><label>Fixed horizon graph</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

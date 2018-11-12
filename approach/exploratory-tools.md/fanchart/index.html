@@ -152,6 +152,34 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/prd/">
+            Prediction-Realization Diagram
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item active">
+        <div>
+          <a href="/approach/exploratory-tools.md/fanchart/">
+            Fanchart
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-origin-graph/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fixed-origin-graph/">
+            Fixed origin graph
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-horizon-graph/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fixed-horizon-graph/">
+            Fixed horizon graph
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen
@@ -299,6 +327,8 @@
    Exploratory analysis tools</option> 
       <option value="/approach/exploratory-tools.md/prd/" >-- Prediction-Realization Diagram</option>
       <option value="/approach/exploratory-tools.md/fanchart/"  selected>-- Fanchart</option>
+      <option value="/approach/exploratory-tools.md/fixed-origin-graph/" >-- Fixed origin graph</option>
+      <option value="/approach/exploratory-tools.md/fixed-horizon-graph/" >-- Fixed horizon graph</option>
   
     <option value="/approach/accuracy-tools/" >
   - 
@@ -353,31 +383,15 @@
     
     
     
-    <p>The function <strong>plot_fs</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.</p>
+    <p>The function <strong>plot_fan</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.</p>
 
 <p>Here’s a fanchart created by the function <strong>plot_fs</strong> for time series of id == &ldquo;M1&rdquo;:</p>
 
 <pre><code>library(forvision)
-plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;)
+plot_fan(ts = TSTS, fc = AFTS, id = &quot;M1&quot;)
 </code></pre>
 
-<p><img src="/images/fanchart/1.png" alt="" /></p>
-
-<p>The fanchart with the forecasts of the single forecast method by using the option setting <em>method</em>:</p>
-
-<pre><code>library(forvision)
-plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quot;)
-</code></pre>
-
-<p><img src="/images/fanchart/2.png" alt="" /></p>
-
-<p>The fanchart with the forecasts of the multiple forecast methods by using the option setting <em>method</em>:</p>
-
-<pre><code>library(forvision)
-plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;))  
-</code></pre>
-
-<p><img src="/images/fanchart/3.png" alt="" /></p>
+<p><img src="/images/fanchart/fan.PNG" alt="" /></p>
 
 
     
@@ -385,7 +399,7 @@ plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&q
         <div class="chevrons">
     <div id="navigation">
 <a class="nav nav-prev" href="/approach/exploratory-tools.md/prd/" title="Prediction-Realization Diagram"> <i class="fa fa-chevron-left"></i><label>Prediction-Realization Diagram</label></a>
-    <a class="nav nav-next" href="/approach/accuracy-tools/" title="Accuracy evaluation tools" style="margin-right: 0px;"><label>Accuracy evaluation tools</label><i class="fa fa-chevron-right"></i></a></div>
+    <a class="nav nav-next" href="/approach/exploratory-tools.md/fixed-origin-graph/" title="Fixed origin graph" style="margin-right: 0px;"><label>Fixed origin graph</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
