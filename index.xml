@@ -102,7 +102,7 @@ library(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = &amp;quot;M1&amp;quot;) 
       <guid>/datasets/test-cases/</guid>
       <description>Example 1
 In this example we have data containing actuals for several time time series + corresponding out-of-sample forecasts with different horizons produced using different forecasting methods at different origins.
-   File Description Schema     example1_tsts.csv Actual observations TSTS (Time Series Table Schema)   example1_afts.csv Actuals and forecasts AFTS (Forecast Table Schema)    </description>
+   File Description Schema     example1_tsts.csv Actual observations TSTS (Time Series Table Schema)   example1_afts.csv Actuals and forecasts AFTS (Forecast Table Schema)    To cite this website, please use the following reference:</description>
     </item>
     
     <item>
