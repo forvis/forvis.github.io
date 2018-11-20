@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Time Series (TSTS) :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/approach/data-shemas/tsts/">
     
       <header>
   <div class="logo">
@@ -86,7 +86,7 @@
       <a href="/audience/">Target audience</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/">Our approach</a>
@@ -99,14 +99,14 @@
       <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/data-shemas/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/data-shemas/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/data-shemas/">Main table schemas (TS)</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/approach/data-shemas/tsts/" class="dd-item">
+      <li data-nav-id="/approach/data-shemas/tsts/" class="dd-item active">
         <div>
           <a href="/approach/data-shemas/tsts/">
             Time Series (TSTS)
@@ -313,7 +313,7 @@
     <option value="/approach/data-shemas/" >
   - 
    Main table schemas (TS)</option> 
-      <option value="/approach/data-shemas/tsts/" >-- Time Series (TSTS)</option>
+      <option value="/approach/data-shemas/tsts/"  selected>-- Time Series (TSTS)</option>
       <option value="/approach/data-shemas/fts/" >-- Forecast (FTS)</option>
       <option value="/approach/data-shemas/afts/" >-- Actuals and forecasts(AFTS)</option>
   
@@ -379,52 +379,79 @@
       </div>
     
 
+    <h1>Time Series (TSTS)</h1>
     
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<p>In time series table schema each observation is stored in a table as a separate record (line):</p>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<table>
+<thead>
+<tr>
+<th>Field name (column name)</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<tbody>
+<tr>
+<td>*series_id</td>
+<td>Time series identifier - a unique name that identifies a time series</td>
+<td>“Y1”</td>
+</tr>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<tr>
+<td>*timestamp</td>
+<td>Any representation of the period to which the observation relates</td>
+<td>“01.01.1997” in case of daily data, “Sep 1997” in case of monthly data,  “Week 49, 1997” in case of weekly data</td>
+</tr>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<tr>
+<td>value</td>
+<td>The value observed</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<p>*the key (the unique value that should not duplicated) for this table schema is series_id, timestamp. In other words, we cannot have two (or more) records in a table relating to the same time series and the same period of observation (timestamp)</p>
 
-<p><strong>Our current results involve:</strong></p>
+<p>We may have additional fields (columns) in this table or additional table specifying the features of time series. However, the above schema includes the fields that are necessary for further processing of time series data containing many time series. Here we do not impose restrictions on the types of the data.</p>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<p>If some observation is missing, the corresponding table line can be omitted or corresponding value can be denoted as ‘NA’. Observation can also contain censored data, etc., which can also be represented by additional agreements, but here these rules are not specified.</p>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<h2 id="example">Example:</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">TSTS <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;C:/Users/svcuo/Desktop/data/TSTS.csv&#34;</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">head</span><span style="color:#111">(</span>TSTS<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
+<pre><code>  series_id   value   timestamp
+1         Y1 3103.96      1984
+2         Y1 3360.27      1985
+3         Y1 3807.63      1986
+4         Y1 4387.88      1987
+5         Y1 4936.99      1988
+6         Y1 5379.75      1989
+7         Y1 6158.68      1990
+8         Y1 6876.58      1991
+9         Y2 5389.80      1984
+10        Y2 5384.40      1985
+</code></pre>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p><strong>To cite this website, please use the following reference:</strong></p>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
 
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
-
-
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/approach/data-shemas/" title="Main table schemas (TS)"> <i class="fa fa-chevron-left"></i><label>Main table schemas (TS)</label></a>
+    <a class="nav nav-next" href="/approach/data-shemas/fts/" title="Forecast (FTS)" style="margin-right: 0px;"><label>Forecast (FTS)</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

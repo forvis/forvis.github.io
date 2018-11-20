@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Loading data :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/forvision/load-data/">
     
       <header>
   <div class="logo">
@@ -213,48 +213,13 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/forvision/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/forvision/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/forvision/">The forvision package for R</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/forvision/install/" class="dd-item">
-        <div>
-          <a href="/forvision/install/">
-            How to download and install
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision/load-data/" class="dd-item">
-        <div>
-          <a href="/forvision/load-data/">
-            Loading data
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision/data-check/" class="dd-item">
-        <div>
-          <a href="/forvision/data-check/">
-            Data integrity checks
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision/exploratory-analysis/" class="dd-item">
-        <div>
-          <a href="/forvision/exploratory-analysis/">
-            Exploratory analysis
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision/accuracy-evaluation/" class="dd-item">
-        <div>
-          <a href="/forvision/accuracy-evaluation/">
-            Accuracy evaluation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/publications/" class="dd-item alwaysopen
@@ -343,7 +308,7 @@
     <option value="/forvision/" >
    The forvision package for R</option> 
       <option value="/forvision/install/" >- How to download and install</option>
-      <option value="/forvision/load-data/" >- Loading data</option>
+      <option value="/forvision/load-data/"  selected>- Loading data</option>
       <option value="/forvision/data-check/" >- Data integrity checks</option>
       <option value="/forvision/exploratory-analysis/" >- Exploratory analysis</option>
       <option value="/forvision/accuracy-evaluation/" >- Accuracy evaluation</option>
@@ -379,52 +344,74 @@
       </div>
     
 
+    <h1>Loading data</h1>
     
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<h4 id="read-data-from-url-from-example-datasets">Read data from URL (from example datasets)</h4>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<hr />
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<p>You can use the following methods to read data from URL sources:</p>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<p>1) Using function <em>download.file()</em>:</p>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<!-- -->
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<pre><code>temporaryFile &lt;- tempfile()
+download.file(&quot;RUL&quot;, destfile=temporaryFile)
+myData &lt;- read.csv(temporaryFile)
+</code></pre>
 
-<p><strong>Our current results involve:</strong></p>
+<p>2) Using package <strong>RCurl</strong>:</p>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<!-- -->
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<pre><code>library(RCurl)
+myCsv &lt;- getURL(&quot;RUL&quot;, ssl.verifypeer = FALSE)
+myData &lt;- read.csv(textConnection(myCsv))
+</code></pre>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p>3) Using R base function <strong>read.csv()</strong>:</p>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
+<!-- -->
 
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
+<pre><code>myData &lt;- read.csv(&quot;RUL&quot;)
+</code></pre>
 
+<p>You can use the RULs for examples datasets from the section
+<a href="https://forvis.github.io/datasets/">datasets</a></p>
 
+<p>For example, to read dataset <strong>example1_AFTS.csv</strong> from URL:</p>
+
+<pre><code>data &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv&quot;)
+head(data)
+
+##   X series_id  actual method timestamp origin_timestamp forecast horizon
+## 1 1        Y1 5379.75      A      1989             1988  5406.43       1
+## 2 2        Y1 6158.68      A      1990             1988  5875.96       2
+## 3 3        Y1 6876.58      A      1991             1988  6345.48       3
+## 4 4        Y1 5379.75      B      1989             1988  5473.87       1
+## 5 5        Y1 6158.68      B      1990             1988  6010.43       2
+## 6 6        Y1 6876.58      B      1991             1988  6546.63       3
+##       Lo90     Hi90
+## 1 5183.349 5629.511
+## 2 5652.879 6099.041
+## 3 6122.399 6568.561
+## 4 5250.789 5696.951
+## 5 5787.349 6233.511
+## 6 6323.549 6769.711
+</code></pre>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/forvision/install/" title="How to download and install"> <i class="fa fa-chevron-left"></i><label>How to download and install</label></a>
+    <a class="nav nav-next" href="/forvision/data-check/" title="Data integrity checks" style="margin-right: 0px;"><label>Data integrity checks</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

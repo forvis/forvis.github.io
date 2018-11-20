@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Forecast (FTS) :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/approach/data-shemas/fts/">
     
       <header>
   <div class="logo">
@@ -86,7 +86,7 @@
       <a href="/audience/">Target audience</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/">Our approach</a>
@@ -99,7 +99,7 @@
       <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/data-shemas/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/data-shemas/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/data-shemas/">Main table schemas (TS)</a>
@@ -113,7 +113,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/approach/data-shemas/fts/" class="dd-item">
+      <li data-nav-id="/approach/data-shemas/fts/" class="dd-item active">
         <div>
           <a href="/approach/data-shemas/fts/">
             Forecast (FTS)
@@ -314,7 +314,7 @@
   - 
    Main table schemas (TS)</option> 
       <option value="/approach/data-shemas/tsts/" >-- Time Series (TSTS)</option>
-      <option value="/approach/data-shemas/fts/" >-- Forecast (FTS)</option>
+      <option value="/approach/data-shemas/fts/"  selected>-- Forecast (FTS)</option>
       <option value="/approach/data-shemas/afts/" >-- Actuals and forecasts(AFTS)</option>
   
     <option value="/approach/optional-ds/" >
@@ -379,52 +379,109 @@
       </div>
     
 
+    <h1>Forecast (FTS)</h1>
     
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<p>Forecast Table Schema is needed to store forecasting results.</p>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<p>Each table line corresponds to all the forecasting results obtained for a given time series series using a given method for a given horizon for a given origin:</p>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<table>
+<thead>
+<tr>
+<th>Field name (column name)</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<tbody>
+<tr>
+<td>series_id*</td>
+<td>Time series identifier - a unique name that identifies a time series</td>
+<td>“Y1”</td>
+</tr>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<tr>
+<td>period_timestamp</td>
+<td>Any representation of the period to which the observation relates</td>
+<td>“01.01.1997” in case of daily data, “Sep 1997” in case of monthly data,  “Week 49, 1997” in case of weekly data</td>
+</tr>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<tr>
+<td>origin_timestamp</td>
+<td>The value observed</td>
+<td>1000</td>
+</tr>
 
-<p><strong>Our current results involve:</strong></p>
+<tr>
+<td>horizon*</td>
+<td>forecast horion</td>
+<td>3</td>
+</tr>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<tr>
+<td>method*</td>
+<td>forecast method</td>
+<td>&ldquo;ARIMA&rdquo;</td>
+</tr>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<tr>
+<td>forecast</td>
+<td>forecast</td>
+<td>234</td>
+</tr>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<tr>
+<td>Lo90</td>
+<td>-</td>
+<td>-</td>
+</tr>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
+<tr>
+<td>Hi90</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
 
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
+<p>*the key (the unique value that should not duplicated) for this table schema is series_id, method_id, forecast_timestamp, origin_timestamp, horizon.</p>
 
+<h2 id="example">Example:</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">FTS <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;C:/Users/svcuo/Desktop/data/FTS.csv&#34;</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">head</span><span style="color:#111">(</span>FTS<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
+<pre><code>   series_id  actual method timestamp origin_timestamp forecast horizon     Lo90     Hi90
+1         Y1 5379.75      A      1989             1988  5406.43       1 5183.349 5629.511
+2         Y1 6158.68      A      1990             1988  5875.96       2 5652.879 6099.041
+3         Y1 6876.58      A      1991             1988  6345.48       3 6122.399 6568.561
+4         Y1 5379.75      B      1989             1988  5473.87       1 5250.789 5696.951
+5         Y1 6158.68      B      1990             1988  6010.43       2 5787.349 6233.511
+6         Y1 6876.58      B      1991             1988  6546.63       3 6323.549 6769.711
+7         Y1 5379.75      C      1989             1988  5406.43       1 5183.349 5629.511
+8         Y1 6158.68      C      1990             1988  5875.96       2 5652.879 6099.041
+9         Y1 6876.58      C      1991             1988  6345.48       3 6122.399 6568.561
+10        Y2 4793.20      A      1989             1988  4142.60       1 3919.519 4365.681
+</code></pre>
 
+<p>It is possible to make this format more flexible if some of the columns will contain a JSON or XML representation of a list of variables. E.g., we can have a column named “method params” containing an XML representation of a list of parameters.</p>
+
+<p><strong>To cite this website, please use the following reference:</strong></p>
+
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
+
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/approach/data-shemas/tsts/" title="Time Series (TSTS)"> <i class="fa fa-chevron-left"></i><label>Time Series (TSTS)</label></a>
+    <a class="nav nav-next" href="/approach/data-shemas/afts/" title="Actuals and forecasts(AFTS)" style="margin-right: 0px;"><label>Actuals and forecasts(AFTS)</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

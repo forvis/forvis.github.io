@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Project setup :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/set-up/">
     
       <header>
   <div class="logo">
@@ -74,7 +74,7 @@
       <a href="/project-summary/"> Project summary</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/set-up/" class="dd-item alwaysopen
+    <li data-nav-id="/set-up/" class="dd-item parent active alwaysopen
         ">
       <div>
       <a href="/set-up/">Project setup</a><i class="fa fa-circle-thin read-icon"></i>
@@ -298,7 +298,7 @@
     <option value="/project-summary/" >
     Project summary</option> 
   
-    <option value="/set-up/" >
+    <option value="/set-up/"  selected>
    Project setup</option> 
   
     <option value="/audience/" >
@@ -379,44 +379,30 @@
       </div>
     
 
+    <h1>Project setup</h1>
     
     
     
-    
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
-
-<span class="fa fa-github" aria-hidden="true"></span>
-
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
-
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<p><strong>We consider the following setup.</strong></p>
 
 <ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<li><p>Suppose we have a set of time series. In general, the set can contain from one to a relatively large number of series (say, tens of thousands).</p></li>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
+<li><p>For each time series  we  want  to  store  actuals  and  to  calculate and store forecasts. In particular, it is needed to store out-of-sample    forecasts    produced  from    different    origins    (rolling-origin   forecasts)   and   with   different   horizons   and,   perhaps, using different methods. We also may want not only to store  point  forecasts,  but  prediction  intervals  (PIs),  density  forecasts,  and  additional  information  related  to  forecasting  process  (such  as  model  coefficients,  reasons  for  judgmental  adjustments, etc.).</p></li>
+
+<li><p>We  assume  that  both  actuals  and  forecasts  may  be  frequently updated as new data becomes available.</p></li>
 </ol>
 
-<p><strong>Our current results involve:</strong></p>
+<p>Given  the  above  settings,  we  need  to  have  a  convenient  means  to  store  and  access  (and,  perhaps,  to  distribute  or  exchange) forecasting data including actuals, forecasts, and the related information. We would like to find a means that would be fast, cross-platform, easy to learn and to implement.</p>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<p>Eventually,  the  storage  of  forecasting  data  is  needed  to  perform   adequate   out-of-sample   evaluation   of   forecasting   accuracy. In the case of forecasting competitions, a well-defined approach  to  store  forecasting  data  should  enable  a  credible  approach for forecasting accuracy comparisons.</p>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<p><strong>To cite this website, please use the following reference:</strong></p>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
-
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
-
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. All rights reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
 
@@ -424,7 +410,8 @@
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/project-summary/" title=" Project summary"> <i class="fa fa-chevron-left"></i><label> Project summary</label></a>
+    <a class="nav nav-next" href="/audience/" title="Target audience" style="margin-right: 0px;"><label>Target audience</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

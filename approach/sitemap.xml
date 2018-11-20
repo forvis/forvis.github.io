@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/project-summary/</loc>
+  </url>
+  
+  <url>
+    <loc>/set-up/</loc>
+  </url>
+  
+  <url>
+    <loc>/audience/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/data-flow/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/data-shemas/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/data-shemas/tsts/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/data-shemas/fts/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/data-shemas/afts/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/optional-ds/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/optional-ds/ftds/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/exploratory-tools.md/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/exploratory-tools.md/prd/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/exploratory-tools.md/fanchart/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/exploratory-tools.md/fixed-origin-graph/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/exploratory-tools.md/fixed-horizon-graph/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/accuracy-tools/</loc>
+  </url>
+  
+  <url>
+    <loc>/datasets/</loc>
+  </url>
+  
+  <url>
+    <loc>/datasets/test-cases/</loc>
+  </url>
+  
+  <url>
+    <loc>/datasets/m3-data/</loc>
+  </url>
+  
+  <url>
+    <loc>/forvision/</loc>
+  </url>
+  
+  <url>
+    <loc>/forvision/install/</loc>
+  </url>
+  
+  <url>
+    <loc>/forvision/load-data/</loc>
+  </url>
+  
+  <url>
+    <loc>/forvision/data-check/</loc>
+  </url>
+  
+  <url>
+    <loc>/forvision/exploratory-analysis/</loc>
+  </url>
+  
+  <url>
+    <loc>/forvision/accuracy-evaluation/</loc>
+  </url>
+  
+  <url>
+    <loc>/publications/</loc>
+  </url>
+  
+  <url>
+    <loc>/glossary/</loc>
+  </url>
+  
+  <url>
+    <loc>/abbreviations-list/</loc>
+  </url>
+  
+  <url>
+    <loc>/team/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/team/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

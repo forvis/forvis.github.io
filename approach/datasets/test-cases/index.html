@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Test cases :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/datasets/test-cases/">
     
       <header>
   <div class="logo">
@@ -190,14 +190,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/datasets/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/datasets/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/datasets/">Data sets</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/datasets/test-cases/" class="dd-item">
+      <li data-nav-id="/datasets/test-cases/" class="dd-item active">
         <div>
           <a href="/datasets/test-cases/">
             Test cases
@@ -337,7 +337,7 @@
   
     <option value="/datasets/" >
    Data sets</option> 
-      <option value="/datasets/test-cases/" >- Test cases</option>
+      <option value="/datasets/test-cases/"  selected>- Test cases</option>
       <option value="/datasets/m3-data/" >- M3-Competition data</option>
   
     <option value="/forvision/" >
@@ -379,52 +379,51 @@
       </div>
     
 
+    <h1>Test cases</h1>
     
     
     
-    
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
+    <p><strong>Example 1</strong></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<p>In this example we have data containing actuals for several time time series + corresponding out-of-sample forecasts with different horizons produced using different forecasting methods at different origins.</p>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/example1_TSTS.csv">example1_tsts.csv</a></td>
+<td>Actual observations</td>
+<td>TSTS (Time Series Table Schema)</td>
+</tr>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv">example1_afts.csv</a></td>
+<td>Actuals and forecasts</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
+</tbody>
+</table>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<p><strong>To cite this website, please use the following reference:</strong></p>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
 
-<p><strong>Our current results involve:</strong></p>
-
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
-
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
-
-<p><strong>Our preliminary results have been presented here:</strong></p>
-
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
-
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
-
-
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/datasets/" title="Data sets"> <i class="fa fa-chevron-left"></i><label>Data sets</label></a>
+    <a class="nav nav-next" href="/datasets/m3-data/" title="M3-Competition data" style="margin-right: 0px;"><label>M3-Competition data</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

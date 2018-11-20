@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Glossary :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/glossary/">
     
       <header>
   <div class="logo">
@@ -263,7 +263,7 @@
       <a href="/publications/">Our publications</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/glossary/" class="dd-item alwaysopen
+    <li data-nav-id="/glossary/" class="dd-item parent active alwaysopen
         ">
       <div>
       <a href="/glossary/">Glossary</a><i class="fa fa-circle-thin read-icon"></i>
@@ -351,7 +351,7 @@
     <option value="/publications/" >
    Our publications</option> 
   
-    <option value="/glossary/" >
+    <option value="/glossary/"  selected>
    Glossary</option> 
   
     <option value="/abbreviations-list/" >
@@ -379,44 +379,42 @@
       </div>
     
 
+    <h1>Glossary</h1>
     
     
     
-    
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<p><strong>Forecast origin</strong> - The most recent historical period for which data is used to build a forecasting model. The next time period is the first forecast period.[2]</p>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<p><strong>Forecast horizon</strong> -The number of periods from the forecast origin to the end of the time period being forecast.[1]</p>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<p><strong>Prediction intervals (PIs)</strong> – the bounds within which future observed values are expected to fall, given a specified level of confidence.  For  example,  a  95%  PI  is  expected  to  contain  the  actual  forecast  95%  of  the  time.  Some  researchers  have  found  that estimated PIs are typically too narrow for quantitative and judgmental forecasting methods [1].</p>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<p><strong>Out-of-sample forecasts</strong> - the process using the model fitted on the sample (the data sample that you are using to fit the model) for forecasting for the new data points that was not part of the data sample. For example, if you use data 1990-2010 to fit the model and then you forecast for 2011-2013, it&rsquo;s out-of-sample forecast (if you use 1990-2013 for fitting the model and then you forecast 2011-2013, then its in-sample forecast).(We used <a href="https://stats.stackexchange.com/questions/260899/what-is-difference-between-in-sample-and-out-of-sample-forecasts">this</a> discussion to develop this term)</p>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<p><strong>Out-of-sample evaluation</strong> - the process of formally evaluating the predictive capabilities of the models on the new data points not belonging to the training sample to see how effective the algorithms are in reproducing data.(We used <a href="https://stats.stackexchange.com/questions/260899/what-is-difference-between-in-sample-and-out-of-sample-forecasts">this</a> discussion to develop this term)</p>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<p><strong>Rolling-origin forecast</strong> - This is a forecasting process in which the “origin” at which the forecast is based rolls forward in time.</p>
 
-<p><strong>Our current results involve:</strong></p>
+<p><strong>Slice and dice</strong>: To slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better [3].</p>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<p><strong>Framework</strong> - a conceptual structure intended to serve as a guide for the building of something that expands the structure into something useful [4].</p>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<p><strong>References:</strong></p>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p>[1] J. Scott Armstrong, “Principles of forecasting: A handbook for Researchers and Practitioners,”  University of Pennsylvania, USA, 2001.</p>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
+<p>[2] <a href="http://www.moneycontrol.com/glossary/trading-terms/forecast-origin_2465.html">http://www.moneycontrol.com/glossary/trading-terms/forecast-origin_2465.html</a>.</p>
 
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
+<p>[3] <a href="https://www.urbandictionary.com/define.php?term=slice%20and%20dice">https://www.urbandictionary.com/define.php?term=slice%20and%20dice</a></p>
 
+<p>[4] <a href="https://whatis.techtarget.com/definition/framework">https://whatis.techtarget.com/definition/framework</a></p>
+
+<p><strong>To cite this website, please use the following reference:</strong></p>
+
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
+
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
 
@@ -424,7 +422,8 @@
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/publications/" title="Our publications"> <i class="fa fa-chevron-left"></i><label>Our publications</label></a>
+    <a class="nav nav-next" href="/abbreviations-list/" title="Abbreviations list" style="margin-right: 0px;"><label>Abbreviations list</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>Prediction-Realization Diagram :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/approach/exploratory-tools.md/prd/">
     
       <header>
   <div class="logo">
@@ -86,7 +86,7 @@
       <a href="/audience/">Target audience</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/">Our approach</a>
@@ -145,14 +145,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/exploratory-tools.md/">Exploratory analysis tools</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item">
+      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item active">
         <div>
           <a href="/approach/exploratory-tools.md/prd/">
             Prediction-Realization Diagram
@@ -325,7 +325,7 @@
     <option value="/approach/exploratory-tools.md/" >
   - 
    Exploratory analysis tools</option> 
-      <option value="/approach/exploratory-tools.md/prd/" >-- Prediction-Realization Diagram</option>
+      <option value="/approach/exploratory-tools.md/prd/"  selected>-- Prediction-Realization Diagram</option>
       <option value="/approach/exploratory-tools.md/fanchart/" >-- Fanchart</option>
       <option value="/approach/exploratory-tools.md/fixed-origin-graph/" >-- Fixed origin graph</option>
       <option value="/approach/exploratory-tools.md/fixed-horizon-graph/" >-- Fixed horizon graph</option>
@@ -379,52 +379,64 @@
       </div>
     
 
+    <h1>Prediction-Realization Diagram</h1>
     
     
     
-    
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
+    <p>The function <strong>plotPRD</strong> of the
+<a href="https://github.com/forvis/forvision">forvision</a> package plots the Prediction-Realization Diagram for the given data from dataset containing columns actual, forecast, and method (AFTS).</p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<p>Here’s a prediction-realization diagram created by the function
+<strong>plotPRD</strong>:</p>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<pre><code>library(forvision)
+plotPRD(AFTS)
+</code></pre>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<p><img src="/images/PRD/unnamed-chunk-1-1.png" alt="" /></p>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<p>The resulting prediction-relization digram plotted in logarithmic scales
+by using the option setting <em>useLog</em> ==TRUE:</p>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<pre><code>library(forvision)
+plotPRD(AFTS, useLogs = TRUE)
+</code></pre>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<p><img src="/images/PRD/unnamed-chunk-2-1.png" alt="" /></p>
 
-<p><strong>Our current results involve:</strong></p>
+<p>The prediction-realization diagram for the selected methods:</p>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<pre><code># For the methods &quot;ARARMA&quot;, &quot;Auto-ANN&quot;, and &quot;DAMPEN&quot;
+data1 &lt;- subset(AFTS, method == c(&quot;ARARMA&quot;, &quot;Auto-ANN&quot;, &quot;DAMPEN&quot;))
+library(forvision)
+plotPRD(data1)
+</code></pre>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<p><img src="/images/PRD/unnamed-chunk-3-1.png" alt="" /></p>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p>The prediction-realization diagram for the selected horizon:</p>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
+<pre><code># For the horizons 1, 2
+data2 &lt;- subset(AFTS, horizon == 1)
+library(forvision)
+plotPRD(data2)
+</code></pre>
 
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
+<p><img src="/images/PRD/unnamed-chunk-4-1.png" alt="" /></p>
 
+<p><strong>To cite this website, please use the following reference:</strong></p>
 
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
+
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/approach/exploratory-tools.md/" title="Exploratory analysis tools"> <i class="fa fa-chevron-left"></i><label>Exploratory analysis tools</label></a>
+    <a class="nav nav-next" href="/approach/exploratory-tools.md/fanchart/" title="Fanchart" style="margin-right: 0px;"><label>Fanchart</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>

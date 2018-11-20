@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Forvision project :: the Forvision project</title>
+<title>M3-Competition data :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/">
+  <body data-url="/datasets/m3-data/">
     
       <header>
   <div class="logo">
@@ -190,7 +190,7 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/datasets/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/datasets/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/datasets/">Data sets</a>
@@ -204,7 +204,7 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/datasets/m3-data/" class="dd-item">
+      <li data-nav-id="/datasets/m3-data/" class="dd-item active">
         <div>
           <a href="/datasets/m3-data/">
             M3-Competition data
@@ -338,7 +338,7 @@
     <option value="/datasets/" >
    Data sets</option> 
       <option value="/datasets/test-cases/" >- Test cases</option>
-      <option value="/datasets/m3-data/" >- M3-Competition data</option>
+      <option value="/datasets/m3-data/"  selected>- M3-Competition data</option>
   
     <option value="/forvision/" >
    The forvision package for R</option> 
@@ -379,52 +379,103 @@
       </div>
     
 
+    <h1>M3-Competition data</h1>
     
     
     
-    
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<p><img src="unp.PNG" alt="" /></p>
+    <p><strong>The 3003 time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Data with Rolling-Origin and Interval Forecasts saved as csv files</strong></p>
 
-<p>In the <a href="https://github.com/forvis/forvision">Forvision project 
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<tbody>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAYearSeries.csv">FORAYearSeries.csv</a></td>
+<td>The yearly time series from the M3 forecasting competition</td>
+<td>TSTS (Time Series Table Schema)</td>
+</tr>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAYearForecast.csv">FORAYearForecast.csv</a></td>
+<td>The yearly forecasts of yearly time series from all the original participating methods in the M3 forecasting competition</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
 
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAQuartSeries.csv">FORAQuartSeries.csv</a></td>
+<td>The quarterly time series from the M3 forecasting competition</td>
+<td>TSTS (Time Series Table Schema)</td>
+</tr>
 
-<ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAQuartForecast.csv">FORAQuartForecast.csv</a></td>
+<td>The quarterly forecasts of quarterly time series from all the original participating methods in the M3 forecasting competition</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
-</ol>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAMonthSeries.csv">FORAMonthSeries.csv</a></td>
+<td>The monthly time series from the M3 forecasting competition</td>
+<td>TSTS (Time Series Table Schema)</td>
+</tr>
 
-<p><strong>Our current results involve:</strong></p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAMonthForecast.csv">FORAMonthForecast.csv</a></td>
+<td>The monthly forecasts of monthly time series from all the original participating methods in the M3 forecasting competition</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
 
-<ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAOtherSeries.csv">FORAOtherSeries.csv</a></td>
+<td>The other time series from the M3 forecasting competition</td>
+<td>TSTS (Time Series Table Schema)</td>
+</tr>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAOtherForecast.csv">FORAOtherForecast.csv</a></td>
+<td>The other forecasts of other time series from all the original participating methods in the M3 forecasting competition</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/M3ArimaYear.csv">M3ArimaYear.csv</a></td>
+<td>The yearly time series + forecasts of M3-Competition using ARIMA model with Rolling-Origin and Interval Forecasts</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018, November). Data schemas for forecasting (with examples in R). <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em>. Moradabad, India.</p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/M3ArimaQuart.csv">M3ArimaQuart.csv</a></td>
+<td>The quaterly time series + forecasts of M3-Competition using ARIMA model with Rolling-Origin and Interval Forecasts</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
 
-<p><a href="/our-publications/SMART-2018.pdf">Sai, C., Davydenko, A., &amp; Shcherbakov, M. (2018). <em>Data schemas for forecasting (with examples in R)</em>. Presentation, India</a></p>
+<tr>
+<td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/M3ArimaMonth.csv">M3ArimaMonth.csv</a></td>
+<td>The monthly time series + forecasts of M3-Competition using ARIMA model with Rolling-Origin and Interval Forecasts</td>
+<td>AFTS (Forecast Table Schema)</td>
+</tr>
+</tbody>
+</table>
 
+<p><strong>To cite this website, please use the following reference:</strong></p>
 
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
+
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-next" href="/project-summary/" title=" Project summary" style="margin-right: 0px;"><label> Project summary</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/datasets/test-cases/" title="Test cases"> <i class="fa fa-chevron-left"></i><label>Test cases</label></a>
+    <a class="nav nav-next" href="/forvision/" title="The forvision package for R" style="margin-right: 0px;"><label>The forvision package for R</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
