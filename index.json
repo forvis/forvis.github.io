@@ -126,18 +126,18 @@
 	"content": "Mean absolute percentage error for different forecasting methods and different horizons is generated using the function calculateMAPEs of the forvision package for the given data from dataset.\nlibrary(forvision) calculateMAPEs(afts)  "
 },
 {
-	"uri": "/datasets/",
-	"title": "Data sets",
-	"tags": [],
-	"description": "",
-	"content": "Data sets\n"
-},
-{
 	"uri": "/approach/accuracy-tools/pis-evaluation/",
 	"title": "PIs evaluation",
 	"tags": [],
 	"description": "",
 	"content": "The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:\nlibrary(forvision) validatePIs(afts)  "
+},
+{
+	"uri": "/datasets/",
+	"title": "Data sets",
+	"tags": [],
+	"description": "",
+	"content": "Data sets\n"
 },
 {
 	"uri": "/datasets/test-cases/",
