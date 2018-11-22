@@ -71,7 +71,15 @@
   </url>
   
   <url>
+    <loc>/approach/accuracy-tools/point-forecast-evaluation/</loc>
+  </url>
+  
+  <url>
     <loc>/datasets/</loc>
+  </url>
+  
+  <url>
+    <loc>/approach/accuracy-tools/pis-evaluation/</loc>
   </url>
   
   <url>

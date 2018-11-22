@@ -95,14 +95,14 @@
 	"title": "Fanchart",
 	"tags": [],
 	"description": "15",
-	"content": "The function plot_fan of the forvision package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.\nHere’s a fanchart created by the function plot_fs for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plot_fan(ts = TSTS, fc = AFTS, id = \u0026quot;M1\u0026quot;)  "
+	"content": "The function plotFAN of the forvision package plots the fanchart for the given data from dataset.\nHere’s a fanchart created by the function plotFAN for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plotFAN(ts = TSTS, fc = AFTS, id = \u0026quot;M1\u0026quot;)  "
 },
 {
 	"uri": "/approach/exploratory-tools.md/fixed-origin-graph/",
 	"title": "Fixed origin graph",
 	"tags": [],
 	"description": "",
-	"content": "The function plot_fs of the forvision package plots the fixed origin graph for the given data from dataset containing 2 dataframes TSTS and AFTS.\nHere’s a fixed origin graph created by the function plot_fs for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = \u0026quot;AutoBox1\u0026quot;)  The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting method:\nlibrary(forvision) plot_fs(ts = TSTS1, fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = c(\u0026quot;AutoBox1\u0026quot;, \u0026quot;AutoBox3\u0026quot;))  To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
+	"content": "The function plotFS of the forvision package plots the fixed origin graph for the given data from dataset.\nHere’s a fixed origin graph created by the function plotFS for time series of id == \u0026ldquo;M1\u0026rdquo;:\nlibrary(forvision) plotFS(fc = AFTS1, id = \u0026quot;M1\u0026quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:\nlibrary(forvision) plotFS(fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = \u0026quot;AutoBox1\u0026quot;)  The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting method:\nlibrary(forvision) plotFS(fc = AFTS1, id = \u0026quot;M1\u0026quot;, method = c(\u0026quot;AutoBox1\u0026quot;, \u0026quot;AutoBox3\u0026quot;))  To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/approach/exploratory-tools.md/fixed-horizon-graph/",
@@ -119,11 +119,25 @@
 	"content": "This page is under construction.\n"
 },
 {
+	"uri": "/approach/accuracy-tools/point-forecast-evaluation/",
+	"title": " Point forecasts evaluation",
+	"tags": [],
+	"description": "",
+	"content": "Mean absolute percentage error for different forecasting methods and different horizons is generated using the function calculateMAPEs of the forvision package for the given data from dataset.\nlibrary(forvision) calculateMAPEs(afts)  "
+},
+{
 	"uri": "/datasets/",
 	"title": "Data sets",
 	"tags": [],
 	"description": "",
 	"content": "Data sets\n"
+},
+{
+	"uri": "/approach/accuracy-tools/pis-evaluation/",
+	"title": "PIs evaluation",
+	"tags": [],
+	"description": "",
+	"content": "The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:\nlibrary(forvision) validatePIs(afts)  "
 },
 {
 	"uri": "/datasets/test-cases/",

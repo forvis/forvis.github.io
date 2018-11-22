@@ -10,5 +10,25 @@
 	<atom:link href="/approach/accuracy-tools/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title> Point forecasts evaluation</title>
+      <link>/approach/accuracy-tools/point-forecast-evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/approach/accuracy-tools/point-forecast-evaluation/</guid>
+      <description>Mean absolute percentage error for different forecasting methods and different horizons is generated using the function calculateMAPEs of the forvision package for the given data from dataset.
+library(forvision) calculateMAPEs(afts)  </description>
+    </item>
+    
+    <item>
+      <title>PIs evaluation</title>
+      <link>/approach/accuracy-tools/pis-evaluation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/approach/accuracy-tools/pis-evaluation/</guid>
+      <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
+library(forvision) validatePIs(afts)  </description>
+    </item>
+    
   </channel>
 </rss>

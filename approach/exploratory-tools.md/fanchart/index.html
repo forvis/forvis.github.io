@@ -182,11 +182,28 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen
+    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/approach/accuracy-tools/">Accuracy evaluation tools</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/approach/accuracy-tools/">Accuracy evaluation tools</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
+        <ul>
+      <li data-nav-id="/approach/accuracy-tools/point-forecast-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/point-forecast-evaluation/">
+             Point forecasts evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/accuracy-tools/pis-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/pis-evaluation/">
+            PIs evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -333,6 +350,8 @@
     <option value="/approach/accuracy-tools/" >
   - 
    Accuracy evaluation tools</option> 
+      <option value="/approach/accuracy-tools/point-forecast-evaluation/" >--  Point forecasts evaluation</option>
+      <option value="/approach/accuracy-tools/pis-evaluation/" >-- PIs evaluation</option>
   
   
     <option value="/datasets/" >
@@ -383,12 +402,12 @@
     
     
     
-    <p>The function <strong>plot_fan</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fanchart for the given data from dataset containing 2 dataframes TSTS and AFTS.</p>
+    <p>The function <strong>plotFAN</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fanchart for the given data from dataset.</p>
 
-<p>Here’s a fanchart created by the function <strong>plot_fs</strong> for time series of id == &ldquo;M1&rdquo;:</p>
+<p>Here’s a fanchart created by the function <strong>plotFAN</strong> for time series of id == &ldquo;M1&rdquo;:</p>
 
 <pre><code>library(forvision)
-plot_fan(ts = TSTS, fc = AFTS, id = &quot;M1&quot;)
+plotFAN(ts = TSTS, fc = AFTS, id = &quot;M1&quot;)
 </code></pre>
 
 <p><img src="/images/fanchart/fan.PNG" alt="" /></p>

@@ -182,11 +182,28 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen
+    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/approach/accuracy-tools/">Accuracy evaluation tools</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/approach/accuracy-tools/">Accuracy evaluation tools</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
+        <ul>
+      <li data-nav-id="/approach/accuracy-tools/point-forecast-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/point-forecast-evaluation/">
+             Point forecasts evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/accuracy-tools/pis-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/pis-evaluation/">
+            PIs evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
     </li>
         </ul>
     </li>
@@ -333,6 +350,8 @@
     <option value="/approach/accuracy-tools/" >
   - 
    Accuracy evaluation tools</option> 
+      <option value="/approach/accuracy-tools/point-forecast-evaluation/" >--  Point forecasts evaluation</option>
+      <option value="/approach/accuracy-tools/pis-evaluation/" >-- PIs evaluation</option>
   
   
     <option value="/datasets/" >
@@ -383,12 +402,12 @@
     
     
     
-    <p>The function <strong>plot_fs</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fixed origin graph for the given data from dataset containing 2 dataframes TSTS and AFTS.</p>
+    <p>The function <strong>plotFS</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fixed origin graph for the given data from dataset.</p>
 
-<p>Here’s a fixed origin graph created by the function <strong>plot_fs</strong> for time series of id == &ldquo;M1&rdquo;:</p>
+<p>Here’s a fixed origin graph created by the function <strong>plotFS</strong> for time series of id == &ldquo;M1&rdquo;:</p>
 
 <pre><code>library(forvision)
-plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;)
+plotFS(fc = AFTS1, id = &quot;M1&quot;)
 </code></pre>
 
 <p><img src="/images/fanchart/1.png" alt="" /></p>
@@ -396,7 +415,7 @@ plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;)
 <p>The fixed origin graph with the forecasts of the single forecast method by using the option setting <em>method</em>:</p>
 
 <pre><code>library(forvision)
-plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quot;)
+plotFS(fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quot;)
 </code></pre>
 
 <p><img src="/images/fanchart/2.png" alt="" /></p>
@@ -404,7 +423,7 @@ plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quo
 <p>The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting <em>method</em>:</p>
 
 <pre><code>library(forvision)
-plot_fs(ts = TSTS1, fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;))  
+plotFS(fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;))  
 </code></pre>
 
 <p><img src="/images/fanchart/3.png" alt="" /></p>
