@@ -99,47 +99,37 @@
       <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/data-shemas/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/step-by-step-guide/" class="dd-item alwaysopen
         ">
       <div>
-      <a href="/approach/data-shemas/">Main table schemas (TS)</a>
+      <a href="/approach/step-by-step-guide/">Step-by-step guide</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/approach/data-structures/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/data-structures/">Data structures</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/approach/data-shemas/tsts/" class="dd-item">
+      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item">
         <div>
-          <a href="/approach/data-shemas/tsts/">
+          <a href="/approach/data-structures/tsts/">
             Time Series (TSTS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/approach/data-shemas/fts/" class="dd-item">
+      <li data-nav-id="/approach/data-structures/fts/" class="dd-item">
         <div>
-          <a href="/approach/data-shemas/fts/">
+          <a href="/approach/data-structures/fts/">
             Forecast (FTS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/approach/data-shemas/afts/" class="dd-item">
+      <li data-nav-id="/approach/data-structures/afts/" class="dd-item">
         <div>
-          <a href="/approach/data-shemas/afts/">
+          <a href="/approach/data-structures/afts/">
             Actuals and forecasts(AFTS)
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/approach/optional-ds/" class="dd-item alwaysopen haschildren
-        ">
-      <div>
-      <a href="/approach/optional-ds/">Optional data structures</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/approach/optional-ds/ftds/" class="dd-item">
-        <div>
-          <a href="/approach/optional-ds/ftds/">
-            Forecasts Table Dynamic Schema (FTDS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -185,7 +175,7 @@
     <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/approach/accuracy-tools/">Accuracy evaluation tools</a>
+      <a href="/approach/accuracy-tools/"> Performance measurement</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
@@ -327,17 +317,16 @@
   - 
    Data flow</option> 
   
-    <option value="/approach/data-shemas/" >
+    <option value="/approach/step-by-step-guide/" >
   - 
-   Main table schemas (TS)</option> 
-      <option value="/approach/data-shemas/tsts/" >-- Time Series (TSTS)</option>
-      <option value="/approach/data-shemas/fts/" >-- Forecast (FTS)</option>
-      <option value="/approach/data-shemas/afts/" >-- Actuals and forecasts(AFTS)</option>
+   Step-by-step guide</option> 
   
-    <option value="/approach/optional-ds/" >
+    <option value="/approach/data-structures/" >
   - 
-   Optional data structures</option> 
-      <option value="/approach/optional-ds/ftds/" >-- Forecasts Table Dynamic Schema (FTDS)</option>
+   Data structures</option> 
+      <option value="/approach/data-structures/tsts/" >-- Time Series (TSTS)</option>
+      <option value="/approach/data-structures/fts/" >-- Forecast (FTS)</option>
+      <option value="/approach/data-structures/afts/" >-- Actuals and forecasts(AFTS)</option>
   
     <option value="/approach/exploratory-tools.md/" >
   - 
@@ -349,7 +338,7 @@
   
     <option value="/approach/accuracy-tools/" >
   - 
-   Accuracy evaluation tools</option> 
+    Performance measurement</option> 
       <option value="/approach/accuracy-tools/point-forecast-evaluation/" >--  Point forecasts evaluation</option>
       <option value="/approach/accuracy-tools/pis-evaluation/" >-- PIs evaluation</option>
   
@@ -413,17 +402,17 @@ In the <a href="https://github.com/forvis/forvision">Forvision project
 <p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
 
 <ol>
-<li><p>to define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<li><p>To define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
 
-<li><p>to develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
+<li><p>To develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
 </ol>
 
 <p><strong>Our current results involve:</strong></p>
 
 <ol>
-<li><p>a set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<li><p>A set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
 
-<li><p>a more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
+<li><p>A more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
 </ol>
 
 <p><strong>Our preliminary results have been presented here:</strong></p>

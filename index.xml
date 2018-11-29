@@ -12,20 +12,20 @@
     
     <item>
       <title>Time Series (TSTS)</title>
-      <link>/approach/data-shemas/tsts/</link>
+      <link>/approach/data-structures/tsts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/approach/data-shemas/tsts/</guid>
+      <guid>/approach/data-structures/tsts/</guid>
       <description>In time series table schema each observation is stored in a table as a separate record (line):
    Field name (column name) Description Examples     *series_id Time series identifier - a unique name that identifies a time series “Y1”   *timestamp Any representation of the period to which the observation relates “01.01.1997” in case of daily data, “Sep 1997” in case of monthly data, “Week 49, 1997” in case of weekly data   value The value observed 1000    *the key (the unique value that should not duplicated) for this table schema is series_id, timestamp.</description>
     </item>
     
     <item>
       <title>Forecast (FTS)</title>
-      <link>/approach/data-shemas/fts/</link>
+      <link>/approach/data-structures/fts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/approach/data-shemas/fts/</guid>
+      <guid>/approach/data-structures/fts/</guid>
       <description>Forecast Table Schema is needed to store forecasting results.
 Each table line corresponds to all the forecasting results obtained for a given time series series using a given method for a given horizon for a given origin:
    Field name (column name) Description Examples     series_id* Time series identifier - a unique name that identifies a time series “Y1”   period_timestamp Any representation of the period to which the observation relates “01.</description>
@@ -33,21 +33,12 @@ Each table line corresponds to all the forecasting results obtained for a given 
     
     <item>
       <title>Actuals and forecasts(AFTS)</title>
-      <link>/approach/data-shemas/afts/</link>
+      <link>/approach/data-structures/afts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/approach/data-shemas/afts/</guid>
+      <guid>/approach/data-structures/afts/</guid>
       <description>Sometimes it is convenient to have a table where we have both actuals and forecasts in one row in one table. This Actuals and Forecasts Table Schema (AFTS) is the same as the FTS schema, but additional column “value” is used to represent the actual value of time series. If no actual value is available, then “value”=”NA”.
 In order to obtain data in the AFTS format, we can use a query to link actual values from the TSTS schema and forecasts from the FTS schema: diagram</description>
-    </item>
-    
-    <item>
-      <title>Forecasts Table Dynamic Schema (FTDS)</title>
-      <link>/approach/optional-ds/ftds/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/approach/optional-ds/ftds/</guid>
-      <description>This page is under construction.</description>
     </item>
     
     <item>

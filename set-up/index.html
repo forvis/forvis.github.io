@@ -93,6 +93,108 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/approach/data-flow/" class="dd-item alwaysopen
+        ">
+      <div>
+      <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/approach/step-by-step-guide/" class="dd-item alwaysopen
+        ">
+      <div>
+      <a href="/approach/step-by-step-guide/">Step-by-step guide</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/approach/data-structures/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/data-structures/">Data structures</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/tsts/">
+            Time Series (TSTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/data-structures/fts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/fts/">
+            Forecast (FTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/data-structures/afts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/afts/">
+            Actuals and forecasts(AFTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/exploratory-tools.md/">Exploratory analysis tools</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/prd/">
+            Prediction-Realization Diagram
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fanchart/">
+            Fanchart
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-origin-graph/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fixed-origin-graph/">
+            Fixed origin graph
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-horizon-graph/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fixed-horizon-graph/">
+            Fixed horizon graph
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/accuracy-tools/"> Performance measurement</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/approach/accuracy-tools/point-forecast-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/point-forecast-evaluation/">
+             Point forecasts evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/accuracy-tools/pis-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/pis-evaluation/">
+            PIs evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/datasets/" class="dd-item alwaysopen haschildren
@@ -215,17 +317,16 @@
   - 
    Data flow</option> 
   
-    <option value="/approach/data-shemas/" >
+    <option value="/approach/step-by-step-guide/" >
   - 
-   Main table schemas (TS)</option> 
-      <option value="/approach/data-shemas/tsts/" >-- Time Series (TSTS)</option>
-      <option value="/approach/data-shemas/fts/" >-- Forecast (FTS)</option>
-      <option value="/approach/data-shemas/afts/" >-- Actuals and forecasts(AFTS)</option>
+   Step-by-step guide</option> 
   
-    <option value="/approach/optional-ds/" >
+    <option value="/approach/data-structures/" >
   - 
-   Optional data structures</option> 
-      <option value="/approach/optional-ds/ftds/" >-- Forecasts Table Dynamic Schema (FTDS)</option>
+   Data structures</option> 
+      <option value="/approach/data-structures/tsts/" >-- Time Series (TSTS)</option>
+      <option value="/approach/data-structures/fts/" >-- Forecast (FTS)</option>
+      <option value="/approach/data-structures/afts/" >-- Actuals and forecasts(AFTS)</option>
   
     <option value="/approach/exploratory-tools.md/" >
   - 
@@ -237,7 +338,7 @@
   
     <option value="/approach/accuracy-tools/" >
   - 
-   Accuracy evaluation tools</option> 
+    Performance measurement</option> 
       <option value="/approach/accuracy-tools/point-forecast-evaluation/" >--  Point forecasts evaluation</option>
       <option value="/approach/accuracy-tools/pis-evaluation/" >-- PIs evaluation</option>
   
@@ -304,6 +405,8 @@
 <p>Given  the  above  settings,  we  need  to  have  a  convenient  means  to  store  and  access  (and,  perhaps,  to  distribute  or  exchange) forecasting data including actuals, forecasts, and the related information. We would like to find a means that would be fast, cross-platform, easy to learn and to implement.</p>
 
 <p>Eventually,  the  storage  of  forecasting  data  is  needed  to  perform   adequate   out-of-sample   evaluation   of   forecasting   accuracy. In the case of forecasting competitions, a well-defined approach  to  store  forecasting  data  should  enable  a  credible  approach for forecasting accuracy comparisons.</p>
+
+<hr />
 
 <p><strong>To cite this website, please use the following reference:</strong></p>
 

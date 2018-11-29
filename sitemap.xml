@@ -23,27 +23,23 @@
   </url>
   
   <url>
-    <loc>/approach/data-shemas/</loc>
+    <loc>/approach/step-by-step-guide/</loc>
   </url>
   
   <url>
-    <loc>/approach/data-shemas/tsts/</loc>
+    <loc>/approach/data-structures/</loc>
   </url>
   
   <url>
-    <loc>/approach/data-shemas/fts/</loc>
+    <loc>/approach/data-structures/tsts/</loc>
   </url>
   
   <url>
-    <loc>/approach/data-shemas/afts/</loc>
+    <loc>/approach/data-structures/fts/</loc>
   </url>
   
   <url>
-    <loc>/approach/optional-ds/</loc>
-  </url>
-  
-  <url>
-    <loc>/approach/optional-ds/ftds/</loc>
+    <loc>/approach/data-structures/afts/</loc>
   </url>
   
   <url>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>How to download and install :: the Forvision project</title>
+<title>Time Series (TSTS) :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 
     
   </head>
-  <body data-url="/forvision/install/">
+  <body data-url="/approach/data-structures/tsts/">
     
       <header>
   <div class="logo">
@@ -86,7 +86,7 @@
       <a href="/audience/">Target audience</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/">Our approach</a>
@@ -105,14 +105,14 @@
       <a href="/approach/step-by-step-guide/">Step-by-step guide</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
-    <li data-nav-id="/approach/data-structures/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/approach/data-structures/" class="dd-item parent alwaysopen haschildren
         ">
       <div>
       <a href="/approach/data-structures/">Data structures</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item">
+      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item active">
         <div>
           <a href="/approach/data-structures/tsts/">
             Time Series (TSTS)
@@ -220,14 +220,14 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/forvision/" class="dd-item parent alwaysopen haschildren
+    <li data-nav-id="/forvision/" class="dd-item alwaysopen haschildren
         ">
       <div>
       <a href="/forvision/">The forvision package for R</a>
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/forvision/install/" class="dd-item active">
+      <li data-nav-id="/forvision/install/" class="dd-item">
         <div>
           <a href="/forvision/install/">
             How to download and install
@@ -324,7 +324,7 @@
     <option value="/approach/data-structures/" >
   - 
    Data structures</option> 
-      <option value="/approach/data-structures/tsts/" >-- Time Series (TSTS)</option>
+      <option value="/approach/data-structures/tsts/"  selected>-- Time Series (TSTS)</option>
       <option value="/approach/data-structures/fts/" >-- Forecast (FTS)</option>
       <option value="/approach/data-structures/afts/" >-- Actuals and forecasts(AFTS)</option>
   
@@ -350,7 +350,7 @@
   
     <option value="/forvision/" >
    The forvision package for R</option> 
-      <option value="/forvision/install/"  selected>- How to download and install</option>
+      <option value="/forvision/install/" >- How to download and install</option>
       <option value="/forvision/load-data/" >- Loading data</option>
       <option value="/forvision/data-check/" >- Data integrity checks</option>
       <option value="/forvision/exploratory-analysis/" >- Exploratory analysis</option>
@@ -387,28 +387,79 @@
       </div>
     
 
-    <h1>How to download and install</h1>
+    <h1>Time Series (TSTS)</h1>
     
     
     
     
 
-<h4 id="installation">Installation</h4>
+<p>In time series table schema each observation is stored in a table as a separate record (line):</p>
 
-<p>You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># install.packages(&#34;devtools&#34;)</span>
-devtools<span style="color:#f92672">::</span>install_github<span style="color:#111">(</span><span style="color:#d88200">&#34;forvis/forvision&#34;</span><span style="color:#111">)</span></code></pre></div>
-<h4 id="problems-and-issues">Problems and Issues</h4>
+<table>
+<thead>
+<tr>
+<th>Field name (column name)</th>
+<th>Description</th>
+<th>Examples</th>
+</tr>
+</thead>
 
-<p>Please <strong>report any issues</strong> you may encounter in our <a href="https://github.com/forvis/forvision/issues">issues page on github</a></p>
+<tbody>
+<tr>
+<td>*series_id</td>
+<td>Time series identifier - a unique name that identifies a time series</td>
+<td>“Y1”</td>
+</tr>
+
+<tr>
+<td>*timestamp</td>
+<td>Any representation of the period to which the observation relates</td>
+<td>“01.01.1997” in case of daily data, “Sep 1997” in case of monthly data,  “Week 49, 1997” in case of weekly data</td>
+</tr>
+
+<tr>
+<td>value</td>
+<td>The value observed</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+
+<p>*the key (the unique value that should not duplicated) for this table schema is series_id, timestamp. In other words, we cannot have two (or more) records in a table relating to the same time series and the same period of observation (timestamp)</p>
+
+<p>We may have additional fields (columns) in this table or additional table specifying the features of time series. However, the above schema includes the fields that are necessary for further processing of time series data containing many time series. Here we do not impose restrictions on the types of the data.</p>
+
+<p>If some observation is missing, the corresponding table line can be omitted or corresponding value can be denoted as ‘NA’. Observation can also contain censored data, etc., which can also be represented by additional agreements, but here these rules are not specified.</p>
+
+<h2 id="example">Example:</h2>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">TSTS <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;C:/Users/svcuo/Desktop/data/TSTS.csv&#34;</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">head</span><span style="color:#111">(</span>TSTS<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
+<pre><code>  series_id   value   timestamp
+1         Y1 3103.96      1984
+2         Y1 3360.27      1985
+3         Y1 3807.63      1986
+4         Y1 4387.88      1987
+5         Y1 4936.99      1988
+6         Y1 5379.75      1989
+7         Y1 6158.68      1990
+8         Y1 6876.58      1991
+9         Y2 5389.80      1984
+10        Y2 5384.40      1985
+</code></pre>
+
+<p><strong>To cite this website, please use the following reference:</strong></p>
+
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
+
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
     
     
         <div class="chevrons">
     <div id="navigation">
-<a class="nav nav-prev" href="/forvision/" title="The forvision package for R"> <i class="fa fa-chevron-left"></i><label>The forvision package for R</label></a>
-    <a class="nav nav-next" href="/forvision/load-data/" title="Loading data" style="margin-right: 0px;"><label>Loading data</label><i class="fa fa-chevron-right"></i></a></div>
+<a class="nav nav-prev" href="/approach/data-structures/" title="Data structures"> <i class="fa fa-chevron-left"></i><label>Data structures</label></a>
+    <a class="nav nav-next" href="/approach/data-structures/fts/" title="Forecast (FTS)" style="margin-right: 0px;"><label>Forecast (FTS)</label><i class="fa fa-chevron-right"></i></a></div>
   </div>
 
   </section>
