@@ -87,27 +87,27 @@
   </url>
   
   <url>
-    <loc>/forvision/</loc>
+    <loc>/forvision-package/</loc>
   </url>
   
   <url>
-    <loc>/forvision/install/</loc>
+    <loc>/forvision-package/install/</loc>
   </url>
   
   <url>
-    <loc>/forvision/load-data/</loc>
+    <loc>/forvision-package/load-data/</loc>
   </url>
   
   <url>
-    <loc>/forvision/data-check/</loc>
+    <loc>/forvision-package/data-check/</loc>
   </url>
   
   <url>
-    <loc>/forvision/exploratory-analysis/</loc>
+    <loc>/forvision-package/exploratory-analysis/</loc>
   </url>
   
   <url>
-    <loc>/forvision/accuracy-evaluation/</loc>
+    <loc>/forvision-package/accuracy-evaluation/</loc>
   </url>
   
   <url>
