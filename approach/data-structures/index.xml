@@ -11,7 +11,7 @@
     
     
     <item>
-      <title>Time Series (TSTS)</title>
+      <title>Time Series Table Schema (TSTS)</title>
       <link>/approach/data-structures/tsts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -21,7 +21,7 @@
     </item>
     
     <item>
-      <title>Forecast (FTS)</title>
+      <title>Forecast Table Schema (FTS)</title>
       <link>/approach/data-structures/fts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -32,7 +32,7 @@ Each table line corresponds to all the forecasting results obtained for a given 
     </item>
     
     <item>
-      <title>Actuals and forecasts(AFTS)</title>
+      <title>Actuals and Forecasts Table Schema (AFTS)</title>
       <link>/approach/data-structures/afts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
