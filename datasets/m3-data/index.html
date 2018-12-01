@@ -45,7 +45,7 @@
     <nav class="shortcuts">
             <li class="" role="">
                 <a href="https://forvis.github.io/forvision"  rel="noopener">
-                  <i class='fa fa-flask'></i><label>Docs</label>
+                  <i class='fa fa-flask'></i><label>R-package</label>
                 </a>
             </li>
             <li class="" role="">
@@ -209,65 +209,34 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-      <li data-nav-id="/datasets/test-cases/" class="dd-item">
+      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item">
         <div>
-          <a href="/datasets/test-cases/">
-            Test cases
+          <a href="/approach/data-structures/tsts/">
+            Time Series Table Schema (TSTS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
-      <li data-nav-id="/datasets/m3-data/" class="dd-item active">
+      <li data-nav-id="/approach/data-structures/fts/" class="dd-item">
         <div>
-          <a href="/datasets/m3-data/">
-            M3-Competition data
+          <a href="/approach/data-structures/fts/">
+            Forecast Table Schema (FTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/data-structures/afts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/afts/">
+            Actuals and Forecasts Table Schema (AFTS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
         </ul>
     </li>
-    <li data-nav-id="/forvision-package/" class="dd-item alwaysopen haschildren
+    <li data-nav-id="/forvision-package/" class="dd-item alwaysopen
         ">
       <div>
-      <a href="/forvision-package/">The forvision package for R</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/forvision-package/">The forvision package for R</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
-        <ul>
-      <li data-nav-id="/forvision-package/install/" class="dd-item">
-        <div>
-          <a href="/forvision-package/install/">
-            How to download and install
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision-package/load-data/" class="dd-item">
-        <div>
-          <a href="/forvision-package/load-data/">
-            Loading data
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision-package/data-check/" class="dd-item">
-        <div>
-          <a href="/forvision-package/data-check/">
-            Data integrity checks
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision-package/exploratory-analysis/" class="dd-item">
-        <div>
-          <a href="/forvision-package/exploratory-analysis/">
-            Exploratory analysis
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/forvision-package/accuracy-evaluation/" class="dd-item">
-        <div>
-          <a href="/forvision-package/accuracy-evaluation/">
-            Accuracy evaluation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
     </li>
     <li data-nav-id="/publications/" class="dd-item alwaysopen
         ">
@@ -355,11 +324,6 @@
   
     <option value="/forvision-package/" >
    The forvision package for R</option> 
-      <option value="/forvision-package/install/" >- How to download and install</option>
-      <option value="/forvision-package/load-data/" >- Loading data</option>
-      <option value="/forvision-package/data-check/" >- Data integrity checks</option>
-      <option value="/forvision-package/exploratory-analysis/" >- Exploratory analysis</option>
-      <option value="/forvision-package/accuracy-evaluation/" >- Accuracy evaluation</option>
   
     <option value="/publications/" >
    Our publications</option> 
@@ -403,7 +367,7 @@
 <tr>
 <th>File</th>
 <th>Description</th>
-<th>Schema</th>
+<th align="center">Schema</th>
 </tr>
 </thead>
 
@@ -411,67 +375,67 @@
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAYearSeries.csv">FORAYearSeries.csv</a></td>
 <td>The yearly time series from the M3 forecasting competition</td>
-<td>TSTS (Time Series Table Schema)</td>
+<td align="center">TSTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAYearForecast.csv">FORAYearForecast.csv</a></td>
 <td>The yearly forecasts of yearly time series from all the original participating methods in the M3 forecasting competition</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAQuartSeries.csv">FORAQuartSeries.csv</a></td>
 <td>The quarterly time series from the M3 forecasting competition</td>
-<td>TSTS (Time Series Table Schema)</td>
+<td align="center">TSTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAQuartForecast.csv">FORAQuartForecast.csv</a></td>
 <td>The quarterly forecasts of quarterly time series from all the original participating methods in the M3 forecasting competition</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAMonthSeries.csv">FORAMonthSeries.csv</a></td>
 <td>The monthly time series from the M3 forecasting competition</td>
-<td>TSTS (Time Series Table Schema)</td>
+<td align="center">TSTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAMonthForecast.csv">FORAMonthForecast.csv</a></td>
 <td>The monthly forecasts of monthly time series from all the original participating methods in the M3 forecasting competition</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAOtherSeries.csv">FORAOtherSeries.csv</a></td>
 <td>The other time series from the M3 forecasting competition</td>
-<td>TSTS (Time Series Table Schema)</td>
+<td align="center">TSTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/FORAOtherForecast.csv">FORAOtherForecast.csv</a></td>
 <td>The other forecasts of other time series from all the original participating methods in the M3 forecasting competition</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/M3ArimaYear.csv">M3ArimaYear.csv</a></td>
 <td>The yearly time series + forecasts of M3-Competition using ARIMA model with Rolling-Origin and Interval Forecasts</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/M3ArimaQuart.csv">M3ArimaQuart.csv</a></td>
 <td>The quaterly time series + forecasts of M3-Competition using ARIMA model with Rolling-Origin and Interval Forecasts</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 
 <tr>
 <td><a href="https://raw.githubusercontent.com/forvis/forvision_data/master/M3ArimaMonth.csv">M3ArimaMonth.csv</a></td>
 <td>The monthly time series + forecasts of M3-Competition using ARIMA model with Rolling-Origin and Interval Forecasts</td>
-<td>AFTS (Forecast Table Schema)</td>
+<td align="center">FTS</td>
 </tr>
 </tbody>
 </table>

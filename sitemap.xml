@@ -91,26 +91,6 @@
   </url>
   
   <url>
-    <loc>/forvision-package/install/</loc>
-  </url>
-  
-  <url>
-    <loc>/forvision-package/load-data/</loc>
-  </url>
-  
-  <url>
-    <loc>/forvision-package/data-check/</loc>
-  </url>
-  
-  <url>
-    <loc>/forvision-package/exploratory-analysis/</loc>
-  </url>
-  
-  <url>
-    <loc>/forvision-package/accuracy-evaluation/</loc>
-  </url>
-  
-  <url>
     <loc>/publications/</loc>
   </url>
   

@@ -18,7 +18,7 @@
       <guid>/datasets/test-cases/</guid>
       <description>Example 1
 In this example we have data containing actuals for several time time series + corresponding out-of-sample forecasts with different horizons produced using different forecasting methods at different origins.
-   File Description Schema     example1_tsts.csv Actual observations TSTS   example1_afts.csv Actuals and forecasts AFTS    To cite this website, please use the following reference:
+   File Description Schema     example1_tsts.csv Actual observations TSTS   example1_ats.csv Actuals and forecasts FTS    To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date).</description>
     </item>
     
@@ -29,7 +29,7 @@ Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date).</description>
       
       <guid>/datasets/m3-data/</guid>
       <description>The 3003 time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Data with Rolling-Origin and Interval Forecasts saved as csv files
-   File Description Schema     FORAYearSeries.csv The yearly time series from the M3 forecasting competition TSTS (Time Series Table Schema)   FORAYearForecast.csv The yearly forecasts of yearly time series from all the original participating methods in the M3 forecasting competition AFTS (Forecast Table Schema)   FORAQuartSeries.</description>
+   File Description Schema     FORAYearSeries.csv The yearly time series from the M3 forecasting competition TSTS   FORAYearForecast.csv The yearly forecasts of yearly time series from all the original participating methods in the M3 forecasting competition FTS   FORAQuartSeries.csv The quarterly time series from the M3 forecasting competition TSTS   FORAQuartForecast.</description>
     </item>
     
   </channel>

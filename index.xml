@@ -114,7 +114,7 @@ library(forvision) validatePIs(afts)  </description>
       <guid>/datasets/test-cases/</guid>
       <description>Example 1
 In this example we have data containing actuals for several time time series + corresponding out-of-sample forecasts with different horizons produced using different forecasting methods at different origins.
-   File Description Schema     example1_tsts.csv Actual observations TSTS   example1_afts.csv Actuals and forecasts AFTS    To cite this website, please use the following reference:
+   File Description Schema     example1_tsts.csv Actual observations TSTS   example1_ats.csv Actuals and forecasts FTS    To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date).</description>
     </item>
     
@@ -125,57 +125,7 @@ Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date).</description>
       
       <guid>/datasets/m3-data/</guid>
       <description>The 3003 time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Data with Rolling-Origin and Interval Forecasts saved as csv files
-   File Description Schema     FORAYearSeries.csv The yearly time series from the M3 forecasting competition TSTS (Time Series Table Schema)   FORAYearForecast.csv The yearly forecasts of yearly time series from all the original participating methods in the M3 forecasting competition AFTS (Forecast Table Schema)   FORAQuartSeries.</description>
-    </item>
-    
-    <item>
-      <title>How to download and install</title>
-      <link>/forvision-package/install/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/forvision-package/install/</guid>
-      <description>Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:
-# install.packages(&amp;#34;devtools&amp;#34;) devtools::install_github(&amp;#34;forvis/forvision&amp;#34;) Problems and Issues Please report any issues you may encounter in our issues page on github</description>
-    </item>
-    
-    <item>
-      <title>Loading data</title>
-      <link>/forvision-package/load-data/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/forvision-package/load-data/</guid>
-      <description>Read data from URL (from example datasets) You can use the following methods to read data from URL sources:
-1) Using function download.file():
-temporaryFile &amp;lt;- tempfile() download.file(&amp;quot;RUL&amp;quot;, destfile=temporaryFile) myData &amp;lt;- read.csv(temporaryFile)  2) Using package RCurl:
-library(RCurl) myCsv &amp;lt;- getURL(&amp;quot;RUL&amp;quot;, ssl.verifypeer = FALSE) myData &amp;lt;- read.csv(textConnection(myCsv))  3) Using R base function read.csv():
-myData &amp;lt;- read.csv(&amp;quot;RUL&amp;quot;)  You can use the RULs for examples datasets from the section datasets</description>
-    </item>
-    
-    <item>
-      <title>Data integrity checks</title>
-      <link>/forvision-package/data-check/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/forvision-package/data-check/</guid>
-      <description>This page is under construction.</description>
-    </item>
-    
-    <item>
-      <title>Exploratory analysis</title>
-      <link>/forvision-package/exploratory-analysis/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/forvision-package/exploratory-analysis/</guid>
-      <description>This page is under construction.</description>
-    </item>
-    
-    <item>
-      <title>Accuracy evaluation</title>
-      <link>/forvision-package/accuracy-evaluation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/forvision-package/accuracy-evaluation/</guid>
-      <description>This page is under construction.</description>
+   File Description Schema     FORAYearSeries.csv The yearly time series from the M3 forecasting competition TSTS   FORAYearForecast.csv The yearly forecasts of yearly time series from all the original participating methods in the M3 forecasting competition FTS   FORAQuartSeries.csv The quarterly time series from the M3 forecasting competition TSTS   FORAQuartForecast.</description>
     </item>
     
     <item>
