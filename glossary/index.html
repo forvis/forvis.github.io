@@ -225,11 +225,49 @@
     </li>
         </ul>
     </li>
-    <li data-nav-id="/forvision-package/" class="dd-item alwaysopen
+    <li data-nav-id="/forvision-package/" class="dd-item alwaysopen haschildren
         ">
       <div>
-      <a href="/forvision-package/">The forvision package for R</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/forvision-package/">The forvision package for R</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
+        <ul>
+      <li data-nav-id="/forvision-package/install/" class="dd-item">
+        <div>
+          <a href="/forvision-package/install/">
+            How to download and install
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/forvision-package/load-data/" class="dd-item">
+        <div>
+          <a href="/forvision-package/load-data/">
+            Loading data
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/forvision-package/data-check/" class="dd-item">
+        <div>
+          <a href="/forvision-package/data-check/">
+            Data integrity checks
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/forvision-package/exploratory-analysis/" class="dd-item">
+        <div>
+          <a href="/forvision-package/exploratory-analysis/">
+            Exploratory analysis
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/forvision-package/accuracy-evaluation/" class="dd-item">
+        <div>
+          <a href="/forvision-package/accuracy-evaluation/">
+            Accuracy evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
     </li>
     <li data-nav-id="/publications/" class="dd-item alwaysopen
         ">
@@ -317,6 +355,11 @@
   
     <option value="/forvision-package/" >
    The forvision package for R</option> 
+      <option value="/forvision-package/install/" >- How to download and install</option>
+      <option value="/forvision-package/load-data/" >- Loading data</option>
+      <option value="/forvision-package/data-check/" >- Data integrity checks</option>
+      <option value="/forvision-package/exploratory-analysis/" >- Exploratory analysis</option>
+      <option value="/forvision-package/accuracy-evaluation/" >- Accuracy evaluation</option>
   
     <option value="/publications/" >
    Our publications</option> 
@@ -354,21 +397,21 @@
     
     
 
-<p><strong>Forecast origin</strong> - The most recent historical period for which data is used to build a forecasting model. The next time period is the first forecast period.[2]</p>
+<p><strong>Forecast origin</strong> – the most recent historical period for which data is used to build a forecasting model. The next time period is the first forecast period [2].</p>
 
-<p><strong>Forecast horizon</strong> -The number of periods from the forecast origin to the end of the time period being forecast.[1]</p>
+<p><strong>Forecast horizon</strong> – the number of periods from the forecast origin to the end of the time period being forecast [1].</p>
 
 <p><strong>Prediction intervals (PIs)</strong> – the bounds within which future observed values are expected to fall, given a specified level of confidence.  For  example,  a  95%  PI  is  expected  to  contain  the  actual  forecast  95%  of  the  time.  Some  researchers  have  found  that estimated PIs are typically too narrow for quantitative and judgmental forecasting methods [1].</p>
 
-<p><strong>Out-of-sample forecasts</strong> - the process using the model fitted on the sample (the data sample that you are using to fit the model) for forecasting for the new data points that was not part of the data sample. For example, if you use data 1990-2010 to fit the model and then you forecast for 2011-2013, it&rsquo;s out-of-sample forecast (if you use 1990-2013 for fitting the model and then you forecast 2011-2013, then its in-sample forecast).(We used <a href="https://stats.stackexchange.com/questions/260899/what-is-difference-between-in-sample-and-out-of-sample-forecasts">this</a> discussion to develop this term)</p>
+<p><strong>Out-of-sample forecasts</strong> – the process using the model fitted on the sample (the data sample that you are using to fit the model) for forecasting for the new data points that was not part of the data sample. For example, if you use data 1990-2010 to fit the model and then you forecast for 2011-2013, it&rsquo;s out-of-sample forecast (if you use 1990-2013 for fitting the model and then you forecast 2011-2013, then its in-sample forecast).(We used <a href="https://stats.stackexchange.com/questions/260899/what-is-difference-between-in-sample-and-out-of-sample-forecasts">this</a> discussion to develop this term).</p>
 
-<p><strong>Out-of-sample evaluation</strong> - the process of formally evaluating the predictive capabilities of the models on the new data points not belonging to the training sample to see how effective the algorithms are in reproducing data.(We used <a href="https://stats.stackexchange.com/questions/260899/what-is-difference-between-in-sample-and-out-of-sample-forecasts">this</a> discussion to develop this term)</p>
+<p><strong>Out-of-sample evaluation</strong> – the process of formally evaluating the predictive capabilities of the models on the new data points not belonging to the training sample to see how effective the algorithms are in reproducing data.(We used <a href="https://stats.stackexchange.com/questions/260899/what-is-difference-between-in-sample-and-out-of-sample-forecasts">this</a> discussion to develop this term).</p>
 
-<p><strong>Rolling-origin forecast</strong> - This is a forecasting process in which the “origin” at which the forecast is based rolls forward in time.</p>
+<p><strong>Rolling-origin forecast</strong> – This is a forecasting process in which the “origin” at which the forecast is based rolls forward in time.</p>
 
-<p><strong>Slice and dice</strong>: To slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better [3].</p>
+<p><strong>Slice and dice</strong> – to slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better [3].</p>
 
-<p><strong>Framework</strong> - a conceptual structure intended to serve as a guide for the building of something that expands the structure into something useful [4].</p>
+<p><strong>Framework</strong> – a conceptual structure intended to serve as a guide for the building of something that expands the structure into something useful [4].</p>
 
 <p><strong>References:</strong></p>
 

@@ -45,7 +45,7 @@
     <nav class="shortcuts">
             <li class="" role="">
                 <a href="https://forvis.github.io/forvision"  rel="noopener">
-                  <i class='fa fa-flask'></i><label>Docs</label>
+                  <i class='fa fa-flask'></i><label>R-package</label>
                 </a>
             </li>
             <li class="" role="">
@@ -437,14 +437,14 @@ myData &lt;- read.csv(textConnection(myCsv))
 <pre><code>data &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv&quot;)
 head(data)
 
-##   X series_id  actual method timestamp origin_timestamp forecast horizon
+##   X series_id  value    method timestamp origin_timestamp forecast horizon
 ## 1 1        Y1 5379.75      A      1989             1988  5406.43       1
 ## 2 2        Y1 6158.68      A      1990             1988  5875.96       2
 ## 3 3        Y1 6876.58      A      1991             1988  6345.48       3
 ## 4 4        Y1 5379.75      B      1989             1988  5473.87       1
 ## 5 5        Y1 6158.68      B      1990             1988  6010.43       2
 ## 6 6        Y1 6876.58      B      1991             1988  6546.63       3
-##       Lo90     Hi90
+##       lo90     hi90
 ## 1 5183.349 5629.511
 ## 2 5652.879 6099.041
 ## 3 6122.399 6568.561

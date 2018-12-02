@@ -154,6 +154,41 @@
 	"content": "forvision - An R package for forecasting accuracy evaluation and visualization\nThe R package forvision includes a set of functions to visualize forecast features and for making significant conclusion about difference between results obtained by user-defined forecasting models.The comparison performed according build-in error measures, such as common-used as well as advanced and stable measures.\nFor more information, documentation and examples of use, please see the forvision package website at R-package\n"
 },
 {
+	"uri": "/forvision-package/install/",
+	"title": "How to download and install",
+	"tags": [],
+	"description": "",
+	"content": " Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:\n# install.packages(\u0026#34;devtools\u0026#34;) devtools::install_github(\u0026#34;forvis/forvision\u0026#34;) Problems and Issues Please report any issues you may encounter in our issues page on github\n"
+},
+{
+	"uri": "/forvision-package/load-data/",
+	"title": "Loading data",
+	"tags": [],
+	"description": "",
+	"content": " Read data from URL (from example datasets) You can use the following methods to read data from URL sources:\n1) Using function download.file():\ntemporaryFile \u0026lt;- tempfile() download.file(\u0026quot;RUL\u0026quot;, destfile=temporaryFile) myData \u0026lt;- read.csv(temporaryFile)  2) Using package RCurl:\nlibrary(RCurl) myCsv \u0026lt;- getURL(\u0026quot;RUL\u0026quot;, ssl.verifypeer = FALSE) myData \u0026lt;- read.csv(textConnection(myCsv))  3) Using R base function read.csv():\nmyData \u0026lt;- read.csv(\u0026quot;RUL\u0026quot;)  You can use the RULs for examples datasets from the section datasets\nFor example, to read dataset example1_AFTS.csv from URL:\ndata \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv\u0026quot;) head(data) ## X series_id value method timestamp origin_timestamp forecast horizon ## 1 1 Y1 5379.75 A 1989 1988 5406.43 1 ## 2 2 Y1 6158.68 A 1990 1988 5875.96 2 ## 3 3 Y1 6876.58 A 1991 1988 6345.48 3 ## 4 4 Y1 5379.75 B 1989 1988 5473.87 1 ## 5 5 Y1 6158.68 B 1990 1988 6010.43 2 ## 6 6 Y1 6876.58 B 1991 1988 6546.63 3 ## lo90 hi90 ## 1 5183.349 5629.511 ## 2 5652.879 6099.041 ## 3 6122.399 6568.561 ## 4 5250.789 5696.951 ## 5 5787.349 6233.511 ## 6 6323.549 6769.711  "
+},
+{
+	"uri": "/forvision-package/data-check/",
+	"title": "Data integrity checks",
+	"tags": [],
+	"description": "",
+	"content": "This page is under construction.\n"
+},
+{
+	"uri": "/forvision-package/exploratory-analysis/",
+	"title": "Exploratory analysis",
+	"tags": [],
+	"description": "",
+	"content": "This page is under construction.\n"
+},
+{
+	"uri": "/forvision-package/accuracy-evaluation/",
+	"title": "Accuracy evaluation",
+	"tags": [],
+	"description": "",
+	"content": "This page is under construction.\n"
+},
+{
 	"uri": "/publications/",
 	"title": "Our publications",
 	"tags": [],
@@ -165,7 +200,7 @@
 	"title": "Glossary",
 	"tags": [],
 	"description": "",
-	"content": "Forecast origin - The most recent historical period for which data is used to build a forecasting model. The next time period is the first forecast period.[2]\nForecast horizon -The number of periods from the forecast origin to the end of the time period being forecast.[1]\nPrediction intervals (PIs) – the bounds within which future observed values are expected to fall, given a specified level of confidence. For example, a 95% PI is expected to contain the actual forecast 95% of the time. Some researchers have found that estimated PIs are typically too narrow for quantitative and judgmental forecasting methods [1].\nOut-of-sample forecasts - the process using the model fitted on the sample (the data sample that you are using to fit the model) for forecasting for the new data points that was not part of the data sample. For example, if you use data 1990-2010 to fit the model and then you forecast for 2011-2013, it\u0026rsquo;s out-of-sample forecast (if you use 1990-2013 for fitting the model and then you forecast 2011-2013, then its in-sample forecast).(We used this discussion to develop this term)\nOut-of-sample evaluation - the process of formally evaluating the predictive capabilities of the models on the new data points not belonging to the training sample to see how effective the algorithms are in reproducing data.(We used this discussion to develop this term)\nRolling-origin forecast - This is a forecasting process in which the “origin” at which the forecast is based rolls forward in time.\nSlice and dice: To slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better [3].\nFramework - a conceptual structure intended to serve as a guide for the building of something that expands the structure into something useful [4].\nReferences:\n[1] J. Scott Armstrong, “Principles of forecasting: A handbook for Researchers and Practitioners,” University of Pennsylvania, USA, 2001.\n[2] http://www.moneycontrol.com/glossary/trading-terms/forecast-origin_2465.html.\n[3] https://www.urbandictionary.com/define.php?term=slice%20and%20dice\n[4] https://whatis.techtarget.com/definition/framework\nTo cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
+	"content": "Forecast origin – the most recent historical period for which data is used to build a forecasting model. The next time period is the first forecast period [2].\nForecast horizon – the number of periods from the forecast origin to the end of the time period being forecast [1].\nPrediction intervals (PIs) – the bounds within which future observed values are expected to fall, given a specified level of confidence. For example, a 95% PI is expected to contain the actual forecast 95% of the time. Some researchers have found that estimated PIs are typically too narrow for quantitative and judgmental forecasting methods [1].\nOut-of-sample forecasts – the process using the model fitted on the sample (the data sample that you are using to fit the model) for forecasting for the new data points that was not part of the data sample. For example, if you use data 1990-2010 to fit the model and then you forecast for 2011-2013, it\u0026rsquo;s out-of-sample forecast (if you use 1990-2013 for fitting the model and then you forecast 2011-2013, then its in-sample forecast).(We used this discussion to develop this term).\nOut-of-sample evaluation – the process of formally evaluating the predictive capabilities of the models on the new data points not belonging to the training sample to see how effective the algorithms are in reproducing data.(We used this discussion to develop this term).\nRolling-origin forecast – This is a forecasting process in which the “origin” at which the forecast is based rolls forward in time.\nSlice and dice – to slice and dice is to break a body of information down into smaller parts or to examine it from different viewpoints so that you can understand it better [3].\nFramework – a conceptual structure intended to serve as a guide for the building of something that expands the structure into something useful [4].\nReferences:\n[1] J. Scott Armstrong, “Principles of forecasting: A handbook for Researchers and Practitioners,” University of Pennsylvania, USA, 2001.\n[2] http://www.moneycontrol.com/glossary/trading-terms/forecast-origin_2465.html.\n[3] https://www.urbandictionary.com/define.php?term=slice%20and%20dice\n[4] https://whatis.techtarget.com/definition/framework\nTo cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/abbreviations-list/",
