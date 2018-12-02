@@ -114,8 +114,8 @@ library(forvision) validatePIs(afts)  </description>
       <guid>/datasets/test-cases/</guid>
       <description>Example 1
 In this example we have data containing actuals for several time time series + corresponding out-of-sample forecasts with different horizons produced using different forecasting methods at different origins.
-   File Description Schema     example1_TSTS.csv Actual observations TSTS   example1_FTS.csv Actuals and Forecasts FTS    To cite this website, please use the following reference:
-Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date).</description>
+   File Description Schema     example1_TSTS.csv Actual observations TSTS   example1_FTS.csv Forecasts FTS   example1_AFTS.csv Actuals and Forecasts AFTS    To cite this website, please use the following reference:
+Sai, C., Davydenko, A.</description>
     </item>
     
     <item>
