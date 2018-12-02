@@ -376,7 +376,7 @@
 </tr>
 
 <tr>
-<td>period_timestamp*</td>
+<td>timestamp*</td>
 <td>Any representation of the period to which the forecast relates.</td>
 <td>“01.01.1997” in case of daily data, “Sep 1997” in case of monthly data,  “Week 49, 1997” in case of weekly data</td>
 </tr>
@@ -419,12 +419,12 @@
 </tbody>
 </table>
 
-<p>*the key (the unique value that should not duplicated) for this table schema is series_id, method, period_timestamp, origin_timestamp, horizon.</p>
+<p>*the key (the unique value that should not duplicated) for this table schema is series_id, method, timestamp, origin_timestamp, horizon.</p>
 
 <h2 id="example">Example:</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">FTS <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;C:/Users/svcuo/Desktop/data/example1_FTS.csv&#34;</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">head</span><span style="color:#111">(</span>FTS<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
-<pre><code>   series_id   method period_timestamp origin_timestamp  forecast  horizon   Lo90     Hi90
+<pre><code>   series_id   method  timestamp       origin_timestamp  forecast  horizon   Lo90     Hi90
 1         Y1      A       1989              1988          5406.43      1    5183.349 5629.511
 2         Y1      A       1990              1988          5875.96      2    5652.879 6099.041
 3         Y1      A       1991              1988          6345.48      3    6122.399 6568.561
