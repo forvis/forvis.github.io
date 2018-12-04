@@ -28,7 +28,8 @@ Sai, C., Davydenko, A.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/datasets/m3-data/</guid>
-      <description>The 3003 time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Data with Rolling-Origin and Interval Forecasts saved as csv files</description>
+      <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Forecast Data :
+   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_mothly_TSTS.csv Actual observations TSTS   M3_mothly_FTS.csv Forecasts FTS   M3_yearly_PIs_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS    To cite this website, please use the following reference:</description>
     </item>
     
   </channel>

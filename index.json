@@ -144,7 +144,7 @@
 	"title": "M3-Competition data",
 	"tags": [],
 	"description": "",
-	"content": "The 3003 time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Data with Rolling-Origin and Interval Forecasts saved as csv files\n"
+	"content": "The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Forecast Data :\n   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_mothly_TSTS.csv Actual observations TSTS   M3_mothly_FTS.csv Forecasts FTS   M3_yearly_PIs_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS    To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/forvision-package/",
@@ -158,14 +158,14 @@
 	"title": "How to download and install",
 	"tags": [],
 	"description": "",
-	"content": " Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:\n# install.packages(\u0026#34;devtools\u0026#34;) devtools::install_github(\u0026#34;forvis/forvision\u0026#34;) Problems and Issues Please report any issues you may encounter in our issues page on github\n"
+	"content": " Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:\n# install.packages(\u0026#34;devtools\u0026#34;) devtools::install_github(\u0026#34;forvis/forvision\u0026#34;)"
 },
 {
 	"uri": "/forvision-package/load-data/",
 	"title": "Loading data",
 	"tags": [],
 	"description": "",
-	"content": " Read data from URL (from example datasets) You can use the following methods to read data from URL sources:\n1) Using function download.file():\ntemporaryFile \u0026lt;- tempfile() download.file(\u0026quot;RUL\u0026quot;, destfile=temporaryFile) myData \u0026lt;- read.csv(temporaryFile)  2) Using package RCurl:\nlibrary(RCurl) myCsv \u0026lt;- getURL(\u0026quot;RUL\u0026quot;, ssl.verifypeer = FALSE) myData \u0026lt;- read.csv(textConnection(myCsv))  3) Using R base function read.csv():\nmyData \u0026lt;- read.csv(\u0026quot;RUL\u0026quot;)  You can use the RULs for examples datasets from the section datasets\nFor example, to read dataset example1_AFTS.csv from URL:\ndata \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_AFTS.csv\u0026quot;) head(data) ## X series_id value method timestamp origin_timestamp forecast horizon ## 1 1 Y1 5379.75 A 1989 1988 5406.43 1 ## 2 2 Y1 6158.68 A 1990 1988 5875.96 2 ## 3 3 Y1 6876.58 A 1991 1988 6345.48 3 ## 4 4 Y1 5379.75 B 1989 1988 5473.87 1 ## 5 5 Y1 6158.68 B 1990 1988 6010.43 2 ## 6 6 Y1 6876.58 B 1991 1988 6546.63 3 ## lo90 hi90 ## 1 5183.349 5629.511 ## 2 5652.879 6099.041 ## 3 6122.399 6568.561 ## 4 5250.789 5696.951 ## 5 5787.349 6233.511 ## 6 6323.549 6769.711  "
+	"content": " Read data from URL (from example datasets) You can use R base function read.csv()to read data from URL sources:\nmyData \u0026lt;- read.csv(\u0026quot;RUL\u0026quot;)  You can use the RULs for examples datasets from the section datasets\nExamples: 1) load time series data: data_ts \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_TSTS.csv\u0026quot;) head(data_ts) series_id value timestamp 1 Y1 3103.96 1984 2 Y1 3360.27 1985 3 Y1 3807.63 1986 4 Y1 4387.88 1987 5 Y1 4936.99 1988 6 Y1 5379.75 1989  2) load forecast data: data_fc \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_FTS.csv\u0026quot;) head(data_fc) series_id method timestamp origin_timestamp forecast horizon lo90 hi90 1 Y1 A 1989 1988 5406.43 1 5183.349 5629.511 2 Y1 A 1990 1988 5875.96 2 5652.879 6099.041 3 Y1 A 1991 1988 6345.48 3 6122.399 6568.561 4 Y1 B 1989 1988 5473.87 1 5250.789 5696.951 5 Y1 B 1990 1988 6010.43 2 5787.349 6233.511 6 Y1 B 1991 1988 6546.63 3 6323.549 6769.711  "
 },
 {
 	"uri": "/forvision-package/data-check/",
@@ -189,11 +189,18 @@
 	"content": "This page is under construction.\n"
 },
 {
+	"uri": "/forvision-package/issues/",
+	"title": "Problems and Issues",
+	"tags": [],
+	"description": "",
+	"content": " Problems and Issues Please report any issues you may encounter in our issues page on github\n"
+},
+{
 	"uri": "/publications/",
 	"title": "Our publications",
 	"tags": [],
 	"description": "",
-	"content": "Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (December 1, 2018) . The Forvision Project. Retrieved from https://forvis.github.io/\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (November 23-24, 2018). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends, 145-149. Moradabad, India.\nDavydenko, A., \u0026amp; Fildes, R. (2016). Forecast Error Measures: Critical Review and Practical Recommendations. Business Forecasting: Practical Problems and Solutions.\nDavydenko, A., \u0026amp; Fildes, R. (2014). Measuring Forecasting Accuracy: Problems and Recommendations (by the Example of SKU-Level Judgmental Adjustments). In Intelligent Fashion Forecasting Systems: Models and Applications, 43-70. Springer Berlin Heidelberg\nShcherbakov, M., Brebels, A., Shcherbakova, N., Tyukov, A., Janovsky, T., \u0026amp; Kamaev, V. (2013). A Survey of Forecast Error Measures. Information Technologies in Modern Industry, Education \u0026amp; Society, 171-176.\nDavydenko, A., \u0026amp; Fildes, R. (2013). Measuring forecasting accuracy: The case of judgmental adjustments to SKU-level demand forecasts. International Journal of Forecasting, 510-522.\nDavydenko, A., Fildes, R., \u0026amp; Trapero, J. (2010). Measuring the Accuracy of Judgmental Adjustments to SKU-level Demand Forecasts. Lancaster University Management School.\nDavydenko, A. (2010). How to Measure the Quality of Demand Forecasts Efficiently: a New Class of Forecasting Performance Metrics. LUMS\u0026rsquo; Inaugural Research Conference. Lancaster, UK.\n"
+	"content": "Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (December 5, 2018) . The Forvision Project. Retrieved from https://forvis.github.io/\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (November 23-24, 2018). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends, 145-149. Moradabad, India.\nDavydenko, A., \u0026amp; Fildes, R. (2016). Forecast Error Measures: Critical Review and Practical Recommendations. Business Forecasting: Practical Problems and Solutions.\nDavydenko, A., \u0026amp; Fildes, R. (2014). Measuring Forecasting Accuracy: Problems and Recommendations (by the Example of SKU-Level Judgmental Adjustments). In Intelligent Fashion Forecasting Systems: Models and Applications, 43-70. Springer Berlin Heidelberg\nShcherbakov, M., Brebels, A., Shcherbakova, N., Tyukov, A., Janovsky, T., \u0026amp; Kamaev, V. (2013). A Survey of Forecast Error Measures. Information Technologies in Modern Industry, Education \u0026amp; Society, 171-176.\nDavydenko, A., \u0026amp; Fildes, R. (2013). Measuring forecasting accuracy: The case of judgmental adjustments to SKU-level demand forecasts. International Journal of Forecasting, 510-522.\nDavydenko, A., Fildes, R., \u0026amp; Trapero, J. (2010). Measuring the Accuracy of Judgmental Adjustments to SKU-level Demand Forecasts. Lancaster University Management School.\nDavydenko, A. (2010). How to Measure the Quality of Demand Forecasts Efficiently: a New Class of Forecasting Performance Metrics. LUMS\u0026rsquo; Inaugural Research Conference. Lancaster, UK.\n"
 },
 {
 	"uri": "/glossary/",

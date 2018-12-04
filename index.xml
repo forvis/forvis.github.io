@@ -124,7 +124,8 @@ Sai, C., Davydenko, A.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/datasets/m3-data/</guid>
-      <description>The 3003 time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Data with Rolling-Origin and Interval Forecasts saved as csv files</description>
+      <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Forecast Data :
+   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_mothly_TSTS.csv Actual observations TSTS   M3_mothly_FTS.csv Forecasts FTS   M3_yearly_PIs_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS    To cite this website, please use the following reference:</description>
     </item>
     
     <item>
@@ -133,8 +134,8 @@ Sai, C., Davydenko, A.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/forvision-package/install/</guid>
-      <description>Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:
-# install.packages(&amp;#34;devtools&amp;#34;) devtools::install_github(&amp;#34;forvis/forvision&amp;#34;) Problems and Issues Please report any issues you may encounter in our issues page on github</description>
+      <description> Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:
+# install.packages(&amp;#34;devtools&amp;#34;) devtools::install_github(&amp;#34;forvis/forvision&amp;#34;)</description>
     </item>
     
     <item>
@@ -143,11 +144,9 @@ Sai, C., Davydenko, A.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/forvision-package/load-data/</guid>
-      <description>Read data from URL (from example datasets) You can use the following methods to read data from URL sources:
-1) Using function download.file():
-temporaryFile &amp;lt;- tempfile() download.file(&amp;quot;RUL&amp;quot;, destfile=temporaryFile) myData &amp;lt;- read.csv(temporaryFile)  2) Using package RCurl:
-library(RCurl) myCsv &amp;lt;- getURL(&amp;quot;RUL&amp;quot;, ssl.verifypeer = FALSE) myData &amp;lt;- read.csv(textConnection(myCsv))  3) Using R base function read.csv():
-myData &amp;lt;- read.csv(&amp;quot;RUL&amp;quot;)  You can use the RULs for examples datasets from the section datasets</description>
+      <description>Read data from URL (from example datasets) You can use R base function read.csv()to read data from URL sources:
+myData &amp;lt;- read.csv(&amp;quot;RUL&amp;quot;)  You can use the RULs for examples datasets from the section datasets
+Examples: 1) load time series data: data_ts &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_TSTS.csv&amp;quot;) head(data_ts) series_id value timestamp 1 Y1 3103.96 1984 2 Y1 3360.27 1985 3 Y1 3807.63 1986 4 Y1 4387.88 1987 5 Y1 4936.99 1988 6 Y1 5379.</description>
     </item>
     
     <item>
@@ -175,6 +174,15 @@ myData &amp;lt;- read.csv(&amp;quot;RUL&amp;quot;)  You can use the RULs for exa
       
       <guid>/forvision-package/accuracy-evaluation/</guid>
       <description>This page is under construction.</description>
+    </item>
+    
+    <item>
+      <title>Problems and Issues</title>
+      <link>/forvision-package/issues/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/forvision-package/issues/</guid>
+      <description>Problems and Issues Please report any issues you may encounter in our issues page on github</description>
     </item>
     
     <item>
