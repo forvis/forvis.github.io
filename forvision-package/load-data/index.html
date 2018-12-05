@@ -406,23 +406,11 @@
     
     
 
-<h4 id="read-data-from-url-from-example-datasets">Read data from URL (from example datasets)</h4>
+<h4 id="load-data-from-urls-from-example-datasets-https-forvis-github-io-datasets">Load data from URLs (from <a href="https://forvis.github.io/datasets/">example datasets</a>)</h4>
 
 <hr />
 
-<p>You can use R base function <strong>read.csv()</strong>to read data from URL sources:</p>
-
-<!-- -->
-
-<pre><code>myData &lt;- read.csv(&quot;URL&quot;)
-</code></pre>
-
-<p>You can use the RULs for examples datasets from the section
-<a href="https://forvis.github.io/datasets/">datasets</a></p>
-
-<h4 id="examples">Examples:</h4>
-
-<h5 id="1-load-time-series-data">1) load time series data:</h5>
+<h5 id="1-load-time-series-data">1) Load time series data:</h5>
 
 <pre><code>data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_TSTS.csv&quot;)
 head(data_ts)
@@ -436,7 +424,7 @@ head(data_ts)
 6        Y1    5379.75      1989
 </code></pre>
 
-<h5 id="2-load-forecast-data">2) load forecast data:</h5>
+<h5 id="2-load-forecast-data">2) Load forecast data:</h5>
 
 <pre><code>data_fc &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_FTS.csv&quot;)
 head(data_fc)
