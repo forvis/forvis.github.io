@@ -27,7 +27,7 @@
       
       <guid>/forvision-package/load-data/</guid>
       <description>Read data from URL (from example datasets) You can use R base function read.csv()to read data from URL sources:
-myData &amp;lt;- read.csv(&amp;quot;RUL&amp;quot;)  You can use the RULs for examples datasets from the section datasets
+myData &amp;lt;- read.csv(&amp;quot;URL&amp;quot;)  You can use the RULs for examples datasets from the section datasets
 Examples: 1) load time series data: data_ts &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_TSTS.csv&amp;quot;) head(data_ts) series_id value timestamp 1 Y1 3103.96 1984 2 Y1 3360.27 1985 3 Y1 3807.63 1986 4 Y1 4387.88 1987 5 Y1 4936.99 1988 6 Y1 5379.</description>
     </item>
     
