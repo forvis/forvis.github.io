@@ -124,7 +124,7 @@ In this example we have data containing actuals for several time time series + c
       
       <guid>/datasets/m3-data/</guid>
       <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Forecast Data :
-   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_mothly_TSTS.csv Actual observations TSTS   M3_mothly_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_FTS.csv Forecasts FTS    To cite this website, please use the following reference:</description>
+   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_FTS.csv Forecasts FTS    To cite this website, please use the following reference:</description>
     </item>
     
     <item>
