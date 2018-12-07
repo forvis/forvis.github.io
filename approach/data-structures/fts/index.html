@@ -98,108 +98,6 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
-    <li data-nav-id="/approach/data-flow/" class="dd-item alwaysopen
-        ">
-      <div>
-      <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/approach/step-by-step-guide/" class="dd-item alwaysopen
-        ">
-      <div>
-      <a href="/approach/step-by-step-guide/">Step-by-step guide</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/approach/data-structures/" class="dd-item parent alwaysopen haschildren
-        ">
-      <div>
-      <a href="/approach/data-structures/">Data structures</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item">
-        <div>
-          <a href="/approach/data-structures/tsts/">
-            Time Series Table Schema (TSTS)
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/data-structures/fts/" class="dd-item active">
-        <div>
-          <a href="/approach/data-structures/fts/">
-            Forecast Table Schema (FTS)
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/data-structures/afts/" class="dd-item">
-        <div>
-          <a href="/approach/data-structures/afts/">
-            Actuals and Forecasts Table Schema (AFTS)
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item alwaysopen haschildren
-        ">
-      <div>
-      <a href="/approach/exploratory-tools.md/">Exploratory analysis tools</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item">
-        <div>
-          <a href="/approach/exploratory-tools.md/prd/">
-            Prediction-Realization Diagram
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item">
-        <div>
-          <a href="/approach/exploratory-tools.md/fanchart/">
-            Fanchart
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/exploratory-tools.md/fixed-origin-graph/" class="dd-item">
-        <div>
-          <a href="/approach/exploratory-tools.md/fixed-origin-graph/">
-            Fixed origin graph
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/exploratory-tools.md/fixed-horizon-graph/" class="dd-item">
-        <div>
-          <a href="/approach/exploratory-tools.md/fixed-horizon-graph/">
-            Fixed horizon graph
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
-    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen haschildren
-        ">
-      <div>
-      <a href="/approach/accuracy-tools/"> Performance measurement</a>
-            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-        <ul>
-      <li data-nav-id="/approach/accuracy-tools/point-forecast-evaluation/" class="dd-item">
-        <div>
-          <a href="/approach/accuracy-tools/point-forecast-evaluation/">
-             Point forecasts evaluation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-      <li data-nav-id="/approach/accuracy-tools/pis-evaluation/" class="dd-item">
-        <div>
-          <a href="/approach/accuracy-tools/pis-evaluation/">
-            PIs evaluation
-          </a><i class="fa fa-circle-thin read-icon"></i>
-        </div>
-    </li>
-        </ul>
-    </li>
         </ul>
     </li>
     <li data-nav-id="/datasets/" class="dd-item alwaysopen haschildren
@@ -483,7 +381,7 @@
 <h2 id="example">Example:</h2>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">FTS <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;C:/Users/svcuo/Desktop/data/example1_FTS.csv&#34;</span><span style="color:#111">)</span>
 <span style="color:#00a8c8">head</span><span style="color:#111">(</span>FTS<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
-<pre><code>   series_id   method  timestamp       origin_timestamp  forecast  horizon   Lo90     Hi90
+<pre><code>   series_id   method  timestamp       origin_timestamp  forecast  horizon   lo90     hi90
 1         Y1      A       1989              1988          5406.43      1    5183.349 5629.511
 2         Y1      A       1990              1988          5875.96      2    5652.879 6099.041
 3         Y1      A       1991              1988          6345.48      3    6122.399 6568.561
