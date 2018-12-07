@@ -144,14 +144,14 @@
 	"title": "M3-Competition data",
 	"tags": [],
 	"description": "",
-	"content": "The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Forecast Data :\n   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_FTS.csv Forecasts FTS    To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
+	"content": "The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 forecast data:\n   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_FTS.csv Forecasts FTS    To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/datasets/m3-pis/",
 	"title": "M3 prediction intervals",
 	"tags": [],
 	"description": "",
-	"content": "   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_PIs_FTS.csv Forecasts FTS    "
+	"content": "The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 interval forecast data using ARIMA model:\n   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_PIs_FTS.csv Forecasts FTS    "
 },
 {
 	"uri": "/forvision-package/",

@@ -124,7 +124,7 @@ Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/datasets/m3-data/</guid>
-      <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 Forecast Data :
+      <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 forecast data:
    File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_FTS.csv Forecasts FTS    To cite this website, please use the following reference:</description>
     </item>
     
@@ -134,7 +134,8 @@ Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/datasets/m3-pis/</guid>
-      <description>   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_PIs_FTS.csv Forecasts FTS    </description>
+      <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 interval forecast data using ARIMA model:
+   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_PIs_FTS.csv Forecasts FTS    </description>
     </item>
     
     <item>
