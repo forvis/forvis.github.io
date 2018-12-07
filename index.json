@@ -151,7 +151,7 @@
 	"title": "M3 prediction intervals",
 	"tags": [],
 	"description": "",
-	"content": "   File Description Schema     M3_yearly_PIs_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS    "
+	"content": "   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS    "
 },
 {
 	"uri": "/forvision-package/",
