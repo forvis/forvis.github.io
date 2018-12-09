@@ -413,22 +413,22 @@
     
     
     <p>The function <strong>plotPRD</strong> of the
-<a href="https://github.com/forvis/forvision">forvision</a> package plots the Prediction-Realization Diagram for the given data from dataset containing columns actual, forecast, and method (AFTS).</p>
+<a href="https://github.com/forvis/forvision">forvision</a> package plots the Prediction-Realization Diagram for the given data from dataset containing columns value, forecast, and method (AFTS).</p>
 
 <p>Here’s a prediction-realization diagram created by the function
 <strong>plotPRD</strong>:</p>
 
 <pre><code>library(forvision)
-plotPRD(AFTS)
+plotPRD(afts)
 </code></pre>
 
 <p><img src="/images/PRD/unnamed-chunk-1-1.png" alt="" /></p>
 
 <p>The resulting prediction-relization digram plotted in logarithmic scales
-by using the option setting <em>useLog</em> ==TRUE:</p>
+by using the option setting <em>useLog</em> = TRUE:</p>
 
 <pre><code>library(forvision)
-plotPRD(AFTS, useLogs = TRUE)
+plotPRD(afts, useLogs = TRUE)
 </code></pre>
 
 <p><img src="/images/PRD/unnamed-chunk-2-1.png" alt="" /></p>
@@ -436,7 +436,7 @@ plotPRD(AFTS, useLogs = TRUE)
 <p>The prediction-realization diagram for the selected methods:</p>
 
 <pre><code># For the methods &quot;ARARMA&quot;, &quot;Auto-ANN&quot;, and &quot;DAMPEN&quot;
-data1 &lt;- subset(AFTS, method == c(&quot;ARARMA&quot;, &quot;Auto-ANN&quot;, &quot;DAMPEN&quot;))
+data1 &lt;- subset(afts, method == c(&quot;ARARMA&quot;, &quot;Auto-ANN&quot;, &quot;DAMPEN&quot;))
 library(forvision)
 plotPRD(data1)
 </code></pre>
@@ -446,7 +446,7 @@ plotPRD(data1)
 <p>The prediction-realization diagram for the selected horizon:</p>
 
 <pre><code># For the horizons 1, 2
-data2 &lt;- subset(AFTS, horizon == 1)
+data2 &lt;- subset(afts, horizon == 1)
 library(forvision)
 plotPRD(data2)
 </code></pre>

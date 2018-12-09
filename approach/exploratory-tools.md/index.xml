@@ -16,11 +16,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/approach/exploratory-tools.md/prd/</guid>
-      <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns actual, forecast, and method (AFTS).
+      <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns value, forecast, and method (AFTS).
 Here’s a prediction-realization diagram created by the function plotPRD:
-library(forvision) plotPRD(AFTS)  The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog ==TRUE:
-library(forvision) plotPRD(AFTS, useLogs = TRUE)  The prediction-realization diagram for the selected methods:
-# For the methods &amp;quot;ARARMA&amp;quot;, &amp;quot;Auto-ANN&amp;quot;, and &amp;quot;DAMPEN&amp;quot; data1 &amp;lt;- subset(AFTS, method == c(&amp;quot;ARARMA&amp;quot;, &amp;quot;Auto-ANN&amp;quot;, &amp;quot;DAMPEN&amp;quot;)) library(forvision) plotPRD(data1)  The prediction-realization diagram for the selected horizon:</description>
+library(forvision) plotPRD(afts)  The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:
+library(forvision) plotPRD(afts, useLogs = TRUE)  The prediction-realization diagram for the selected methods:
+# For the methods &amp;quot;ARARMA&amp;quot;, &amp;quot;Auto-ANN&amp;quot;, and &amp;quot;DAMPEN&amp;quot; data1 &amp;lt;- subset(afts, method == c(&amp;quot;ARARMA&amp;quot;, &amp;quot;Auto-ANN&amp;quot;, &amp;quot;DAMPEN&amp;quot;)) library(forvision) plotPRD(data1)  The prediction-realization diagram for the selected horizon:</description>
     </item>
     
     <item>
@@ -30,8 +30,8 @@ library(forvision) plotPRD(AFTS, useLogs = TRUE)  The prediction-realization dia
       
       <guid>/approach/exploratory-tools.md/fanchart/</guid>
       <description>The function plotFAN of the forvision package plots the fanchart for the given data from dataset.
-Here’s a fanchart created by the function plotFAN for time series of id == &amp;ldquo;M1&amp;rdquo;:
-library(forvision) plotFAN(ts = TSTS, fc = AFTS, id = &amp;quot;M1&amp;quot;)  </description>
+Here’s a fanchart created by the function plotFAN for time series of id = &amp;ldquo;M350&amp;rdquo;:
+library(forvision) plotFanChart(ts = TSTS, fs = FTS, id = &amp;quot;M350&amp;quot;, origin = &amp;quot;1993-09&amp;quot;, m = &amp;quot;ARIMA&amp;quot;)  </description>
     </item>
     
     <item>
@@ -40,10 +40,10 @@ library(forvision) plotFAN(ts = TSTS, fc = AFTS, id = &amp;quot;M1&amp;quot;)  <
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/approach/exploratory-tools.md/fixed-origin-graph/</guid>
-      <description>The function plotFS of the forvision package plots the fixed origin graph for the given data from dataset.
-Here’s a fixed origin graph created by the function plotFS for time series of id == &amp;ldquo;M1&amp;rdquo;:
-library(forvision) plotFS(fc = AFTS1, id = &amp;quot;M1&amp;quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:
-library(forvision) plotFS(fc = AFTS1, id = &amp;quot;M1&amp;quot;, method = &amp;quot;AutoBox1&amp;quot;)  The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting method:</description>
+      <description>The function plotFixedOrigin of the forvision package plots the fixed origin graph for the given data from dataset.
+Here’s a fixed origin graph created by the function plotFixedOrigin for time series of id = &amp;ldquo;M1&amp;rdquo;:
+library(forvision) plotFixedOrigin(ts = TSTS, id = &amp;quot;M1&amp;quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:
+library(forvision) plotFixedOrigin(ts = TSTS, fs = FTS, id = &amp;quot;M1&amp;quot;, origin = &amp;quot;1994-02&amp;quot;, m = &amp;quot;AutoBox1&amp;quot;)  The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting method:</description>
     </item>
     
     <item>

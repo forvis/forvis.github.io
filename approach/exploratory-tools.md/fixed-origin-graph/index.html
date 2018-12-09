@@ -412,31 +412,31 @@
     
     
     
-    <p>The function <strong>plotFS</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fixed origin graph for the given data from dataset.</p>
+    <p>The function <strong>plotFixedOrigin</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fixed origin graph for the given data from dataset.</p>
 
-<p>Here’s a fixed origin graph created by the function <strong>plotFS</strong> for time series of id == &ldquo;M1&rdquo;:</p>
+<p>Here’s a fixed origin graph created by the function <strong>plotFixedOrigin</strong> for time series of id = &ldquo;M1&rdquo;:</p>
 
 <pre><code>library(forvision)
-plotFS(fc = AFTS1, id = &quot;M1&quot;)
+plotFixedOrigin(ts = TSTS, id = &quot;M1&quot;)
 </code></pre>
 
-<p><img src="/images/fanchart/1.png" alt="" /></p>
+<p><img src="/images/fixed_origin/1.png" alt="" /></p>
 
 <p>The fixed origin graph with the forecasts of the single forecast method by using the option setting <em>method</em>:</p>
 
 <pre><code>library(forvision)
-plotFS(fc = AFTS1, id = &quot;M1&quot;, method = &quot;AutoBox1&quot;)
+plotFixedOrigin(ts = TSTS, fs = FTS, id = &quot;M1&quot;, origin = &quot;1994-02&quot;, m = &quot;AutoBox1&quot;)
 </code></pre>
 
-<p><img src="/images/fanchart/2.png" alt="" /></p>
+<p><img src="/images/fixed_origin/2.png" alt="" /></p>
 
 <p>The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting <em>method</em>:</p>
 
 <pre><code>library(forvision)
-plotFS(fc = AFTS1, id = &quot;M1&quot;, method = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;))  
+plotFixedOrigin(ts = TSTS, fs = FTS, id = &quot;M1&quot;, origin = &quot;1994-02&quot;, m = c(&quot;AutoBox1&quot;, &quot;AutoBox3&quot;)) 
 </code></pre>
 
-<p><img src="/images/fanchart/3.png" alt="" /></p>
+<p><img src="/images/fixed_origin/3.png" alt="" /></p>
 
 <p><strong>To cite this website, please use the following reference:</strong></p>
 
