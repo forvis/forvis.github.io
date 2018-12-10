@@ -418,7 +418,12 @@
 <p>Here’s a prediction-realization diagram created by the function
 <strong>plotPRD</strong>:</p>
 
-<pre><code>library(forvision)
+<pre><code># Load time series and forecast data from url
+data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&quot;)
+data_Fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&quot;)
+# Create AFTS shema
+library(forvision)
+afts &lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE)
 plotPRD(afts)
 </code></pre>
 
