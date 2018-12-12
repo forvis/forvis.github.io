@@ -49,7 +49,7 @@ In order to obtain data in the AFTS format, we can use a query to link actual va
       <guid>/approach/exploratory-tools.md/prd/</guid>
       <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns value, forecast, and method (AFTS).
 Here’s a prediction-realization diagram created by the function plotPRD:
-# Load time series and forecast data from url data_ts &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&amp;quot;) data_аs &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&amp;quot;) # Create AFTS shema library(forvision) af &amp;lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE) plotPRD(af)  The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
+# Load time series and forecast data from url data_ts &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&amp;quot;) data_fs &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&amp;quot;) # Create AFTS shema library(forvision) af &amp;lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE) plotPRD(af)  The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
     </item>
     
     <item>
