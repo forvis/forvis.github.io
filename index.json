@@ -175,13 +175,6 @@
 	"content": "Our workflow assumes that input data for forecast evaluation is stored in a special format:\n for actuals we use the Time Series Table Schema (TSTS),\n for forecasts we use the Forecast Table Schema (FTS).\n  Here we use .csv files stored online. Alternatively, a database or local files can be used. For this example we use the M3-Competition dataset formatted according to the above schemas.\nThe first step is to load actuals and forecasts:\n# load M3-Competition quarterly data actuals: data_ts \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv\u0026quot;, stringsAsFactors = FALSE) # load M3-Competition quarterly data forecasts: data_fs \u0026lt;- read.csv(\u0026quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_FTS.csv\u0026quot;, stringsAsFactors = FALSE)  Then we can check if data is loaded correctly:\n# show first lines of the tables and get summary info to see if the data loaded is what was expected: head(data_ts) ## series_id category value timestamp ## 1 Q1 MICRO 3142.63 1984-Q1 ## 2 Q1 MICRO 3190.75 1984-Q2 ## 3 Q1 MICRO 3178.69 1984-Q3 ## 4 Q1 MICRO 3170.94 1984-Q4 ## 5 Q1 MICRO 3124.38 1985-Q1 ## 6 Q1 MICRO 3170.00 1985-Q2 head(data_fs) ## series_id method forecast horizon timestamp origin_timestamp ## 1 Q1 NAIVE2 5511.55 1 1993-Q1 1992-Q4 ## 2 Q1 NAIVE2 5511.55 2 1993-Q2 1992-Q4 ## 3 Q1 NAIVE2 5511.55 3 1993-Q3 1992-Q4 ## 4 Q1 NAIVE2 5511.55 4 1993-Q4 1992-Q4 ## 5 Q1 NAIVE2 5511.55 5 1994-Q1 1992-Q4 ## 6 Q1 NAIVE2 5511.55 6 1994-Q2 1992-Q4 library(forvision) validateTSTS(data_ts) ## [1] TRUE validateFTS(data_fs) ## [1] TRUE  To see details on the data format specifications, use showTSTS() and showFTS() functions.\n"
 },
 {
-	"uri": "/forvision-package/data-check/",
-	"title": "Data integrity checks",
-	"tags": [],
-	"description": "",
-	"content": "This page is under construction.\n"
-},
-{
 	"uri": "/forvision-package/exploratory-analysis/",
 	"title": "Exploratory analysis",
 	"tags": [],

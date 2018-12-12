@@ -34,15 +34,6 @@ The first step is to load actuals and forecasts:</description>
     </item>
     
     <item>
-      <title>Data integrity checks</title>
-      <link>/forvision-package/data-check/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/forvision-package/data-check/</guid>
-      <description>This page is under construction.</description>
-    </item>
-    
-    <item>
       <title>Exploratory analysis</title>
       <link>/forvision-package/exploratory-analysis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
