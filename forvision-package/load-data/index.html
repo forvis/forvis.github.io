@@ -412,39 +412,66 @@
     
     
     
-    
+    <p>Our workflow assumes that input data for forecast evaluation is stored
+in a special format:</p>
 
-<h4 id="load-data-from-urls-from-example-datasets-https-forvis-github-io-datasets">Load data from URLs (from <a href="https://forvis.github.io/datasets/">example datasets</a>)</h4>
+<ul>
+<li><p>for actuals we use the <a href="https://forvis.github.io/approach/data-structures/tsts/">Time Series Table Schema
+(TSTS)</a>,</p></li>
 
-<hr />
+<li><p>for forecasts we use the <a href="https://forvis.github.io/approach/data-structures/fts/">Forecast Table Schema
+(FTS)</a>.</p></li>
+</ul>
 
-<h5 id="1-load-time-series-data">1) Load time series data:</h5>
+<p>Here we use .csv files stored online. Alternatively, a database or local
+files can be used. For this example we use the <a href="https://forvis.github.io/datasets/m3-data/">M3-Competition
+dataset</a> formatted according
+to the above schemas.</p>
 
-<pre><code>data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_TSTS.csv&quot;)
+<p><strong>The first step is to load actuals and forecasts:</strong></p>
+
+<pre><code># load M3-Competition quarterly data actuals:
+data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&quot;, stringsAsFactors = FALSE)
+
+# load M3-Competition quarterly data forecasts:
+data_fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_FTS.csv&quot;, stringsAsFactors = FALSE)
+</code></pre>
+
+<p><strong>Then we can check if data is loaded correctly:</strong></p>
+
+<pre><code># show first lines of the tables and get summary info to see if the data loaded is what was expected:
 head(data_ts)
 
-    series_id   value   timestamp
-1        Y1    3103.96      1984
-2        Y1    3360.27      1985
-3        Y1    3807.63      1986
-4        Y1    4387.88      1987
-5        Y1    4936.99      1988
-6        Y1    5379.75      1989
+##   series_id category   value timestamp
+## 1        Q1    MICRO 3142.63   1984-Q1
+## 2        Q1    MICRO 3190.75   1984-Q2
+## 3        Q1    MICRO 3178.69   1984-Q3
+## 4        Q1    MICRO 3170.94   1984-Q4
+## 5        Q1    MICRO 3124.38   1985-Q1
+## 6        Q1    MICRO 3170.00   1985-Q2
+
+head(data_fs)
+
+##   series_id method forecast horizon timestamp origin_timestamp
+## 1        Q1 NAIVE2  5511.55       1   1993-Q1          1992-Q4
+## 2        Q1 NAIVE2  5511.55       2   1993-Q2          1992-Q4
+## 3        Q1 NAIVE2  5511.55       3   1993-Q3          1992-Q4
+## 4        Q1 NAIVE2  5511.55       4   1993-Q4          1992-Q4
+## 5        Q1 NAIVE2  5511.55       5   1994-Q1          1992-Q4
+## 6        Q1 NAIVE2  5511.55       6   1994-Q2          1992-Q4
+
+library(forvision)
+validateTSTS(data_ts)
+
+## [1] TRUE
+
+validateFTS(data_fs)
+
+## [1] TRUE
 </code></pre>
 
-<h5 id="2-load-forecast-data">2) Load forecast data:</h5>
-
-<pre><code>data_fc &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/example1_FTS.csv&quot;)
-head(data_fc)
-
-    series_id method timestamp origin_timestamp forecast   horizon    lo90     hi90
-1        Y1      A      1989             1988    5406.43       1     5183.349 5629.511
-2        Y1      A      1990             1988    5875.96       2     5652.879 6099.041
-3        Y1      A      1991             1988    6345.48       3     6122.399 6568.561
-4        Y1      B      1989             1988    5473.87       1     5250.789 5696.951
-5        Y1      B      1990             1988    6010.43       2     5787.349 6233.511
-6        Y1      B      1991             1988    6546.63       3     6323.549 6769.711
-</code></pre>
+<p>To see details on the data format specifications, use <code>showTSTS()</code> and
+<code>showFTS()</code> functions.</p>
 
 
     
