@@ -420,11 +420,11 @@
 
 <pre><code># Load time series and forecast data from url
 data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&quot;)
-data_Fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&quot;)
+data_аs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&quot;)
 # Create AFTS shema
 library(forvision)
-afts &lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE)
-plotPRD(afts)
+af &lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE)
+plotPRD(af)
 </code></pre>
 
 <p><img src="/images/PRD/unnamed-chunk-1-1.png" alt="" /></p>
@@ -433,7 +433,7 @@ plotPRD(afts)
 by using the option setting <em>useLog</em> = TRUE:</p>
 
 <pre><code>library(forvision)
-plotPRD(afts, useLogs = TRUE)
+plotPRD(af, useLogs = TRUE)
 </code></pre>
 
 <p><img src="/images/PRD/unnamed-chunk-2-1.png" alt="" /></p>
@@ -441,7 +441,7 @@ plotPRD(afts, useLogs = TRUE)
 <p>The prediction-realization diagram for the selected methods:</p>
 
 <pre><code># For the methods &quot;ARARMA&quot;, &quot;Auto-ANN&quot;, and &quot;DAMPEN&quot;
-data1 &lt;- subset(afts, method == c(&quot;ARARMA&quot;, &quot;Auto-ANN&quot;, &quot;DAMPEN&quot;))
+data1 &lt;- subset(af, method == c(&quot;ARARMA&quot;, &quot;Auto-ANN&quot;, &quot;DAMPEN&quot;))
 library(forvision)
 plotPRD(data1)
 </code></pre>
@@ -451,7 +451,7 @@ plotPRD(data1)
 <p>The prediction-realization diagram for the selected horizon:</p>
 
 <pre><code># For the horizons 1, 2
-data2 &lt;- subset(afts, horizon == 1)
+data2 &lt;- subset(af, horizon == 1)
 library(forvision)
 plotPRD(data2)
 </code></pre>
