@@ -165,7 +165,11 @@ The first step is to load actuals and forecasts:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/forvision-package/exploratory-analysis/</guid>
-      <description>This page is under construction.</description>
+      <description>After loading input data, need to explore it in order to
+ double-check if the data was loaded and prepared correctly
+ examine the range and the distribution for forecasts and actuals
+ detect possible outliers or unexpected cases, the presence of zero cases, negative cases, missing actuals and the frequency of such cases
+  Eventually, at this step we want i) to confirm that the data is of appropriate quality for measuring accuracy performance and ii) to choose the error metrics that correspond to the features of the data.</description>
     </item>
     
     <item>
