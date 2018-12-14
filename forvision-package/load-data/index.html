@@ -431,10 +431,7 @@ data_fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_
 
 <p><strong>Then we can check if data is loaded correctly:</strong></p>
 
-<pre><code># show first lines of the tables and get summary info to see if the data loaded is what was expected:
-head(data_ts)
-
-##   series_id category   value timestamp
+<pre><code>##   series_id category   value timestamp
 ## 1        Q1    MICRO 3142.63   1984-Q1
 ## 2        Q1    MICRO 3190.75   1984-Q2
 ## 3        Q1    MICRO 3178.69   1984-Q3
@@ -451,15 +448,6 @@ head(data_fs)
 ## 4        Q1 NAIVE2  5511.55       4   1993-Q4          1992-Q4
 ## 5        Q1 NAIVE2  5511.55       5   1994-Q1          1992-Q4
 ## 6        Q1 NAIVE2  5511.55       6   1994-Q2          1992-Q4
-
-library(forvision)
-validateTSTS(data_ts)
-
-## [1] TRUE
-
-validateFTS(data_fs)
-
-## [1] TRUE
 </code></pre>
 
 <p>To see details on the data format specifications, use <code>showTSTS()</code> and
