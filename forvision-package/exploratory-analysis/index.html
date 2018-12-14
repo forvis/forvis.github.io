@@ -468,10 +468,12 @@ data_fs<span style="color:#f92672">$</span>timestamp_dbo <span style="color:#f92
 data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">)</span>
 <span style="color:#75715e"># load forecasts</span>
 data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_FTS.csv&#34;</span><span style="color:#111">)</span>
+
 <span style="color:#75715e"># prepare appropriate time-based object timestamp columns for the data_ts and data_fs</span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>zoo<span style="color:#111">)</span>
 data_ts<span style="color:#f92672">$</span>timestamp_dbo <span style="color:#f92672">&lt;-</span> as.yearqtr<span style="color:#111">(</span>ts<span style="color:#f92672">$</span>timestamp<span style="color:#111">,</span> format <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;%Y-Q%q&#39;</span><span style="color:#111">)</span>
 data_fs<span style="color:#f92672">$</span>timestamp_dbo <span style="color:#f92672">&lt;-</span> as.yearqtr<span style="color:#111">(</span>fs<span style="color:#f92672">$</span>timestamp<span style="color:#111">,</span> <span style="color:#d88200">&#39;%Y-Q%q&#39;</span><span style="color:#111">)</span>
+
 <span style="color:#75715e"># plot a fan chart</span>
 plotFanChart<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">,</span>  id <span style="color:#f92672">=</span><span style="color:#d88200">&#34;Q1&#34;</span><span style="color:#111">,</span> origin <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;1992-Q4&#34;</span><span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ARIMA&#34;</span><span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/exploratory-analysis/3.png" alt="" /></p>
