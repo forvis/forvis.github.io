@@ -409,45 +409,33 @@
 
 <p>Here’s a prediction-realization diagram created by the function
 <strong>plotPRD</strong>:</p>
-
-<pre><code># Load time series and forecast data from url
-data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&quot;)
-data_fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&quot;)
-# Create AFTS shema
-library(forvision)
-af &lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE)
-plotPRD(af)
-</code></pre>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Load time series and forecast data from url</span>
+data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+<span style="color:#75715e"># Create AFTS shema</span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+af <span style="color:#f92672">&lt;-</span> createAFTS<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">,</span> na <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+plotPRD<span style="color:#111">(</span>af<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/unnamed-chunk-1-1.png" alt="" /></p>
 
 <p>The resulting prediction-relization digram plotted in logarithmic scales
 by using the option setting <em>useLog</em> = TRUE:</p>
-
-<pre><code>library(forvision)
-plotPRD(af, useLogs = TRUE)
-</code></pre>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+plotPRD<span style="color:#111">(</span>af<span style="color:#111">,</span> useLogs <span style="color:#f92672">=</span> <span style="color:#00a8c8">TRUE</span><span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/2.png" alt="" /></p>
 
 <p>The prediction-realization diagram for the selected methods:</p>
-
-<pre><code># For the methods &quot;ARARMA&quot;, &quot;Auto-ANN&quot;, and &quot;DAMPEN&quot;
-data1 &lt;- subset(af, method == c(&quot;ARARMA&quot;, &quot;Auto-ANN&quot;, &quot;DAMPEN&quot;))
-library(forvision)
-plotPRD(data1)
-</code></pre>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># For the methods &#34;ARARMA&#34;, &#34;Auto-ANN&#34;, and &#34;DAMPEN&#34;</span>
+data1 <span style="color:#f92672">&lt;-</span> <span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> method <span style="color:#f92672">==</span> <span style="color:#00a8c8">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;ARARMA&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;Auto-ANN&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;DAMPEN&#34;</span><span style="color:#111">))</span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+plotPRD<span style="color:#111">(</span>data1<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/unnamed-chunk-3-1.png" alt="" /></p>
 
 <p>The prediction-realization diagram for the selected horizon:</p>
-
-<pre><code># For the horizons 1, 2
-data2 &lt;- subset(af, horizon == 1)
-library(forvision)
-plotPRD(data2)
-</code></pre>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># For the horizons 1, 2</span>
+data2 <span style="color:#f92672">&lt;-</span> <span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> horizon <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+plotPRD<span style="color:#111">(</span>data2<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/unnamed-chunk-4-1.png" alt="" /></p>
 
 <hr />

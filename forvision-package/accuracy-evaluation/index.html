@@ -404,7 +404,105 @@
     
     
     
-    <p>This page is under construction.</p>
+    <p>When after completing the <a href="http://localhost:1313/forvision-package/load-data/">data preparation</a> and <a href="https://forvis.github.io/forvision-package/exploratory-analysis/">exploratory analysis</a> steps we confirm that the data is of appropriate quality, we can proceed to formal assessment of forecasting performance.</p>
+
+<p><strong>Measuring the accuracy of point forecasts</strong></p>
+
+<p>Let&rsquo;s look the M3 yearly data. In our <a href="https://forvis.github.io/forvision-package/exploratory-analysis/">exploratory analysis</a> we used the <a href="https://forvis.github.io/approach/exploratory-tools.md/prd/">prediction-realization diagram</a> to assess the distribution of actuals and forecasts. We spotted zero actuals and negative forecasts. The use of some popular metrics such as MAPE becomes difficult here because we cannot get APEs for zero actuals (<em>***</em>). But even having only positive actuals and forecasts, the behaviour of MAPE can make it unreliable or even misleading (<em>***</em>). Nonetheless, MAPE remains very popular. So let’s see how to calculate it (even though there are better options).</p>
+
+<p>First, let’s load the data (if we haven&rsquo;t done it yet)</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load yearly M3-data</span>
+<span style="color:#75715e"># load time series actuals</span>
+data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+
+<span style="color:#75715e"># load forecasts</span>
+data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span></code></pre></div>
+<p>Now let&rsquo;s look at how many cases contain non-positive actuals or forecasts:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># create a dataframe containing both actuals and forecasts formatted using the AFTS format </span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+af <span style="color:#f92672">&lt;-</span> createAFTS<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">,</span> na <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+<span style="color:#75715e"># number of &#34;bad&#34; cases</span>
+<span style="color:#00a8c8">nrow</span><span style="color:#111">(</span><span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> value <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> forecast <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span></code></pre></div>
+<pre><code>## 129
+</code></pre>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># total number of cases</span>
+<span style="color:#00a8c8">nrow</span><span style="color:#111">(</span>af<span style="color:#111">)</span></code></pre></div>
+<pre><code>## 85140
+</code></pre>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># percentage of &#34;bad&#34; cases</span>
+<span style="color:#111">(</span><span style="color:#ae81ff">129</span><span style="color:#f92672">/</span><span style="color:#ae81ff">85140</span><span style="color:#111">)</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span></code></pre></div>
+<pre><code>## 0.1515152
+</code></pre>
+
+<p>The percentage of “bad” cases seems to be negligible, so exclude them and proceed to obtaining the accuracy table and chart for MAPE:</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># exclude bad cases</span>
+af2 <span style="color:#f92672">&lt;-</span> <span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> value <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;</span> forecast <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">nrow</span><span style="color:#111">(</span>af2<span style="color:#111">)</span></code></pre></div>
+<pre><code>## 85011
+</code></pre>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># mape table with non-positive cases excluded</span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+calculateMAPEs<span style="color:#111">(</span>af2<span style="color:#111">)</span></code></pre></div>
+<pre><code>## $`MAPE`
+                horizon = 1 horizon = 2 horizon = 3 horizon = 4 horizon = 5 horizon = 6  average MAPE
+## NAIVE2          8.360053    19.23712    21.70531    23.45871    25.17578    27.35164      20.88143
+## SINGLE          8.426719    19.53460    21.70985    23.59725    25.35748    27.93413      21.09334
+## HOLT            8.504891    20.45405    26.28356    30.15786    34.12761    36.96884      26.08280
+## DAMPEN          8.161127    19.23165    22.76975    26.09369    30.03716    31.06058      22.89233
+## WINTER          8.504891    20.45405    26.28356    30.15786    34.12761    36.96884      26.08280
+## COMB S-H-D      7.964892    19.02728    22.76000    25.56244    28.63649    30.24861      22.36662
+## B-J auto        8.638050    19.71086    22.78263    26.77603    27.99026    30.82170      22.78659
+## AutoBox1       10.119198    22.51186    27.07629    31.31042    34.37756    40.08493      27.58004
+## AutoBox2        7.951192    18.21996    20.24227    21.53416    24.35192    27.06316      19.89378
+## AutoBox3       10.421066    21.64715    25.06411    28.00895    29.13955    32.99808      24.54648
+## ROBUST-Trend    7.606495    18.64720    22.18879    24.39184    26.91103    29.70701      21.57539
+## ARARMA          9.091266    20.68177    25.10429    30.14883    34.99774    40.38033      26.73404
+## Auto-ANN        8.697692    19.30203    21.17230    23.69814    25.82926    28.95334      21.27546
+## Flors-Pearc1    8.561016    19.38149    22.80052    25.34184    27.62398    30.95579      22.44410
+## Flors-Pearc2   10.903332    21.38609    23.17941    24.91399    27.72512    31.29920      23.23452
+## PP-Autocast     8.141452    19.19054    22.75382    26.06017    29.99119    30.98797      22.85419
+## ForecastPro     8.426093    18.77205    22.10483    25.76225    27.52447    30.24350      22.13887
+## SMARTFCS        9.796722    20.29223    23.64564    25.85210    28.55908    31.87433      23.33668
+## THETAsm         7.907310    18.26210    21.41826    23.33240    25.50224    27.78079      20.70052
+## THETA           8.172273    19.38538    22.36993    25.71969    28.45272    30.72379      22.47063
+## RBF             8.146542    18.86758    21.67786    22.58918    25.20706    26.92872      20.56949
+## ForcX           8.495870    18.75417    20.60045    22.70112    24.23433    26.42823      20.20236
+
+## $rank
+                horizon = 1 horizon = 2 horizon = 3 horizon = 4 horizon = 5 horizon = 6 average rank
+## NAIVE2               9.0        10.0         6.0         5.0         3.0         4.0     6.166667
+## SINGLE              11.0        14.0         7.0         6.0         5.0         6.0     8.166667
+## HOLT                13.5        17.5        20.5        20.5        19.5        19.5    18.500000
+## DAMPEN               7.0         9.0        13.0        16.0        18.0        15.0    13.000000
+## WINTER              13.5        17.5        20.5        20.5        19.5        19.5    18.500000
+## COMB S-H-D           4.0         7.0        12.0        11.0        15.0        10.0     9.833333
+## B-J auto            16.0        15.0        14.0        17.0        12.0        12.0    14.333333
+## AutoBox1            20.0        22.0        22.0        22.0        21.0        21.0    21.333333
+## AutoBox2             3.0         1.0         1.0         1.0         2.0         3.0     1.833333
+## AutoBox3            21.0        21.0        18.0        18.0        16.0        18.0    18.666667
+## ROBUST-Trend         1.0         3.0         9.0         8.0         8.0         8.0     6.166667
+## ARARMA              18.0        19.0        19.0        19.0        22.0        22.0    19.833333
+## Auto-ANN            17.0        11.0         3.0         7.0         7.0         7.0     8.666667
+## Flors-Pearc1        15.0        12.0        15.0        10.0        10.0        13.0    12.500000
+## Flors-Pearc2        22.0        20.0        16.0         9.0        11.0        16.0    15.666667
+## PP-Autocast          5.0         8.0        11.0        15.0        17.0        14.0    11.666667
+## ForecastPro         10.0         5.0         8.0        13.0         9.0         9.0     9.000000
+## SMARTFCS            19.0        16.0        17.0        14.0        14.0        17.0    16.166667
+## THETAsm              2.0         2.0         4.0         4.0         6.0         5.0     3.833333
+## THETA                8.0        13.0        10.0        12.0        13.0        11.0    11.166667
+## RBF                  6.0         6.0         5.0         2.0         4.0         2.0     4.166667
+## ForcX               12.0         4.0         2.0         3.0         1.0         1.0     3.833333
+</code></pre>
+
+<p><img src="/images/accuracy/mape.png" alt="" /></p>
+
+<p>To overcome the problems of MAPE we can use MASE instead (***):</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># mase table </span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+calculateMASEs<span style="color:#111">(</span>af2<span style="color:#111">)</span></code></pre></div>
+<p>In fact, for the M3 dataset we have only fixed-origin forecasts. If we had rolling-origin forecasts, we could have used AvgRelMAE instead, as it has some advantages such as being more affected by outliers and more indicative of relative peroframce under linear loss (***).</p>
+
+<p><strong>References:</strong></p>
 
 
     

@@ -49,7 +49,7 @@ In order to obtain data in the AFTS format, we can use a query to link actual va
       <guid>/approach/exploratory-tools.md/prd/</guid>
       <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns value, forecast, and method (AFTS).
 Here’s a prediction-realization diagram created by the function plotPRD:
-# Load time series and forecast data from url data_ts &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&amp;quot;) data_fs &amp;lt;- read.csv(&amp;quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&amp;quot;) # Create AFTS shema library(forvision) af &amp;lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE) plotPRD(af)  The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
+# Load time series and forecast data from url data_ts &amp;lt;- read.csv(&amp;#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&amp;#34;, stringsAsFactors = FALSE) data_fs &amp;lt;- read.csv(&amp;#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&amp;#34;, stringsAsFactors = FALSE) # Create AFTS shema library(forvision) af &amp;lt;- createAFTS(ts = data_ts, fs = data_fs, na = FALSE) plotPRD(af) The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ Here’s a prediction-realization diagram created by the function plotPRD:
       <guid>/approach/exploratory-tools.md/fanchart/</guid>
       <description>The function plotFAN of the forvision package plots the fanchart for the given data from dataset.
 Here’s a fanchart created by the function plotFAN for time series of id = &amp;ldquo;M350&amp;rdquo;:
-library(forvision) plotFanChart(ts = TSTS, fs = FTS, id = &amp;quot;M350&amp;quot;, origin = &amp;quot;1993-09&amp;quot;, m = &amp;quot;ARIMA&amp;quot;)  </description>
+# Load time series and forecast data from url data_ts &amp;lt;- read.csv(&amp;#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_monthly_TSTS.csv&amp;#34;, stringsAsFactors = FALSE) data_fs &amp;lt;- read.csv(&amp;#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_monthly_PIs_FTS.csv&amp;#34;, stringsAsFactors = FALSE) # prepare appropriate time-based object timestamp columns for the data_ts and data_fs library(zoo) data_ts$timestamp_dbo &amp;lt;- as.yearmon(data_ts$timestamp, format = &amp;#39;%Y-%m&amp;#39;) data_fs$timestamp_dbo &amp;lt;- as.</description>
     </item>
     
     <item>
@@ -71,8 +71,7 @@ library(forvision) plotFanChart(ts = TSTS, fs = FTS, id = &amp;quot;M350&amp;quo
       <guid>/approach/exploratory-tools.md/fixed-origin-graph/</guid>
       <description>The function plotFixedOrigin of the forvision package plots the fixed origin graph for the given data from dataset.
 Here’s a fixed origin graph created by the function plotFixedOrigin for time series of id = &amp;ldquo;M1&amp;rdquo;:
-library(forvision) plotFixedOrigin(ts = TSTS, id = &amp;quot;M1&amp;quot;)  The fixed origin graph with the forecasts of the single forecast method by using the option setting method:
-library(forvision) plotFixedOrigin(ts = TSTS, fs = FTS, id = &amp;quot;M1&amp;quot;, origin = &amp;quot;1994-02&amp;quot;, m = &amp;quot;AutoBox1&amp;quot;)  The fixed origin graph with the forecasts of the multiple forecast methods by using the option setting method:</description>
+# Load time series and forecast data from url data_ts &amp;lt;- read.csv(&amp;#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_monthly_TSTS.csv&amp;#34;, stringsAsFactors = FALSE) data_fs &amp;lt;- read.csv(&amp;#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_monthly_FTS.csv&amp;#34;, stringsAsFactors = FALSE) # prepare appropriate time-based object timestamp columns for the data_ts and data_fs library(zoo) data_ts$timestamp_dbo &amp;lt;- as.</description>
     </item>
     
     <item>
@@ -91,7 +90,7 @@ library(forvision) plotFixedOrigin(ts = TSTS, fs = FTS, id = &amp;quot;M1&amp;qu
       
       <guid>/approach/accuracy-tools/point-forecast-evaluation/</guid>
       <description>Mean absolute percentage error for different forecasting methods and different horizons is generated using the function calculateMAPEs of the forvision package for the given data from dataset.
-library(forvision) calculateMAPEs(afts)  </description>
+library(forvision) calculateMAPEs(afts) </description>
     </item>
     
     <item>
@@ -101,7 +100,7 @@ library(forvision) calculateMAPEs(afts)  </description>
       
       <guid>/approach/accuracy-tools/pis-evaluation/</guid>
       <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
-library(forvision) validatePIs(afts)  </description>
+library(forvision) validatePIs(afts) </description>
     </item>
     
     <item>
@@ -178,7 +177,9 @@ The first step is to load actuals and forecasts:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/forvision-package/accuracy-evaluation/</guid>
-      <description>This page is under construction.</description>
+      <description>When after completing the data preparation and exploratory analysis steps we confirm that the data is of appropriate quality, we can proceed to formal assessment of forecasting performance.
+Measuring the accuracy of point forecasts
+Let&amp;rsquo;s look the M3 yearly data. In our exploratory analysis we used the prediction-realization diagram to assess the distribution of actuals and forecasts. We spotted zero actuals and negative forecasts. The use of some popular metrics such as MAPE becomes difficult here because we cannot get APEs for zero actuals (***).</description>
     </item>
     
     <item>

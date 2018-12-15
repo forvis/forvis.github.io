@@ -421,16 +421,13 @@ dataset</a> formatted according
 to the above schemas.</p>
 
 <p><strong>The first step is to load actuals and forecasts:</strong></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load M3-Competition quarterly data actuals:</span>
+data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 
-<pre><code># load M3-Competition quarterly data actuals:
-data_ts &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&quot;, stringsAsFactors = FALSE)
-
-# load M3-Competition quarterly data forecasts:
-data_fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_FTS.csv&quot;, stringsAsFactors = FALSE)
-</code></pre>
-
+<span style="color:#75715e"># load M3-Competition quarterly data forecasts:</span>
+data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span></code></pre></div>
 <p><strong>Then we can check if data is loaded correctly:</strong></p>
-
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#00a8c8">head</span><span style="color:#111">(</span>data_ts<span style="color:#111">)</span></code></pre></div>
 <pre><code>##   series_id category   value timestamp
 ## 1        Q1    MICRO 3142.63   1984-Q1
 ## 2        Q1    MICRO 3190.75   1984-Q2
@@ -438,10 +435,9 @@ data_fs &lt;- read.csv(&quot;https://raw.githubusercontent.com/forvis/forvision_
 ## 4        Q1    MICRO 3170.94   1984-Q4
 ## 5        Q1    MICRO 3124.38   1985-Q1
 ## 6        Q1    MICRO 3170.00   1985-Q2
-
-head(data_fs)
-
-##   series_id method forecast horizon timestamp origin_timestamp
+</code></pre>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#00a8c8">head</span><span style="color:#111">(</span>data_fs<span style="color:#111">)</span></code></pre></div>
+<pre><code>##   series_id method forecast horizon timestamp origin_timestamp
 ## 1        Q1 NAIVE2  5511.55       1   1993-Q1          1992-Q4
 ## 2        Q1 NAIVE2  5511.55       2   1993-Q2          1992-Q4
 ## 3        Q1 NAIVE2  5511.55       3   1993-Q3          1992-Q4

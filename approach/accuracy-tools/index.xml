@@ -17,7 +17,7 @@
       
       <guid>/approach/accuracy-tools/point-forecast-evaluation/</guid>
       <description>Mean absolute percentage error for different forecasting methods and different horizons is generated using the function calculateMAPEs of the forvision package for the given data from dataset.
-library(forvision) calculateMAPEs(afts)  </description>
+library(forvision) calculateMAPEs(afts) </description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@ library(forvision) calculateMAPEs(afts)  </description>
       
       <guid>/approach/accuracy-tools/pis-evaluation/</guid>
       <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
-library(forvision) validatePIs(afts)  </description>
+library(forvision) validatePIs(afts) </description>
     </item>
     
   </channel>

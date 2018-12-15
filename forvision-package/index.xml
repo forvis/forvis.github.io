@@ -52,7 +52,9 @@ The first step is to load actuals and forecasts:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/forvision-package/accuracy-evaluation/</guid>
-      <description>This page is under construction.</description>
+      <description>When after completing the data preparation and exploratory analysis steps we confirm that the data is of appropriate quality, we can proceed to formal assessment of forecasting performance.
+Measuring the accuracy of point forecasts
+Let&amp;rsquo;s look the M3 yearly data. In our exploratory analysis we used the prediction-realization diagram to assess the distribution of actuals and forecasts. We spotted zero actuals and negative forecasts. The use of some popular metrics such as MAPE becomes difficult here because we cannot get APEs for zero actuals (***).</description>
     </item>
     
     <item>
