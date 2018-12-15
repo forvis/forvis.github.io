@@ -500,6 +500,57 @@ calculateMAPEs<span style="color:#111">(</span>af2<span style="color:#111">)</sp
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># mase table </span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">)</span></code></pre></div>
+<pre><code>## $`MASE`
+                horizon = 1 horizon = 2 horizon = 3 horizon = 4 horizon = 5 horizon = 6  average MAPE
+## NAIVE2          1.243180    2.109222    2.984488    3.581908    4.220806    4.890658      3.171710
+## SINGLE          1.249641    2.106746    2.978748    3.581065    4.215601    4.891618      3.170570
+## HOLT            1.103292    1.911541    2.913759    3.707037    4.409124    5.049054      3.182301
+## DAMPEN          1.087805    1.864142    2.809100    3.517824    4.188994    4.721935      3.031633
+## WINTER          1.103292    1.911541    2.913759    3.707037    4.409124    5.049054      3.182301
+## COMB S-H-D      1.077996    1.804689    2.700081    3.322545    3.933577    4.420069      2.876493
+## B-J auto        1.178533    1.993006    2.962241    3.686087    4.295501    4.873996      3.164894
+## AutoBox1        1.309823    2.177974    3.237293    4.152814    5.096263    6.097075      3.678540
+## AutoBox2        1.074197    1.775109    2.566343    3.133104    3.693237    4.281780      2.753962
+## AutoBox3        1.372351    2.092067    2.956670    3.614722    4.238479    4.788991      3.177214
+## ROBUST-Trend    1.019415    1.659988    2.454962    2.984701    3.554140    4.078309      2.625253
+## ARARMA          1.165812    1.987493    2.973933    3.867603    4.917467    5.975862      3.481362
+## Auto-ANN        1.217388    1.943142    2.782446    3.451284    4.116897    4.838623      3.058297
+## Flors-Pearc1    1.137472    1.855671    2.708465    3.332978    3.996714    4.598926      2.938371
+## Flors-Pearc2    1.440030    2.038698    2.820739    3.383066    3.930131    4.484236      3.016150
+## PP-Autocast     1.084537    1.856125    2.795074    3.497021    4.167997    4.696689      3.016240
+## ForecastPro     1.110955    1.848643    2.748329    3.492080    4.175975    4.777460      3.025574
+## SMARTFCS        1.292934    1.927717    2.786494    3.434540    3.993613    4.542079      2.996230
+## THETAsm         1.073901    1.808055    2.814637    3.451674    4.118812    4.766279      3.005560
+## THETA           1.072569    1.774527    2.656533    3.263346    3.795185    4.275791      2.806325
+## RBF             1.060277    1.710996    2.511425    3.106761    3.663319    4.269709      2.720414
+## ForcX           1.144641    1.839083    2.554110    3.129381    3.724059    4.224839      2.769352
+
+## $rank
+                horizon = 1 horizon = 2 horizon = 3 horizon = 4 horizon = 5 horizon = 6 average rank
+## NAIVE2              17.0        21.0        21.0        16.0        16.0        17.0    18.000000
+## SINGLE              18.0        20.0        20.0        15.0        15.0        18.0    17.666667
+## HOLT                 9.5        12.5        15.5        19.5        19.5        19.5    16.000000
+## DAMPEN               8.0        11.0        12.0        14.0        14.0        11.0    11.666667
+## WINTER               9.5        12.5        15.5        19.5        19.5        19.5    16.000000
+## COMB S-H-D           6.0         5.0         6.0         6.0         7.0         6.0     6.000000
+## B-J auto            15.0        17.0        18.0        18.0        18.0        16.0    17.000000
+## AutoBox1            20.0        22.0        22.0        22.0        22.0        22.0    21.666667
+## AutoBox2             5.0         4.0         4.0         4.0         3.0         5.0     4.166667
+## AutoBox3            21.0        19.0        17.0        17.0        17.0        14.0    17.500000
+## ROBUST-Trend         1.0         1.0         1.0         1.0         1.0         1.0     1.000000
+## ARARMA              14.0        16.0        19.0        21.0        21.0        21.0    18.666667
+## Auto-ANN            16.0        15.0         9.0        10.0        10.0        15.0    12.500000
+## Flors-Pearc1        12.0         9.0         7.0         7.0         9.0         9.0     8.833333
+## Flors-Pearc2        22.0        18.0        14.0         8.0         6.0         7.0    12.500000
+## PP-Autocast          7.0        10.0        11.0        13.0        12.0        10.0    10.500000
+## ForecastPro         11.0         8.0         8.0        12.0        13.0        13.0    10.833333
+## SMARTFCS            19.0        14.0        10.0         9.0         8.0         8.0    11.333333
+## THETAsm              4.0         6.0        13.0        11.0        11.0        12.0     9.500000
+## THETA                3.0         3.0         5.0         5.0         5.0         4.0     4.166667
+## RBF                  2.0         2.0         2.0         2.0         2.0         3.0     2.166667
+## ForcX               13.0         7.0         3.0         3.0         4.0         2.0     5.333333
+</code></pre>
+
 <p>In fact, for the M3 dataset we have only fixed-origin forecasts. If we had rolling-origin forecasts, we could have used AvgRelMAE instead, as it has some advantages such as being more affected by outliers and more indicative of relative peroframce under linear loss (***).</p>
 
 <p><strong>References:</strong></p>
