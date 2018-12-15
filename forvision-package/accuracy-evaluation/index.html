@@ -499,7 +499,7 @@ calculateMAPEs<span style="color:#111">(</span>af2<span style="color:#111">)</sp
 <p>To overcome the problems of MAPE we can use MASE instead (***):</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># mase table </span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
-calculateMASEs<span style="color:#111">(</span>af2<span style="color:#111">)</span></code></pre></div>
+calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">)</span></code></pre></div>
 <p>In fact, for the M3 dataset we have only fixed-origin forecasts. If we had rolling-origin forecasts, we could have used AvgRelMAE instead, as it has some advantages such as being more affected by outliers and more indicative of relative peroframce under linear loss (***).</p>
 
 <p><strong>References:</strong></p>
