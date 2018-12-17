@@ -448,13 +448,17 @@ calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=<
 
 </a> package</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load data</span>
-other_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_other_TSTS.csv&#34;</span><span style="color:#111">,</span> 
+data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">,</span> 
 stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
-other_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_other_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> 
-stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
-<span style="color:#75715e"># show coverage chart</span>
-plotHitrateChart<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> other_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> other_fs<span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">80</span><span style="color:#111">)</span></code></pre></div>
-<p><img src="/images/accuracy/hitrate.png" alt="" /></p>
+data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> 
+stringsAsFactors<span style="color:#f92672">=</span><span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">head</span><span style="color:#111">(</span>ts<span style="color:#111">)</span>
+<span style="color:#75715e"># show coverage chart for ETS forecast method</span>
+plotCoverage<span style="color:#111">(</span>data_ts<span style="color:#111">,</span> data_fs<span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ETS&#34;</span><span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">)</span></code></pre></div>
+<p><img src="/images/accuracy/corv_ETS.png" alt="" /></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># show coverage chart for ARIMA forecast method</span>
+plotCoverage<span style="color:#111">(</span>data_ts<span style="color:#111">,</span> data_fs<span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ARIMA&#34;</span><span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">)</span></code></pre></div>
+<p><img src="/images/accuracy/corv_ARIMA.png" alt="" /></p>
 
 <p>By looking at the coverage chart, it can be seen that the auto.arima method tends to underestimate the uncertainty associated with the forecasts produced, whereas the ets method gives more adequate results.</p>
 
