@@ -39,7 +39,7 @@ Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project.
       
       <guid>/datasets/m3-pis/</guid>
       <description>The time series from the IJF-M3 competition (Makridakis and Hibon, 2000) and M3 interval forecast data using ARIMA model:
-   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_PIs_FTS.csv Forecasts FTS    </description>
+   File Description Schema     M3_yearly_TSTS.csv Actual observations TSTS   M3_yearly_PIs_FTS.csv Forecasts FTS   M3_quarterly_TSTS.csv Actual observations TSTS   M3_quarterly_PIs_FTS.csv Forecasts FTS   M3_monthly_TSTS.csv Actual observations TSTS   M3_monthly_PIs_FTS.csv Forecasts FTS   M3_other_TSTS.csv Actual observations TSTS   M3_other_PIs_FTS.csv Forecasts FTS    To cite this website, please use the following reference:</description>
     </item>
     
   </channel>
