@@ -432,10 +432,8 @@ calculateMAPEs<span style="color:#111">(</span>af2<span style="color:#111">)</sp
 <p><img src="/images/accuracy/mape.png" alt="" /></p>
 
 <p>To overcome the problems of MAPE, we can use MASE (Hyndman and Koehler, 2006) instead:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># extract only historical data (training set) for in-sample MAE calculation using Naive method</span>
-train_ts <span style="color:#f92672">&lt;-</span> dplyr<span style="color:#f92672">::</span>anti_join<span style="color:#111">(</span>data_ts<span style="color:#111">,</span> data_fs<span style="color:#111">,</span> by <span style="color:#f92672">=</span> <span style="color:#00a8c8">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;series_id&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;timestamp&#34;</span><span style="color:#111">))</span>
-<span style="color:#75715e"># calculate MASEs</span>
-calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> train_ts<span style="color:#111">,</span> af <span style="color:#f92672">=</span> af<span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># calculate MASEs</span>
+calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> af <span style="color:#f92672">=</span> af<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/accuracy/mase.png" alt="" /></p>
 
 <p>For the M3 data we have only fixed-origin forecasts. But in case of rolling-origin forecasts we can use AvgRelMAE instead, as it has some advantages such as being less affected by outliers and more indicative of relative performance under linear loss (Davydenko and Fildes, 2013).</p>
