@@ -432,8 +432,10 @@ calculateMAPEs<span style="color:#111">(</span>af2<span style="color:#111">)</sp
 <p><img src="/images/accuracy/mape.png" alt="" /></p>
 
 <p>To overcome the problems of MAPE, we can use MASE (Hyndman and Koehler, 2006) instead:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># calculate MASEs</span>
-calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># extract only historical data (training set) for in-sample MAE calculation using Naive method</span>
+train_ts <span style="color:#f92672">&lt;-</span> dplyr<span style="color:#f92672">::</span>anti_join<span style="color:#111">(</span>data_ts<span style="color:#111">,</span> data_fs<span style="color:#111">,</span> by <span style="color:#f92672">=</span> <span style="color:#00a8c8">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;series_id&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;timestamp&#34;</span><span style="color:#111">))</span>
+<span style="color:#75715e"># calculate MASEs</span>
+calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> train_ts<span style="color:#111">,</span> af <span style="color:#f92672">=</span> af<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/accuracy/mase.png" alt="" /></p>
 
 <p>For the M3 data we have only fixed-origin forecasts. But in case of rolling-origin forecasts we can use AvgRelMAE instead, as it has some advantages such as being less affected by outliers and more indicative of relative performance under linear loss (Davydenko and Fildes, 2013).</p>
@@ -466,7 +468,7 @@ plotCoverage<span style="color:#111">(</span>data_ts<span style="color:#111">,</
 
 <p>Davydenko, Andrey &amp; Robert Fildes. (2013). Measuring Forecasting Accuracy: The Case of Judgmental Adjustments to Sku-Level Demand Forecasts. <em>International Journal of Forecasting</em> 29 (3). Elsevier B.V.: 510–22. doi:10.1016/j.ijforecast.2012.09.002.</p>
 
-<p>Hyndman, R. J. &amp; Koehler, A. B. (2006). Another look at measures of forecast accuracy. <em>International Journal of Forecasting</em>.</p>
+<p>Hyndman, R.J. and Koehler, A.B. (2006). Another look at measures of forecast accuracy. <em>International Journal of Forecasting</em>, 22(4), 679-688.</p>
 
 <hr />
 
