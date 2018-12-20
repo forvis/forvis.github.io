@@ -410,15 +410,15 @@
 
 <p>First, let’s load the data (if we haven&rsquo;t done it yet)</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load time series actuals</span>
-data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> 
+ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> 
 stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 <span style="color:#75715e"># load forecasts</span>
-data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> 
+fc <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> 
 stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span></code></pre></div>
 <p>Now let&rsquo;s look at how many cases contain non-positive actuals or forecasts:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># create a dataframe containing both actuals and forecasts formatted using the AFTS format </span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
-af <span style="color:#f92672">&lt;-</span> createAFTS<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> fs <span style="color:#f92672">=</span> data_fs<span style="color:#111">,</span> na <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+af <span style="color:#f92672">&lt;-</span> createAFTS<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> ts<span style="color:#111">,</span> fc <span style="color:#f92672">=</span> fc<span style="color:#111">,</span> na <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 <span style="color:#75715e"># find the percentage of &#34;bad&#34; cases</span>
 <span style="color:#00a8c8">nrow</span><span style="color:#111">(</span><span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> value <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> forecast <span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span> <span style="color:#f92672">/</span> <span style="color:#00a8c8">nrow</span><span style="color:#111">(</span>af<span style="color:#111">)</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span></code></pre></div>
 <pre><code>## 0.1515152
@@ -433,7 +433,7 @@ calculateMAPEs<span style="color:#111">(</span>af2<span style="color:#111">)</sp
 
 <p>To overcome the problems of MAPE, we can use MASE (Hyndman and Koehler, 2006) instead:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># calculate MASEs</span>
-calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> data_ts<span style="color:#111">,</span> af <span style="color:#f92672">=</span> af<span style="color:#111">)</span></code></pre></div>
+calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> ts<span style="color:#111">,</span> af <span style="color:#f92672">=</span> af<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/accuracy/mase.png" alt="" /></p>
 
 <p>For the M3 data we have only fixed-origin forecasts. But in case of rolling-origin forecasts we can use AvgRelMAE instead, as it has some advantages such as being less affected by outliers and more indicative of relative performance under linear loss (Davydenko and Fildes, 2013).</p>
@@ -448,16 +448,15 @@ calculateMASEs<span style="color:#111">(</span>ts <span style="color:#f92672">=<
 
 </a> package</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load data</span>
-data_ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">,</span> 
+ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">,</span> 
 stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
-data_fs <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> 
+fc <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> 
 stringsAsFactors<span style="color:#f92672">=</span><span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
-<span style="color:#00a8c8">head</span><span style="color:#111">(</span>ts<span style="color:#111">)</span>
 <span style="color:#75715e"># show coverage chart for ETS forecast method</span>
-plotCoverage<span style="color:#111">(</span>data_ts<span style="color:#111">,</span> data_fs<span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ETS&#34;</span><span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">)</span></code></pre></div>
+plotCoverage<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> ts<span style="color:#111">,</span> fc <span style="color:#f92672">=</span> fc<span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ETS&#34;</span><span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/accuracy/corv_ETS.png" alt="" /></p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># show coverage chart for ARIMA forecast method</span>
-plotCoverage<span style="color:#111">(</span>data_ts<span style="color:#111">,</span> data_fs<span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ARIMA&#34;</span><span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">)</span></code></pre></div>
+plotCoverage<span style="color:#111">(</span>ts <span style="color:#f92672">=</span> ts<span style="color:#111">,</span> fc <span style="color:#f92672">=</span> fc<span style="color:#111">,</span> m <span style="color:#f92672">=</span> <span style="color:#d88200">&#34;ARIMA&#34;</span><span style="color:#111">,</span> <span style="color:#00a8c8">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">90</span><span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/accuracy/corv_ARIMA.png" alt="" /></p>
 
 <p>By looking at the coverage chart, it can be seen that the auto.arima method tends to underestimate the uncertainty associated with the forecasts produced, whereas the ets method gives more adequate results.</p>
