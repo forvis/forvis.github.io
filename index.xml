@@ -90,7 +90,7 @@ Here’s a fixed origin graph created by the function plotFixedOrigin for time s
       
       <guid>/approach/accuracy-tools/point-forecast-evaluation/</guid>
       <description>Mean absolute percentage error for different forecasting methods and different horizons is generated using the function calculateMAPEs of the forvision package for the given data from dataset.
-library(forvision) calculateMAPEs(afts) ## $`MAPE` horizon = 1 horizon = 2 horizon = 3 horizon = 4 horizon = 5 horizon = 6 average MAPE ## NAIVE2 8.360053 19.23712 21.70531 23.45871 25.17578 27.35164 20.88143 ## SINGLE 8.426719 19.53460 21.70985 23.59725 25.35748 27.93413 21.09334 ## HOLT 8.</description>
+library(forvision) calculateMAPEs(af) ## $`MAPE` horizon = 1 horizon = 2 horizon = 3 horizon = 4 horizon = 5 horizon = 6 average MAPE ## NAIVE2 8.360053 19.23712 21.70531 23.45871 25.17578 27.35164 20.88143 ## SINGLE 8.426719 19.53460 21.70985 23.59725 25.35748 27.93413 21.09334 ## HOLT 8.</description>
     </item>
     
     <item>
@@ -100,7 +100,7 @@ library(forvision) calculateMAPEs(afts) ## $`MAPE` horizon = 1 horizon = 2 horiz
       
       <guid>/approach/accuracy-tools/pis-evaluation/</guid>
       <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
-library(forvision) plotHitrateChart(ts = data_ts, fs = data_fs, pi = 80) To cite this website, please use the following reference:
+library(forvision) plotHitrateChart(ts, fc, pi = 80) To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/
 © 2018 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
     </item>
