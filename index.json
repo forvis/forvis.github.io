@@ -165,7 +165,7 @@
 	"title": "How to download and install",
 	"tags": [],
 	"description": "",
-	"content": " Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:\n# install.packages(\u0026#34;devtools\u0026#34;) devtools::install_github(\u0026#34;forvis/forvision\u0026#34;, build_vignettes = TRUE) [example]((https://forvis.github.io/data/example1_FTS.csv)\nTo cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
+	"content": " Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:\n# install.packages(\u0026#34;devtools\u0026#34;) devtools::install_github(\u0026#34;forvis/forvision\u0026#34;, build_vignettes = TRUE) To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/forvision-package/load-data/",
