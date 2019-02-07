@@ -419,9 +419,9 @@
 <p>To explore the distribution of actuals and forecasts, let’s use the <a href="https://forvis.github.io/approach/exploratory-tools.md/prd/">prediction-realization diagram</a>.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load yearly M3-data</span>
 <span style="color:#75715e"># load time series actuals</span>
-ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 <span style="color:#75715e"># load forecasts</span>
-fс <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+fс <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 
 <span style="color:#75715e"># create a dataframe containing both actuals and forecasts formatted using the AFTS format </span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
@@ -465,9 +465,9 @@ fc<span style="color:#f92672">$</span>timestamp_dbo <span style="color:#f92672">
 <p>When working with interval predictions, we may want to visualize the forecast uncertainty using the <a href="https://forvis.github.io/approach/exploratory-tools.md/fanchart/">fan chart</a>.</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># load quarterly M3-data</span>
 <span style="color:#75715e"># load time series actuals</span>
-ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_quarterly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 <span style="color:#75715e"># load forecasts</span>
-fc <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://raw.githubusercontent.com/forvis/forvision_data/master/M3_quarterly_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+fc <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_quarterly_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
 
 <span style="color:#75715e"># prepare appropriate time-based object timestamp columns for the data_ts and data_fs</span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>zoo<span style="color:#111">)</span>
