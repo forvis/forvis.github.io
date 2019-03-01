@@ -29,17 +29,10 @@
 },
 {
 	"uri": "/approach/data-flow/",
-	"title": "Data flow",
+	"title": "Workflow",
 	"tags": [],
 	"description": "",
 	"content": "To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
-},
-{
-	"uri": "/approach/step-by-step-guide/",
-	"title": "Step-by-step guide",
-	"tags": [],
-	"description": "",
-	"content": "Step-by-step guide\n"
 },
 {
 	"uri": "/approach/data-structures/",
@@ -53,7 +46,7 @@
 	"title": "Time Series Table Schema (TSTS)",
 	"tags": [],
 	"description": "",
-	"content": " In time series table schema each observation is stored in a table as a separate record (line):\n   Field name (column name) Description Examples     *series_id Time series identifier - a unique name that identifies a time series “Y1”   *timestamp Any representation of the period to which the observation relates. We recommend the use of the ISO 8601 standard \u0026ldquo;1997\u0026rdquo; in case of yearly data, \u0026ldquo;1997-01-20\u0026rdquo; in case of daily data, \u0026ldquo;1997-11\u0026rdquo; in case of monthly data, \u0026ldquo;1997-W03\u0026rdquo; in case of weekly data, \u0026ldquo;2018-Q2\u0026rdquo; in case of quarterly data   value The value observed 1000    *the key (the unique value that should not duplicated) for this table schema is series_id, timestamp. In other words, we cannot have two (or more) records in a table relating to the same time series and the same period of observation (timestamp)\nWe may have additional fields (columns) in this table or additional table specifying the features of time series. However, the above schema includes the fields that are necessary for further processing of time series data containing many time series. Here we do not impose restrictions on the types of the data.\nIf some observation is missing, the corresponding table line can be omitted or corresponding value can be denoted as ‘NA’. Observation can also contain censored data, etc., which can also be represented by additional agreements, but here these rules are not specified.\nExample: TSTS \u0026lt;- read.csv(\u0026#34;C:/Users/svcuo/Desktop/data/TSTS.csv\u0026#34;) head(TSTS, 10)  series_id value timestamp 1 Y1 3103.96 1984 2 Y1 3360.27 1985 3 Y1 3807.63 1986 4 Y1 4387.88 1987 5 Y1 4936.99 1988 6 Y1 5379.75 1989 7 Y1 6158.68 1990 8 Y1 6876.58 1991 9 Y2 5389.80 1984 10 Y2 5384.40 1985  To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
+	"content": " In time series table schema each observation is stored in a table as a separate record (line):\n   Field name (column name) Description Examples     series_id* Time series identifier - a unique name that identifies a time series “Y1”   timestamp* Any representation of the period to which the observation relates. We recommend the use of the ISO 8601 standard \u0026ldquo;1997\u0026rdquo; in case of yearly data, \u0026ldquo;1997-01-20\u0026rdquo; in case of daily data, \u0026ldquo;1997-11\u0026rdquo; in case of monthly data, \u0026ldquo;1997-W03\u0026rdquo; in case of weekly data, \u0026ldquo;2018-Q2\u0026rdquo; in case of quarterly data   value The value observed 1000    *the key (the unique value that should not duplicated) for this table schema is series_id, timestamp. In other words, we cannot have two (or more) records in a table relating to the same time series and the same period of observation (timestamp)\nWe may have additional fields (columns) in this table or additional table specifying the features of time series. However, the above schema includes the fields that are necessary for further processing of time series data containing many time series. Here we do not impose restrictions on the types of the data.\nIf some observation is missing, the corresponding table line can be omitted or corresponding value can be denoted as ‘NA’. Observation can also contain censored data, etc., which can also be represented by additional agreements, but here these rules are not specified.\nExample: TSTS \u0026lt;- read.csv(\u0026#34;C:/Users/svcuo/Desktop/data/TSTS.csv\u0026#34;) head(TSTS, 10)  series_id value timestamp 1 Y1 3103.96 1984 2 Y1 3360.27 1985 3 Y1 3807.63 1986 4 Y1 4387.88 1987 5 Y1 4936.99 1988 6 Y1 5379.75 1989 7 Y1 6158.68 1990 8 Y1 6876.58 1991 9 Y2 5389.80 1984 10 Y2 5384.40 1985  To cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/approach/data-structures/fts/",
@@ -64,10 +57,10 @@
 },
 {
 	"uri": "/approach/data-structures/afts/",
-	"title": "Actuals and Forecasts Table Schema (AFTS)",
+	"title": "Actual and Forecast Table Schema (AFTS)",
 	"tags": [],
 	"description": "",
-	"content": "Sometimes it is convenient to have a table where we have both actuals and forecasts in one row in one table. This Actuals and Forecasts Table Schema (AFTS) is the same as the FTS schema, but additional column “value” is used to represent the actual value of time series. If no actual value is available, then “value”=”NA”.\nIn order to obtain data in the AFTS format, we can use a query to link actual values from the TSTS schema and forecasts from the FTS schema: diagram\n"
+	"content": "Sometimes it is convenient to have a table where we have both actuals and forecasts in one row. AFTS is the same as FTS, but the additional column “value” is used to represent the actual time series value. If no actual is available, then [value]=”NA”.\n"
 },
 {
 	"uri": "/approach/exploratory-tools.md/",
@@ -235,7 +228,7 @@
 	"title": "Forvision project",
 	"tags": [],
 	"description": "",
-	"content": "In the Forvision project we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.\nIn particular, we focus on the following two interrelated tasks:\n To define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described here)\n To develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.\n  Our current results involve:\n A set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: Our recommended approach to handling data for forecasting performance evaluation is presented in this diagram\n A more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.\n  Our preliminary results have been presented here:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (November 23-24, 2018). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends (pp. 145-149). Moradabad, India.\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (November 23-24, 2018). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends [PowerPoint slides]. Moradabad, India\n"
+	"content": "The project’s aim is to develop effective means for forecast evaluation and visualization. Based on our experience of implementing data science solutions for forecasting, we described a typical forecast evaluation setup summarizing the kinds of data we’d typically want to work with, what we’d like to obtain as a result of the analysis, and under what requirements. Especially we focus on handling rolling-origin forecasts made across many series over multiple horizons when many alternative methods are used and we need rigorous cross-validation and comparison tools.\nWe developed a general framework containing of the following components:\n Forecast data formats - simple yet flexible enough data structures designed to store data needed for rolling-origin forecast evaluation.\n Exploratory analysis tools needed to make sure that data is acceptable quality.\n Performance measurement tools - techniques and graphs for accuracy and comparison.\n  Generally, the workflow we propose involves the following steps: 1) data preparation, 2) exploratory analysis, 3) performance measurement using appropriate metrics. The workflow section describes this process in more detail.\nSome components were implemented within the forvision R-package.\nPreliminary results were published here:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (November 23-24, 2018). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends (pp. 145-149). Moradabad, India.\n"
 },
 {
 	"uri": "/team/",

@@ -101,13 +101,7 @@
     <li data-nav-id="/approach/data-flow/" class="dd-item alwaysopen
         ">
       <div>
-      <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/approach/step-by-step-guide/" class="dd-item alwaysopen
-        ">
-      <div>
-      <a href="/approach/step-by-step-guide/">Step-by-step guide</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/approach/data-flow/">Workflow</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
     <li data-nav-id="/approach/data-structures/" class="dd-item alwaysopen haschildren
@@ -134,7 +128,7 @@
       <li data-nav-id="/approach/data-structures/afts/" class="dd-item">
         <div>
           <a href="/approach/data-structures/afts/">
-            Actuals and Forecasts Table Schema (AFTS)
+            Actual and Forecast Table Schema (AFTS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -327,18 +321,14 @@
    Our approach</option> 
     <option value="/approach/data-flow/" >
   - 
-   Data flow</option> 
-  
-    <option value="/approach/step-by-step-guide/" >
-  - 
-   Step-by-step guide</option> 
+   Workflow</option> 
   
     <option value="/approach/data-structures/" >
   - 
    Data structures</option> 
       <option value="/approach/data-structures/tsts/" >-- Time Series Table Schema (TSTS)</option>
       <option value="/approach/data-structures/fts/" >-- Forecast Table Schema (FTS)</option>
-      <option value="/approach/data-structures/afts/" >-- Actuals and Forecasts Table Schema (AFTS)</option>
+      <option value="/approach/data-structures/afts/" >-- Actual and Forecast Table Schema (AFTS)</option>
   
     <option value="/approach/exploratory-tools.md/" >
   - 
@@ -408,31 +398,27 @@
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
 </span>
  
-<p><img src="unp.PNG" alt="" /></p>
+<p>The project’s aim is to develop effective means for forecast evaluation and visualization. Based on our experience of implementing data science solutions for forecasting, we described a typical <a href="https://forvis.github.io/forvision-package/accuracy-evaluation/">forecast evaluation setup</a> summarizing the kinds of data we’d typically want to work with, what we’d like to obtain as a result of the analysis, and under what requirements. Especially we focus on handling rolling-origin forecasts made across many series over multiple horizons when many alternative methods are used and we need rigorous cross-validation and comparison tools.</p>
 
-<p>In the <a href="https://forvis.github.io/">Forvision project</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
-
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<p>We developed a general <a href="https://forvis.github.io/">framework</a> containing of the following components:</p>
 
 <ol>
-<li><p>To define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<li><p><a href="https://forvis.github.io/approach/data-structures/">Forecast data formats</a> - simple yet flexible enough data structures designed to store data needed for rolling-origin forecast evaluation.</p></li>
 
-<li><p>To develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
+<li><p><a href="https://forvis.github.io/approach/exploratory-tools.md/">Exploratory analysis tools</a> needed to make sure that data is acceptable quality.</p></li>
+
+<li><p><a href="https://forvis.github.io/approach/accuracy-tools/">Performance measurement tools</a> - techniques and graphs for accuracy and comparison.</p></li>
 </ol>
 
-<p><strong>Our current results involve:</strong></p>
+<p><img src="unp1.PNG" alt="" /></p>
 
-<ol>
-<li><p>A set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<p>Generally, the <a href="https://forvis.github.io/approach/data-flow/">workflow</a> we propose involves the following steps: 1) data preparation, 2) exploratory analysis, 3) performance measurement using appropriate metrics. The <a href="https://forvis.github.io/approach/data-flow/">workflow</a> section describes this process in more detail.</p>
 
-<li><p>A more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
+<p>Some components were implemented within the <a href="https://forvis.github.io/forvision-package/">forvision R-package</a>.</p>
 
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p><strong>Preliminary results were published here:</strong></p>
 
 <p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (November 23-24, 2018). <a href="/our-publications/1.pdf">Data schemas for forecasting (with examples in R)</a>. <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em> (pp. 145-149). Moradabad, India.</p>
-
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (November 23-24, 2018). <a href="/our-publications/PowerPoint-presentation-SMART2018.pdf">Data schemas for forecasting (with examples in R)</a>. <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em> [PowerPoint slides]. Moradabad, India</p>
 
 
 

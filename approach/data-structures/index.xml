@@ -17,7 +17,7 @@
       
       <guid>/approach/data-structures/tsts/</guid>
       <description>In time series table schema each observation is stored in a table as a separate record (line):
-   Field name (column name) Description Examples     *series_id Time series identifier - a unique name that identifies a time series “Y1”   *timestamp Any representation of the period to which the observation relates. We recommend the use of the ISO 8601 standard &amp;ldquo;1997&amp;rdquo; in case of yearly data, &amp;ldquo;1997-01-20&amp;rdquo; in case of daily data, &amp;ldquo;1997-11&amp;rdquo; in case of monthly data, &amp;ldquo;1997-W03&amp;rdquo; in case of weekly data, &amp;ldquo;2018-Q2&amp;rdquo; in case of quarterly data   value The value observed 1000    *the key (the unique value that should not duplicated) for this table schema is series_id, timestamp.</description>
+   Field name (column name) Description Examples     series_id* Time series identifier - a unique name that identifies a time series “Y1”   timestamp* Any representation of the period to which the observation relates. We recommend the use of the ISO 8601 standard &amp;ldquo;1997&amp;rdquo; in case of yearly data, &amp;ldquo;1997-01-20&amp;rdquo; in case of daily data, &amp;ldquo;1997-11&amp;rdquo; in case of monthly data, &amp;ldquo;1997-W03&amp;rdquo; in case of weekly data, &amp;ldquo;2018-Q2&amp;rdquo; in case of quarterly data   value The value observed 1000    *the key (the unique value that should not duplicated) for this table schema is series_id, timestamp.</description>
     </item>
     
     <item>
@@ -32,13 +32,12 @@ Each table line corresponds to all the forecasting results obtained for a given 
     </item>
     
     <item>
-      <title>Actuals and Forecasts Table Schema (AFTS)</title>
+      <title>Actual and Forecast Table Schema (AFTS)</title>
       <link>/approach/data-structures/afts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/approach/data-structures/afts/</guid>
-      <description>Sometimes it is convenient to have a table where we have both actuals and forecasts in one row in one table. This Actuals and Forecasts Table Schema (AFTS) is the same as the FTS schema, but additional column “value” is used to represent the actual value of time series. If no actual value is available, then “value”=”NA”.
-In order to obtain data in the AFTS format, we can use a query to link actual values from the TSTS schema and forecasts from the FTS schema: diagram</description>
+      <description>Sometimes it is convenient to have a table where we have both actuals and forecasts in one row. AFTS is the same as FTS, but the additional column “value” is used to represent the actual time series value. If no actual is available, then [value]=”NA”.</description>
     </item>
     
   </channel>

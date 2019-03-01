@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title>Actuals and Forecasts Table Schema (AFTS) :: the Forvision project</title>
+<title>Actual and Forecast Table Schema (AFTS) :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -101,13 +101,7 @@
     <li data-nav-id="/approach/data-flow/" class="dd-item alwaysopen
         ">
       <div>
-      <a href="/approach/data-flow/">Data flow</a><i class="fa fa-circle-thin read-icon"></i>
-      </div>
-    </li>
-    <li data-nav-id="/approach/step-by-step-guide/" class="dd-item alwaysopen
-        ">
-      <div>
-      <a href="/approach/step-by-step-guide/">Step-by-step guide</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/approach/data-flow/">Workflow</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
     <li data-nav-id="/approach/data-structures/" class="dd-item parent alwaysopen haschildren
@@ -134,7 +128,7 @@
       <li data-nav-id="/approach/data-structures/afts/" class="dd-item active">
         <div>
           <a href="/approach/data-structures/afts/">
-            Actuals and Forecasts Table Schema (AFTS)
+            Actual and Forecast Table Schema (AFTS)
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -327,18 +321,14 @@
    Our approach</option> 
     <option value="/approach/data-flow/" >
   - 
-   Data flow</option> 
-  
-    <option value="/approach/step-by-step-guide/" >
-  - 
-   Step-by-step guide</option> 
+   Workflow</option> 
   
     <option value="/approach/data-structures/" >
   - 
    Data structures</option> 
       <option value="/approach/data-structures/tsts/" >-- Time Series Table Schema (TSTS)</option>
       <option value="/approach/data-structures/fts/" >-- Forecast Table Schema (FTS)</option>
-      <option value="/approach/data-structures/afts/"  selected>-- Actuals and Forecasts Table Schema (AFTS)</option>
+      <option value="/approach/data-structures/afts/"  selected>-- Actual and Forecast Table Schema (AFTS)</option>
   
     <option value="/approach/exploratory-tools.md/" >
   - 
@@ -400,14 +390,11 @@
       </div>
     
 
-    <h1>Actuals and Forecasts Table Schema (AFTS)</h1>
+    <h1>Actual and Forecast Table Schema (AFTS)</h1>
     
     
     
-    <p>Sometimes it is convenient to have a table where we have both actuals and forecasts in one row in one table. This Actuals and Forecasts Table Schema (AFTS) is the same as the FTS schema, but additional column “value” is used to represent the actual value of time series. If no actual value is available, then “value”=”NA”.</p>
-
-<p>In order to obtain data in the AFTS format, we can use a query to link actual values from the TSTS schema and forecasts from the FTS schema:
-diagram</p>
+    <p>Sometimes it is convenient to have a table where we have both actuals and forecasts in one row. AFTS is the same as FTS, but the additional column “value” is used to represent the actual time series value. If no actual is available, then [value]=”NA”.</p>
 
 
     
