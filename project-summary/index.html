@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="generator" content="Hugo 0.39" />
-<title> Project summary :: the Forvision project</title>
+<title>Project summary :: the Forvision project</title>
 <link rel="shortcut icon" href="/images/logo.PNG" type="image/x-icon" />
 <link href="/css/font-awesome.min.css" rel="stylesheet">
 <link href="/css/nucleus.css" rel="stylesheet">
@@ -76,7 +76,7 @@
     <li data-nav-id="/project-summary/" class="dd-item parent active alwaysopen
         ">
       <div>
-      <a href="/project-summary/"> Project summary</a><i class="fa fa-circle-thin read-icon"></i>
+      <a href="/project-summary/">Project summary</a><i class="fa fa-circle-thin read-icon"></i>
       </div>
     </li>
     <li data-nav-id="/set-up/" class="dd-item alwaysopen
@@ -98,6 +98,102 @@
             <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
       </div>
         <ul>
+    <li data-nav-id="/approach/data-flow/" class="dd-item alwaysopen
+        ">
+      <div>
+      <a href="/approach/data-flow/">Workflow</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="/approach/data-structures/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/data-structures/">Data structures</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/approach/data-structures/tsts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/tsts/">
+            Time Series Table Schema (TSTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/data-structures/fts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/fts/">
+            Forecast Table Schema (FTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/data-structures/afts/" class="dd-item">
+        <div>
+          <a href="/approach/data-structures/afts/">
+            Actual and Forecast Table Schema (AFTS)
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/approach/exploratory-tools.md/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/exploratory-tools.md/">Exploratory analysis tools</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/approach/exploratory-tools.md/prd/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/prd/">
+            Prediction-Realization Diagram
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fanchart/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fanchart/">
+            Fanchart
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-origin-graph/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fixed-origin-graph/">
+            Fixed origin graph
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/exploratory-tools.md/fixed-horizon-graph/" class="dd-item">
+        <div>
+          <a href="/approach/exploratory-tools.md/fixed-horizon-graph/">
+            Fixed horizon graph
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="/approach/accuracy-tools/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/approach/accuracy-tools/"> Performance measurement</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="/approach/accuracy-tools/point-forecast-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/point-forecast-evaluation/">
+             Point forecasts evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="/approach/accuracy-tools/pis-evaluation/" class="dd-item">
+        <div>
+          <a href="/approach/accuracy-tools/pis-evaluation/">
+            PIs evaluation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     <li data-nav-id="/datasets/" class="dd-item alwaysopen haschildren
@@ -213,7 +309,7 @@
         <select onchange="javascript:location.href = this.value;">
           
     <option value="/project-summary/"  selected>
-    Project summary</option> 
+   Project summary</option> 
   
     <option value="/set-up/" >
    Project setup</option> 
@@ -294,39 +390,34 @@
       </div>
     
 
-    <h1> Project summary</h1>
+    <h1>Project summary</h1>
     
     
     
 
-<p><img src="/unp.PNG" alt="" />
-In the <a href="https://github.com/forvis/forvision">Forvision project 
+<p><img src="unp1.PNG" alt="" /></p>
 
-<span class="fa fa-github" aria-hidden="true"></span>
+<p>The project’s aim is to develop effective means for forecast evaluation and visualization. Based on our experience of implementing data science solutions for forecasting, we outline a typical <a href="https://forvis.github.io/forvision-package/accuracy-evaluation/">forecast evaluation setup</a>. Especially, we focus on handling rolling-origin forecasts made across many series over multiple horizons when many alternative methods are used.</p>
 
-</a> we focus on the issues of the implementation of software elements for forecasting performance evaluation and visualization.</p>
-
-<p><strong>In particular, we focus on the following two interrelated tasks:</strong></p>
+<p>We developed a general <a href="https://forvis.github.io/">framework</a> containing of the following components:</p>
 
 <ol>
-<li><p>To define simple yet flexible enough data structures in order to store all the information needed for forecasts evaluation (assuming the settings and requirements described <a href="https://forvis.github.io/set-up/">here</a>)</p></li>
+<li><p><a href="https://forvis.github.io/approach/data-structures/">Forecast data formats</a> - simple yet flexible enough data structures designed to store data needed for rolling-origin forecast evaluation.</p></li>
 
-<li><p>To develop a reliable methodology (including a set of appropriate tools) for forecasts exploratory analysis and accuracy evaluation based on the data structures defined.</p></li>
+<li><p><a href="https://forvis.github.io/approach/exploratory-tools.md/">Exploratory analysis tools</a>  needed to make sure that data is of acceptable quality.</p></li>
+
+<li><p><a href="https://forvis.github.io/approach/accuracy-tools/">Performance measurement tools</a> - techniques and graphs for accuracy and comparison.</p></li>
 </ol>
 
-<p><strong>Our current results involve:</strong></p>
+<p>Generally, the <a href="https://forvis.github.io/approach/data-flow/">workflow</a> we propose involves the following steps: 1) data preparation, 2) exploratory analysis, 3) performance measurement using appropriate metrics. The <a href="https://forvis.github.io/approach/data-flow/">workflow</a> section describes this process in more detail.</p>
 
-<ol>
-<li><p>A set of data schemas, a data flow chart, and a set of corresponding graphical tools and metrics for the typical analysis of forecasting performance: <em>Our recommended approach to handling data for forecasting performance evaluation is presented in <a href="https://forvis.github.io/approach/data-flow/">this diagram</a></em></p></li>
+<p>Some components were implemented within the <a href="https://forvis.github.io/forvision-package/">forvision R-package</a>.</p>
 
-<li><p>A more flexible data schema for storing forecasting results for the case where we need to store not only point or interval forecasts, but, for example, density forecasts, model parameters, etc.</p></li>
-</ol>
-
-<p><strong>Our preliminary results have been presented here:</strong></p>
+<p><strong>Preliminary results were published here:</strong></p>
 
 <p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (November 23-24, 2018). <a href="/our-publications/1.pdf">Data schemas for forecasting (with examples in R)</a>. <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em> (pp. 145-149). Moradabad, India.</p>
 
-<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (November 23-24, 2018). <a href="/our-publications/PowerPoint-presentation-SMART2018.pdf">Data schemas for forecasting (with examples in R)</a>. <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em> [PowerPoint slides]. Moradabad, India</p>
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
 
