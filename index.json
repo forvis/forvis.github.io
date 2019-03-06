@@ -25,7 +25,7 @@
 	"title": "Our approach",
 	"tags": [],
 	"description": "",
-	"content": "Our approach\n"
+	"content": "Any data science analysis involves not only applying some specific algorithm of interest, but also a data preparation step and data quality checks. Our approach is based on including these steps into the forecast evaluation process allowing it to comply with more general methodologies such as the Microsoft TDSP, CRISP-DM, SEMMA, etc. The forecast evaluation framework proposed below summarizes our experience of implementing forecasting projects in various settings.\nThe major steps of the framework are outlined in the forecast evaluation workflow. Subsequent sections provide more details on on the tools chosen, the rationale behind them, and examples in R.\nTo cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. All rights reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/approach/data-flow/",
@@ -39,7 +39,7 @@
 	"title": "Data structures",
 	"tags": [],
 	"description": "",
-	"content": "Data structures\n"
+	"content": "The first step of the workflow is to prepare forecast data. The aim is to use appropriate and convenient data formats facilitating further analysis.\nCapabilities\nBelow we propose data formats allowing forecast data storage with these capabilities:\n Allows the implementation of cross-validation analysis based on a rolling forecasting origin\n Can be used to store not only point forecasts, but also interval forecasts and other types of forecasting results (such as density forecasts, model parameters found at some specific origin, etc.)\n Cross-platform \u0026amp; portable: data can be stored and retrieved using any RDBS using standard SQL queries or using .csv files, does not require data to be stored as a package for some specific language (such as R/Python/etc.)\n Fast data access using RDBS engines, can be implemented at industrial settings for any frequency (hours, minutes, seconds, etc.) and for any number of time series\n Allows actuals to be updated independently from forecasts\n  Advantages\nOur approach to forecast data storage is based on using the these two major table schemas:\n Time Series Table Schema (TSTS) to store time series actuals\n Forecast Table Schema (FTS) to store forecasting results including point forecasts, prediction intervals, and other variables of interest\n  In order to slice-and-dice forecast data easier, we may need a table containing both actuals and forecast. This is done using the Actual and Forecast Table Schema (AFTS). Such data is obtained using a simple SQL query. The AFTS format also allows you to slice-and-dice forecast data effectively.\nReferences\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (November 23-24, 2018). Data schemas for forecasting (with examples in R). Seventh International Conference on System Modelling \u0026amp; Advancement on Research Trends (pp. 145-149). Moradabad, India.\nHyndman Rob. Mcomp: Data from the M-Competitions. Retrieved from https://pkg.robjhyndman.com/Mcomp/index.html\nTo cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. All rights reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/approach/data-structures/tsts/",
@@ -67,7 +67,7 @@
 	"title": "Exploratory analysis tools",
 	"tags": [],
 	"description": "",
-	"content": "Exploratory analysis tools\n"
+	"content": "This step of the framework workflow is needed to explore data features, assess overall data quality, and choose appropriate error metrics.\nWhen forecast data is represented using the framework data structures, we can define APIs and algorithms for the following forecast exploratory analysis tools:\n Prediction-realization diagram - shows actuals vs forecasts scatterplot, visualizes data features across many series and many methods\n Fixed origin graph - shows point forecasts produced by different methods at some given fixed origin\n Fixed horizon graph - shows point forecasts produced by different methods at different origins but with same horizon\n Fanchart - visualises interval forecasts for a given series, method, and origin\n  The forvision package for R implements the above tools and in some cases can allow some interactivity (e.g., the use of a range selector via the dygraphs package).\nTo cite this website, please use the following reference:\nSai, C., Davydenko, A., \u0026amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/\n© 2018 Sai, C., Davydenko, A., \u0026amp; Shcherbakov, M. All Rights Reserved. All rights reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.\n"
 },
 {
 	"uri": "/approach/exploratory-tools.md/prd/",

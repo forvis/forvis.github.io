@@ -395,7 +395,47 @@
     
     
 
-<p>Data structures</p>
+<p>The first step of the <a href="https://forvis.github.io/approach/data-flow/">workflow</a> is to prepare forecast data. The aim is to use appropriate and convenient data formats facilitating further analysis.</p>
+
+<p><strong>Capabilities</strong></p>
+
+<p>Below we propose data formats allowing forecast data storage with these capabilities:</p>
+
+<ul>
+<li><p>Allows the implementation of cross-validation analysis based on a rolling forecasting origin</p></li>
+
+<li><p>Can be used to store not only point forecasts, but also interval forecasts and other types of forecasting results (such as density forecasts, model parameters found at some specific origin, etc.)</p></li>
+
+<li><p>Cross-platform &amp; portable: data can be stored and retrieved using any RDBS using standard SQL queries or using .csv files, does not require data to be stored as a package for some specific language (such as R/Python/etc.)</p></li>
+
+<li><p>Fast data access using RDBS engines, can be implemented at industrial settings for any frequency (hours, minutes, seconds, etc.) and for any number of time series</p></li>
+
+<li><p>Allows actuals to be updated independently from forecasts</p></li>
+</ul>
+
+<p><strong>Advantages</strong></p>
+
+<p>Our approach to forecast data storage is based on using the these two major table schemas:</p>
+
+<ul>
+<li><p><a href="https://forvis.github.io/approach/data-structures/tsts/">Time Series Table Schema</a> (TSTS) to store time series actuals</p></li>
+
+<li><p><a href="https://forvis.github.io/approach/data-structures/fts/">Forecast Table Schema</a> (FTS) to store forecasting results including point forecasts, prediction intervals, and other variables of interest</p></li>
+</ul>
+
+<p>In order to slice-and-dice forecast data easier, we may need a table containing both actuals and forecast. This is done using the <a href="https://forvis.github.io/approach/data-structures/afts/">Actual and Forecast Table Schema</a> (AFTS). Such data is obtained using a simple SQL query. The AFTS format also allows you to slice-and-dice forecast data effectively.</p>
+
+<p><strong>References</strong></p>
+
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (November 23-24, 2018). <a href="/our-publications/1.pdf">Data schemas for forecasting (with examples in R)</a>. <em>Seventh International Conference on System Modelling &amp; Advancement on Research Trends</em> (pp. 145-149). Moradabad, India.</p>
+
+<p>Hyndman Rob. <em>Mcomp: Data from the M-Competitions.</em>  Retrieved from <a href="https://pkg.robjhyndman.com/Mcomp/index.html">https://pkg.robjhyndman.com/Mcomp/index.html</a></p>
+
+<p><strong>To cite this website, please use the following reference:</strong></p>
+
+<p>Sai, C., Davydenko, A., &amp; Shcherbakov, M. (<em>date</em>). <em>The Forvision Project</em>. Retrieved from <a href="https://forvis.github.io/">https://forvis.github.io/</a></p>
+
+<p><sub>© 2018 Sai, C., Davydenko, A., &amp; Shcherbakov, M. All Rights Reserved. All rights reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</sup></p>
 
 
 
