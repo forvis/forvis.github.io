@@ -27,7 +27,7 @@ library(forvision) calculateMAPEs(af) ## $`MAPE` horizon = 1 horizon = 2 horizon
       
       <guid>/approach/accuracy-tools/pis-evaluation/</guid>
       <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
-library(forvision) plotHitrateChart(ts, fc, pi = 80) To cite this website, please use the following reference:
+library(forvision) plotHitrateChart(af, pi = 80) To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/
 © 2018 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
     </item>

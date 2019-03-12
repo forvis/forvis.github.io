@@ -18,7 +18,7 @@
       <guid>/approach/exploratory-tools.md/prd/</guid>
       <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns value, forecast, and method (AFTS).
 Here’s a prediction-realization diagram created by the function plotPRD:
-# Load time series and forecast data from url ts &amp;lt;- m3_yearly_ts fc &amp;lt;- m3_yearly_fc # Create AFTS shema library(forvision) af &amp;lt;- createAFTS(ts, fc) plotPRD(af) The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
+# Load time series and forecast data  library(forvision) ts &amp;lt;- m3_yearly_ts fc &amp;lt;- m3_yearly_fc # Create AFTS shema af &amp;lt;- createAFTS(ts, fc) plotPRD(af) The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
     </item>
     
     <item>
@@ -40,7 +40,7 @@ Here’s a fanchart created by the function plotFAN for time series of id = &amp
       <guid>/approach/exploratory-tools.md/fixed-origin-graph/</guid>
       <description>The function plotFixedOrigin of the forvision package plots the fixed origin graph for the given data from dataset.
 Here’s a fixed origin graph created by the function plotFixedOrigin for time series of id = &amp;ldquo;M1&amp;rdquo;:
-# Load time series and forecast data from url ts &amp;lt;- m3_monthly_ts fc &amp;lt;- m3_monthly_fc # prepare appropriate time-based object timestamp columns for the data_ts and data_fs library(zoo) ts$timestamp_dbo &amp;lt;- as.yearmon(ts$timestamp, format = &amp;#39;%Y-%m&amp;#39;) fc$timestamp_dbo &amp;lt;- as.</description>
+# Load time series and forecast data  library(forvision) ts &amp;lt;- m3_monthly_ts fc &amp;lt;- m3_monthly_fc # prepare appropriate time-based object timestamp columns for the data_ts and data_fs library(zoo) ts$timestamp_dbo &amp;lt;- as.yearmon(ts$timestamp, format = &amp;#39;%Y-%m&amp;#39;) fc$timestamp_dbo &amp;lt;- as.</description>
     </item>
     
     <item>

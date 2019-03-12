@@ -48,7 +48,7 @@ Each table line corresponds to all the forecasting results obtained for a given 
       <guid>/approach/exploratory-tools.md/prd/</guid>
       <description>The function plotPRD of the forvision package plots the Prediction-Realization Diagram for the given data from dataset containing columns value, forecast, and method (AFTS).
 Here’s a prediction-realization diagram created by the function plotPRD:
-# Load time series and forecast data from url ts &amp;lt;- m3_yearly_ts fc &amp;lt;- m3_yearly_fc # Create AFTS shema library(forvision) af &amp;lt;- createAFTS(ts, fc) plotPRD(af) The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
+# Load time series and forecast data  library(forvision) ts &amp;lt;- m3_yearly_ts fc &amp;lt;- m3_yearly_fc # Create AFTS shema af &amp;lt;- createAFTS(ts, fc) plotPRD(af) The resulting prediction-relization digram plotted in logarithmic scales by using the option setting useLog = TRUE:</description>
     </item>
     
     <item>
@@ -70,7 +70,7 @@ Here’s a fanchart created by the function plotFAN for time series of id = &amp
       <guid>/approach/exploratory-tools.md/fixed-origin-graph/</guid>
       <description>The function plotFixedOrigin of the forvision package plots the fixed origin graph for the given data from dataset.
 Here’s a fixed origin graph created by the function plotFixedOrigin for time series of id = &amp;ldquo;M1&amp;rdquo;:
-# Load time series and forecast data from url ts &amp;lt;- m3_monthly_ts fc &amp;lt;- m3_monthly_fc # prepare appropriate time-based object timestamp columns for the data_ts and data_fs library(zoo) ts$timestamp_dbo &amp;lt;- as.yearmon(ts$timestamp, format = &amp;#39;%Y-%m&amp;#39;) fc$timestamp_dbo &amp;lt;- as.</description>
+# Load time series and forecast data  library(forvision) ts &amp;lt;- m3_monthly_ts fc &amp;lt;- m3_monthly_fc # prepare appropriate time-based object timestamp columns for the data_ts and data_fs library(zoo) ts$timestamp_dbo &amp;lt;- as.yearmon(ts$timestamp, format = &amp;#39;%Y-%m&amp;#39;) fc$timestamp_dbo &amp;lt;- as.</description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@ library(forvision) calculateMAPEs(af) ## $`MAPE` horizon = 1 horizon = 2 horizon
       
       <guid>/approach/accuracy-tools/pis-evaluation/</guid>
       <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
-library(forvision) plotHitrateChart(ts, fc, pi = 80) To cite this website, please use the following reference:
+library(forvision) plotHitrateChart(af, pi = 80) To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/
 © 2018 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
     </item>

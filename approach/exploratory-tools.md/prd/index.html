@@ -399,32 +399,29 @@
 
 <p>Here’s a prediction-realization diagram created by the function
 <strong>plotPRD</strong>:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Load time series and forecast data from url</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Load time series and forecast data </span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 ts <span style="color:#f92672">&lt;-</span> m3_yearly_ts
 fc <span style="color:#f92672">&lt;-</span> m3_yearly_fc
 <span style="color:#75715e"># Create AFTS shema</span>
-<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 af <span style="color:#f92672">&lt;-</span> createAFTS<span style="color:#111">(</span>ts<span style="color:#111">,</span> fc<span style="color:#111">)</span>
 plotPRD<span style="color:#111">(</span>af<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/unnamed-chunk-1-1.png" alt="" /></p>
 
 <p>The resulting prediction-relization digram plotted in logarithmic scales
 by using the option setting <em>useLog</em> = TRUE:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
-plotPRD<span style="color:#111">(</span>af<span style="color:#111">,</span> useLogs <span style="color:#f92672">=</span> <span style="color:#00a8c8">TRUE</span><span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">plotPRD<span style="color:#111">(</span>af<span style="color:#111">,</span> useLogs <span style="color:#f92672">=</span> <span style="color:#00a8c8">TRUE</span><span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/2.png" alt="" /></p>
 
 <p>The prediction-realization diagram for the selected methods:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># For the methods &#34;ARARMA&#34;, &#34;Auto-ANN&#34;, and &#34;DAMPEN&#34;</span>
 data1 <span style="color:#f92672">&lt;-</span> <span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> method <span style="color:#f92672">==</span> <span style="color:#00a8c8">c</span><span style="color:#111">(</span><span style="color:#d88200">&#34;ARARMA&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;Auto-ANN&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;DAMPEN&#34;</span><span style="color:#111">))</span>
-<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 plotPRD<span style="color:#111">(</span>data1<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/unnamed-chunk-3-1.png" alt="" /></p>
 
 <p>The prediction-realization diagram for the selected horizon:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># For the horizons 1, 2</span>
 data2 <span style="color:#f92672">&lt;-</span> <span style="color:#00a8c8">subset</span><span style="color:#111">(</span>af<span style="color:#111">,</span> horizon <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span><span style="color:#111">)</span>
-<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 plotPRD<span style="color:#111">(</span>data2<span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/PRD/unnamed-chunk-4-1.png" alt="" /></p>
 
