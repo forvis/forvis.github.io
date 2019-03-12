@@ -400,8 +400,8 @@
 <p>Here’s a prediction-realization diagram created by the function
 <strong>plotPRD</strong>:</p>
 <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Load time series and forecast data from url</span>
-ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_yearly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
-fc <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_yearly_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+ts <span style="color:#f92672">&lt;-</span> m3_yearly_ts
+fc <span style="color:#f92672">&lt;-</span> m3_yearly_fc
 <span style="color:#75715e"># Create AFTS shema</span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 af <span style="color:#f92672">&lt;-</span> createAFTS<span style="color:#111">(</span>ts<span style="color:#111">,</span> fc<span style="color:#111">)</span>

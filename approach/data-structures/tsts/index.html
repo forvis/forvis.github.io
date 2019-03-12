@@ -435,8 +435,8 @@
 <p>If some observation is missing, the corresponding table line can be omitted or corresponding value can be denoted as ‘NA’. Observation can also contain censored data, etc., which can also be represented by additional agreements, but here these rules are not specified.</p>
 
 <h2 id="example">Example:</h2>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">TSTS <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;C:/Users/svcuo/Desktop/data/TSTS.csv&#34;</span><span style="color:#111">)</span>
-<span style="color:#00a8c8">head</span><span style="color:#111">(</span>TSTS<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+<span style="color:#00a8c8">head</span><span style="color:#111">(</span>example1_ts<span style="color:#111">,</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span></code></pre></div>
 <pre><code>  series_id   value   timestamp
 1         Y1 3103.96      1984
 2         Y1 3360.27      1985

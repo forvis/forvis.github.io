@@ -397,9 +397,10 @@
     <p>The function <strong>plotFAN</strong> of the <a href="https://github.com/forvis/forvision">forvision</a> package plots the fanchart for the given data from dataset.</p>
 
 <p>Here’s a fanchart created by the function <strong>plotFAN</strong> for time series of id = &ldquo;M350&rdquo;:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Load time series and forecast data from url</span>
-ts <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_monthly_TSTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
-fc <span style="color:#f92672">&lt;-</span> read.csv<span style="color:#111">(</span><span style="color:#d88200">&#34;https://forvis.github.io/data/M3_monthly_PIs_FTS.csv&#34;</span><span style="color:#111">,</span> stringsAsFactors <span style="color:#f92672">=</span> <span style="color:#00a8c8">FALSE</span><span style="color:#111">)</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e"># Load time series and forecast data </span>
+<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
+ts <span style="color:#f92672">&lt;-</span> m3_monthly_ts
+fc <span style="color:#f92672">&lt;-</span> m3_monthly_fc_pis
 
 <span style="color:#75715e"># prepare appropriate time-based object timestamp columns for the data_ts and data_fs</span>
 <span style="color:#f92672">library</span><span style="color:#111">(</span>zoo<span style="color:#111">)</span>
@@ -407,7 +408,6 @@ ts<span style="color:#f92672">$</span>timestamp_dbo <span style="color:#f92672">
 fc<span style="color:#f92672">$</span>timestamp_dbo <span style="color:#f92672">&lt;-</span> as.yearmon<span style="color:#111">(</span>fc<span style="color:#f92672">$</span>timestamp<span style="color:#111">,</span> <span style="color:#d88200">&#39;%Y-%m&#39;</span><span style="color:#111">)</span>
 
 <span style="color:#75715e"># plot a fan chart</span>
-<span style="color:#f92672">library</span><span style="color:#111">(</span>forvision<span style="color:#111">)</span>
 plotFanChart<span style="color:#111">(</span>ts<span style="color:#111">,</span> fc<span style="color:#111">,</span>  <span style="color:#d88200">&#34;M350&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;1993-09&#34;</span><span style="color:#111">,</span> <span style="color:#d88200">&#34;ARIMA&#34;</span><span style="color:#111">)</span></code></pre></div>
 <p><img src="/images/fanchart/fan.PNG" alt="" /></p>
 
