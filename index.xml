@@ -101,7 +101,7 @@ library(forvision) calculateMAPEs(af) ## $`MAPE` horizon = 1 horizon = 2 horizon
       <description>The Validation of PIs is generated using the function validatePIs of the forvision package for the given data from dataset:
 library(forvision) plotHitrateChart(af, pi = 80) To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/
-© 2018 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
+© 2020 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
     </item>
     
     <item>
@@ -145,7 +145,7 @@ Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project.
       <description>Installation You can install the development version of the forvision package (containing the latest improvements and bug fixes) from github:
 # install.packages(&amp;#34;devtools&amp;#34;) devtools::install_github(&amp;#34;forvis/forvision&amp;#34;, build_vignettes = TRUE) To cite this website, please use the following reference:
 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. (date). The Forvision Project. Retrieved from https://forvis.github.io/
-© 2018 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
+© 2020 Sai, C., Davydenko, A., &amp;amp; Shcherbakov, M. All Rights Reserved. Short sections of text, not exceed two paragraphs, may be quoted without explicit permission, provided that full acknowledgement is given.</description>
     </item>
     
     <item>
