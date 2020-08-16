@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.50" />
+	<meta property="og:title" content="Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản" />
+<meta property="og:description" content="Khoa học dữ liệu là gì? Khoa học dữ liệu (data science) là một trong những ngành đang có nhu cầu tuyển dụng cao ở thời điểm hiện tại cũng như trong tương lai xa. Nhà khoa học dữ liệu (Data Scientist) được Harvard Business Review đánh giá là “công việc hấp dẫn nhất thế kỷ 21”.
+Vậy khoa học dữ liệu là gì? Trong thực tế không một ai có thể xác định chính xác khoa học dữ liệu là gì, nói cách khác một định nghĩa chính xác về khoa học dữ liệu không tồn tại - đây là một khái niệm liên ngành và rất rộng." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/mo-dau-ve-datascience/" /><meta property="article:published_time" content="2018-11-10T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-10T00:00:00&#43;00:00"/>
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/cs.PNG">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128408660-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo" role="banner">
+			<a class="logo__link" href="/" title="Khoa học dữ liệu" rel="home">
+				<div class="logo__title">Khoa học dữ liệu</div>
+				<div class="logo__tagline">By Cuong Sai</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">About</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/r-tutorials/">R</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-tutorials/">Python</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/statistcics-tutorials/">STATISTICS</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/new/">News</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/my-project/">Projects</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<section class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-10T00:00:00">November 10, 2018</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/data-science" rel="category">data science</a></span>
+</div>
+</div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/img/posts/01_data-science/icon.PNG" alt="Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản">
+		</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#khoa-ho-c-dư-liê-u-la-gi">Khoa học dữ liệu là gì?</a></li>
+<li><a href="#sư-kha-c-nhau-giư-a-data-science-machine-learning-deep-learning-va-artificial-intelligence">Sự khác nhau giữa data science, machine learning, deep learning và artificial intelligence</a></li>
+<li><a href="#ngôn-ngư-lâ-p-tri-nh-cho-khoa-ho-c-dư-liê-u">Ngôn ngữ lập trình cho khoa học dữ liệu</a></li>
+<li><a href="#vi-du-thư-c-tê">Ví dụ thực tế</a></li>
+<li><a href="#lơ-i-khuyên-cho-như-ng-ba-n-muô-n-trơ-tha-nh-mô-t-nha-khoa-ho-c-dư-liê-u">Lời khuyên cho những bạn muốn trở thành một nhà khoa học dữ liệu</a></li>
+<li><a href="#ta-i-liê-u-tham-kha-o">Tài liệu tham khảo:</a></li>
+</ul></li>
+</ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			
+
+<h2 id="khoa-ho-c-dư-liê-u-la-gi">Khoa học dữ liệu là gì?</h2>
+
+<p><strong>Khoa học dữ liệu (data science)</strong> là một trong những ngành đang có nhu cầu tuyển dụng cao ở thời điểm hiện tại cũng như trong tương lai xa. Nhà khoa học dữ liệu (Data Scientist) được <a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century">Harvard Business Review</a> đánh giá là “công việc hấp dẫn nhất thế kỷ 21”.</p>
+
+<p>Vậy khoa học dữ liệu là gì? Trong thực tế không một ai có thể xác định chính xác khoa học dữ liệu là gì, nói cách khác một định nghĩa chính xác về khoa học dữ liệu không tồn tại - đây là một khái niệm liên ngành và rất rộng. Khoa học dữ liệu là một lĩnh vực về các quá trình và các hệ thống trích rút tri thức hoặc hiểu biết dữ liệu ở các dạng khác nhau với biên độ rộng của các ngành như: Toán học, khoa học thống kê, khoa học thông tin, khoa học máy tính và lĩnh vực chuyên môn cụ thể. Bao gồm xử lý tín hiệu, lý thuyết xác suất, học máy, lý thuyết học thống kê, khai phá dữ liệu, cơ sở dữ liệu, kỹ thuật thông tin, nhận dạng mẫu, trực quan dữ liệu, các phân tích dự đoán, lý thuyết quyết định, kho dữ liệu, nén dữ liệu, lập trình máy tính, trí tuệ nhân tạo, và siêu máy tính.</p>
+
+<p><img src="/img/posts/01_data-science/1.png" alt="" /></p>
+
+<p>Có thể nói “Một nhà khoa học dữ liệu là người giỏi hơn về thống kê so với những kỹ sư phát triển phần mềm và giỏi hơn về lập trình so với những nhà thống kê học.” Nào chúng ta hãy cùng mổ xẻ khái niệm <strong>data science</strong></p>
+
+<p>Về bản chất có thể hiểu khoa học dữ liệu là ngành giúp chúng ta tạo ra giá trị từ dữ liệu với hai nhiệm vụ chính:</p>
+
+<ul>
+<li><p>Thu thập xử lý dữ liệu để tìm ra những insight giá trị</p></li>
+
+<li><p>Giải thích, trình bày những insight đó cho các bên có liên quan để chuyển hóa isight thành hành động</p></li>
+</ul>
+
+<p>Data science gồm hai thành phần là <strong>data</strong> và <strong>science</strong>:</p>
+
+<ul>
+<li><p><strong>Data:</strong> Là thành phần thứ nhất của cụm từ <strong>data science</strong>, thiếu nó thì tất cả các quá trình tiếp theo đều không thể thực hiện. Sau khi đã có đầy đủ dữ liệu cần thiết, trước khi sử dụng, công việc đầu tiên bạn cần làm là làm sạch và biến đổi dữ liệu - bước quan trọng nhất trong phân tích dữ liệu, nó chiếm đến 80% tổng số thời gian thực hiện phân tích.</p></li>
+
+<li><p><strong>Science:</strong> Chúng ta đã có dữ liệu vậy bây giờ làm gì với chúng? Đó là phân tích, trích rút các quy luật có ích và làm sao có để có thể sử dụng chúng một cách hiệu quả. Ở đây các lĩnh vực sẽ giúp chúng ta như là thống kê, máy học, học sâu, tối ưu. Máy học giúp chúng ta tìm ra các quy luật trong dữ liệu để có thể dự báo thông tin cần thiết với đối tượng mói sau đó.</p></li>
+</ul>
+
+<p>Mô hình tuần hoàn cho các dự án về khoa học dữ liệu có thể bao gồm các khâu được minh họa qua hình bên dưới:</p>
+
+<p><img src="/img/posts/01_data-science/2.PNG" alt="" /></p>
+
+<ul>
+<li><p>Đầu tiên là nhập (import) dự liệu. Ở website này sẽ chủ yếu hướng tới R nên tôi sẽ nói cụ thể về R. Dữ liệu có thể được lưu trong file, database, hoặc web API, và load vào môi trường R dưới dạng data frame để phân tích. <strong>Nếu bạn không thể get dữ liệu của bạn vào R (hoặc các công cụ khác mà các bạn dùng để thực hiện data science), thì bạn không thể làm khoa học dữ liệu với chúng</strong></p></li>
+
+<li><p>Sau khi đã nhập dữ liệu, thì sẽ là một ý tưởng tốt nếu chúng ta <strong>tidy</strong> chúng (tức là sắp xếp dữ liệu có trật tự). dữ liệu của bạn được sắp xếp gọn gàng có trật tự nghĩa là, mỗi cột thể hiện một biến số (variable), mỗi hàng thể hiện một quan sát (observation).</p></li>
+
+<li><p>Có dữ liệu được sắp xếp có trật tự rồi, việc tiếp theo là biến đổi chúng (transform). Biến đổi (transformation)  bảo gồm thu hẹp số lượng quan sát mà chúng ta quan tâm (ví dụ như những người trong một thành phố, hoặc tất cả dữ liệu trong năm cuối), tạo các biến (thuộc tính) mới trên cơ sở các thuộc tính đã có (ví dụ như tạo ra thuộc tính quãng đương từ thuộc tính thời qian và vận tốc). Gộp hai quá trình <strong>tidying</strong> và <strong>transforming</strong> được gọi là <strong>wrangling</strong> (cãi lộn) (bao gồm các khâu làm sạch và biến đổi dữ liệu), bởi vì công việc thu thập dữ liệu trong thực tế mà ta tiếp nhận để phân tích thường ở dạng thô, cần tiến hành chuyển đổi chúng về dạng thích hợp thì mới có thể phân tích được, được ví như một <strong>fight</strong> (đấu tranh, chiến đấu).</p></li>
+
+<li><p>Bây giờ mọi thứ về dữ liệu đã sẵn sàng, chúng ta có dữ liệu được sắp xếp có trật tự với các thuộc tính cần thiết thì công đoạn tiếp theo bao gồm 2 công cụ sản sinh ra thông tin có ích (trích rút tri thức) đó là: Trực quan hóa dữ liệu (data visualization) và mô hình hóa (modeling). Chúng sẽ cso những điểm mạnh (strengths) và điểm yếu (weaknesses), bởi vậy bất cứ một nhà phân tích nào cũng đều phải lặp đi lặp lại rất nhiều lần mới có thể tìm được mô hình phù hợp, tối ưu với dữ liệu của mình. Biểu diễn dữ liệu (hay trực quan hóa) bằng các biểu đồ giúp ta có cái nhìn trực quan hơn, dựa vào đó có thể đưa ra các đánh giá và lựa chọn mô hình phân tích phù hợp.</p></li>
+
+<li><p>Việc cuối cùng là <strong>communicate</strong> kết quả của bạn cho những người khác thông qua các báo cáo. Kỹ năng báo cáo là rất quan trọng, các bạn có thể làm rất tốt công đoạn này bằng công cụ <a href="https://rmarkdown.rstudio.com/"><strong>R Markdown</strong></a>.</p></li>
+</ul>
+
+<p>Hệ sinh thái <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> (hay còn gọi là Hadleyverse) là một tổ hợp công cụ lớn chứa nhiều R packages chuyên dụng khác nhau giúp chúng ta triển khai một chu trình phân tích dữ liệu hoàn chỉnh, từ khâu nhập dữ liệu vào (readr, readxl), định hình (tibble) làm sạch và biến đổi dữ liệu (tidyr, dplyr, …) đến khâu thăm dò và trực quan hóa dữ liệu (ggplot2).</p>
+
+<h2 id="sư-kha-c-nhau-giư-a-data-science-machine-learning-deep-learning-va-artificial-intelligence">Sự khác nhau giữa data science, machine learning, deep learning và artificial intelligence</h2>
+
+<p>Thực ra các lĩnh vực này đều có sự liên quan, chồng chéo đan xen với nhau</p>
+
+<p><img src="/img/posts/01_data-science/41.png" alt="" /></p>
+
+<p>Hiểu nôm na, AI là một ngành khoa học được sinh ra với mục đích làm cho máy tính có được trí thông minh.  Machine learning là một phương tiện được kỳ vọng sẽ giúp con người đạt được mục tiêu đích đó. Cụ thể, AI - là mục tiêu đặt ra, còn machine learning - là phương tiện, công cụ để đạt được mục tiêu đó.</p>
+
+<p>Còn deep learning là một kỹ thuật bổ sung cho máy học. Đây là một thuật toán dự trên ý tưởng từ bộ não của con người.</p>
+
+<p><img src="/img/posts/01_data-science/42.png" alt="" /></p>
+
+<h2 id="ngôn-ngư-lâ-p-tri-nh-cho-khoa-ho-c-dư-liê-u">Ngôn ngữ lập trình cho khoa học dữ liệu</h2>
+
+<p>Về phương diện học ngôn ngữ lập trình cho phép bạn làm việc với dữ liệu, các ngôn ngữ lập trình là công cụ quan trọng để các nhà khoa học dữ liệu xử lý các vấn đề. Các bạn nên chọn bắt đầu với một vài ngôn ngữ như sau:</p>
+
+<p><strong>R</strong></p>
+
+<p>R là một trong những platforms mạnh nhất được phát triển và sử dụng bởi các nhà khoa học thống kê và phân tích dữ liệu hàng đầu trên thế giới. Ngôn ngữ này đã có sự tăng trưởng vượt bậc khi phân tích dữ liệu và khoa học dữ liệu trở nên phổ biến hơn trong những năm gần đây. Hàng năm, số lượng người dùng R tăng hơn 40% và ngày càng có nhiều cơ quan và tổ chức sử dụng R trong hoạt động phân tích thường nhật Tuy nhiên trong thời rian gần đây độ phổ biến của nó đã giảm đi một chút.</p>
+
+<p>Panetta nói: “Điều quan trọng khi học ngôn ngữ như R là hiểu các kỹ năng toán học cơ bản. Nó sẽ là một thảm hoạ nếu chúng ta chỉ tin vào những kết quả của phần mềm mà không biết chúng ta đang đo lường gì và không hiểu dữ liệu đầu vào mà chúng ta cung cấp”.</p>
+
+<p><strong>Python</strong></p>
+
+<p>Python là một ngôn ngữ lập trình đa mục đích, khá mạnh và bao gồm các công cụ có thể ứng dụng vào các môi trường yêu cầu hình tượng hoá mà có thể xuất hiện trên các trang web hoặc trên điện thoại. Nó cũng dễ đọc hơn R</p>
+
+<p><strong>Java</strong></p>
+
+<p>Ngôn ngữ lập trình Java gần đây được xếp hạng một trong những ngôn ngữ được yêu thích và đa năng nhất để viết, dựa vào bản khảo sát từ WP Engine. Nó cũng là một ngôn ngữ lập trình đa mục đích, được thiết kế riêng để càng ít phụ thuộc vào việc thực thi càng tốt. Nó có thể được sử dụng để xây dựng mọi thứ, đặc biệt là các nền tảng có thể mở rộng, nền tảng đa luồng (multithread) và có nền tảng người dùng mạnh mẽ.</p>
+
+<p>&ldquo;Java là ngôn ngữ thông dịch - không giống C và C++, Java không yêu cầu hiểu biết về phần cứng ở mức độ thấp&rdquo;, Panetta nói. Điều đó giúp cho những người đang nghiên cứu bên ngoài lĩnh vực khoa học máy tính và kỹ thuật dễ tiếp cận Java hơn. Theo trang Indeed, Java cũng là ngôn ngữ lập trình được yêu cầu nhiều nhất trong các bài đăng tuyển dụng công nghệ.</p>
+
+<h2 id="vi-du-thư-c-tê">Ví dụ thực tế</h2>
+
+<p>Để các bạn không bị <strong>đói</strong> trong lý thuyết tôi sẽ đưa ra một ví dụ về một dự án khoa học dữ liệu đơn giản.</p>
+
+<p><strong>Bài toán:</strong> Giả sử chúng ta muốn biết mối tương quan giữa việc những người bạn của bạn uống bao nhiêu cafe trong một ngày với thời gian họ ngủ. Ví dụ dữ liệu được thu thập trong bảng dưới đây:</p>
+
+<pre><code>    Tên     Thời gian ngủ (h)    Lượng cafe uông/ngày (ml)
+    Cuong         4                        600
+    Quan          4.5                      500
+    Quyen         5.5                      400
+    Nhung         6                        450
+    Hieu          6.5                      250
+    Quang         7                        200
+    Hue           8.8                      150
+    Tai           9                        50
+</code></pre>
+
+<p>Biểu diễn dữ liệu thu được dưới dạng đồ thị (data visualization). Trục Ox thể hiện thời gian (h), còn trục Oy - Lượng cafe cuống (ml). Đồ thị thu được có dạng sau:</p>
+
+<p><img src="/img/posts/01_data-science/31.png" alt="" /></p>
+
+<p><strong>Phân tích dữ liệu:</strong></p>
+
+<p>Nhìn vào đồ thị ta dễ dàng có thể nhận thấy rằng: Hai thuộc tính có mối tương quan với nhau: Người uống càng nhiều cafe thì càng ngủ ít. Trong ví dụ này tôi lấy dữ liệu tương đối đẹp, tuy nhiên trong thục tế có thể có nhiễu (ví dụ có một vài điểm dữ liệu trái với quy luật uống càng nhiều cafe thì càng ngủ ít). Giờ nhiệm vụ của chúng ta là tìm ra quy luật liên hệ hai thuộc tính này với nhau - Chúng ta cần chọn mô hình chính xác nhất có thể (quy luật là một đường thằng - làm sao để tổng khoảng cách từ đường thẳng này đến tất cả các điểm là nhỏ nhất).</p>
+
+<p><img src="/img/posts/01_data-science/32.png" alt="" /></p>
+
+<p>Đường màu đỏ - chính là mô hình máy học, nó tổng quát dữ liệu và mô tả dữ liệu dưới dạng toán học. Bây giờ với mô hình này chúng ta có thể xác định được giá trị cho những đối tượng mới khi chúng ta cần dự báo. Ví dụ với thời gian ngủ của Binh là 8 h, đưa số liệu này vào mô hình từ đó tìm ra số lượng cafe uống là khoảng 180 ml. Điểm màu đen thể hiện điểm dự báo của chúng ta</p>
+
+<p><img src="/img/posts/01_data-science/33.png" alt="" /></p>
+
+<p>Ví dụ này của chúng ta đã được tối giản đi rất nhiều. Trong thực tế thường phải xây dựng những mô hình phức tạp hơn nhiều, mà ở đó cần tính đến những yếu tố ảnh hưởng khác, ví dụ, thích hay không thích uống cafe. Hay mô hình có thể phức tạp hơn nhiều chứ không chỉ đơn thuần là phụ thuộc giữa hai thuộc tính theo quy luật một đường thẳng.</p>
+
+<p>Nguyên lý làm việc của máy học đại khái là như vậy, ý tưởng rất đơn giản: Tìm quy luật và áp dụng nó vào dữ liệu mới. Thực tế trong máy học còn được chia ra một lớp các bài toán, khi không cần dự báo giá trị cụ thể như ở ví dụ trên mà chia chúng thành một vài nhóm cụ thể. Bài toán dạng này gọi là <strong>phân loại</strong> (classification). Còn bài toán ở trên được gọi là <strong>hồi quy</strong> (regression) hay chính xác hơn là hồi quy tuyến tính (Linear regression). Chúng ta sẽ cùng tìm hiểu sâu về những vấn đề này ở các posts tiếp theo liên quan đến máy học.</p>
+
+<p><strong>Áp dụng kết quả:</strong></p>
+
+<p>Data science không kết thúc chỉ ở xác định những quy luật trong dữ liệu. Một dự án khoa học dữ liệu bất kì - là một nghiên cứu ứng dụng, mà ở đó điều quan trọng là không được quên thiết lập giả thiết ( hypothesis), lên kế hoạch thí nghiệm, và đánh giá kết quả trong khi giải quyết một bài toán thực tế.</p>
+
+<p>Cuối cùng rất quan trọng trong những bài toán kinh doanh thực tế, khi mà cần thiết hiểu rõ được lời giải bài toán tìm được bằng data science có đem lại lợi ích cho dự án hay không</p>
+
+<h2 id="lơ-i-khuyên-cho-như-ng-ba-n-muô-n-trơ-tha-nh-mô-t-nha-khoa-ho-c-dư-liê-u">Lời khuyên cho những bạn muốn trở thành một nhà khoa học dữ liệu</h2>
+
+<ul>
+<li><p>Làm việc với dữ liệu không phải là một việc đơn giản mà có thể thu lại kết quả trong chốc lát.
+Nó đòi hỏi thời gian, sự nhẫn nại, sự chính xác, óc phân tích và kinh nghiệm được tích lũy trong quá trình học tập, rèn luyện liên tục của mỗi người.</p></li>
+
+<li><p>Đừng cố gắng bắt đầu với những bài toán khó. Hãy bắt đầu từ những thứ đơn giản, thử nghiệm với các dự án nhỏ, ý tưởng của bản thân.</p></li>
+
+<li><p>Nên ghé thăm Github để xem các ví dụ và tìm kiếm một tập dữ liệu gây hứng thú với bạn và học cách phân tích nó.</p></li>
+
+<li><p>Có rất nhiều kênh thông tin bổ ích, cũng như môi trường cho các bạn thực hành:</p></li>
+</ul>
+
+<blockquote>
+<ol>
+<li><p>Tham gia các cuộc thi do Kaggle tổ chức: có nhiều cuộc thi được tổ chức liên tục, bạn có thể tham gia và thậm trí có cơ hội giành những giải thưởng lớn.</p></li>
+
+<li><p>Tham gia cộng động mạng, theo dõi những chuyên gia trong lĩnh vực này: Các bạn có thể theo dõi các trang r-bloggers, datascience101, quora, kdnuggets, …. . Hoặc theo dõi bài viết từ các nhà khoa học dữ liệu nổi tiếng.</p></li>
+</ol>
+</blockquote>
+
+<p><em>Trên đây là những tóm tắt về ngành data science và các lĩnh vực liên quan, rất mong nhận được sự đóng góp, phản hồi của các bạn. Sau bài viết này, sẽ là một loạt bài giới thiệu các kỹ thuật phân tích xử lý dữ liệu, dự báo, áp dụng máy học, học sâu với ngôn ngữ lập trình R. Hãy theo dõi website thường xuyên các bạn nhé!</em></p>
+
+<h2 id="ta-i-liê-u-tham-kha-o">Tài liệu tham khảo:</h2>
+
+<p><a href="https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century">https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century</a></p>
+
+<p><a href="https://rb.ru/opinion/chto-takoe-dt/">https://rb.ru/opinion/chto-takoe-dt/</a></p>
+
+<p>Hadley Wickham &amp; Garrett Grolemund. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16"><path d="M16 9.5c0 .373-.24.74-.5 1l-5 5c-.275.26-.634.5-1 .5-.373 0-.74-.24-1-.5L1 8a2.853 2.853 0 0 1-.7-1C.113 6.55 0 5.973 0 5.6V1.4C0 1.034.134.669.401.401.67.134 1.034 0 1.4 0h4.2c.373 0 .95.113 1.4.3.45.187.732.432 1 .7l7.5 7.502c.26.274.5.632.5.998zM3.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/machine-learning/" rel="tag">machine learning</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/deep-learning/" rel="tag">deep learning</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/python/" rel="tag">python</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/java/" rel="tag">Java</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Cuong Sai avatar" src="/img/my.PNG" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Cuong Sai</span>
+	</div>
+	<div class="authorbox__description">
+		PhD studen of CAD Department, Volgograd State Technical University, Volgograd, Russia.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/basic-elements/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Basic HTML Elements</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/slice-dice/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Khái niệm slice and dice trong khoa học dữ liệu</p></a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cuongsai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</section>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/svcuonghvktqs" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/forvis" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:svcuonghvktqs@gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>svcuonghvktqs@gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div><div id="newsletterbox">
+    <div class="white-border">
+    <div class="newsletterbox-wrap">
+    <h4>THEO DÕI BÀI VIẾT</h4>
+    <p>Hãy nhập mail của bạn để nhận được thông báo về những bài viết mới từ blog</p>
+    <form id="subscribe" onsubmit="window.open( 'http://feedburner.google.com/fb/a/mailverify?uri=KhoaHocDLiuViR', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
+    <input id="subbox" type="email" name="email" onblur="if ( this.value == '' ) { this.value = 'Nhập mail của bạn...' } " onfocus=" if ( this.value == 'Nhập mail của bạn...') { this.value = '' }" value="Nhập mail của bạn..." />
+    <input type="hidden" value="KhoaHocDLiuViR" name="uri"/>
+    <input type="hidden" value="en_US" name="loc"/>
+    <input id="subbutton" type="submit" value="Theo dõi"/>
+    </form>
+    </div>
+    </div>
+</div>
+
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/r-python/">Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/caret/">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/toan-tu-pipes-trong-r/">Tổng hợp các toán tử pipes trong R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/quan-ly-du-an-voi-rstudio/">Quản lý dự án với RStudio</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml-r/">Giới thiệu một số Machine Learning Datasets trên R</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/data-science">Data science</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/machine-learning">Machine learning</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/pipes">Pipes</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/project-management">Project management</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/r">R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/rmarkdown">Rmarkdown</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/basic-elements" title="Basic elements">Basic elements</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/classification" title="Classification">Classification</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css" title="Css">Css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-science" title="Data science">Data science</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datasets" title="Datasets">Datasets</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deep-learning" title="Deep learning">Deep learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go" title="Go">Go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html" title="Html">Html</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java" title="Java">Java</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/machine-learning" title="Machine learning">Machine learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/r" title="R">R</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/regression" title="Regression">Regression</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			Copyright &copy; 2018 Cuong Sai. All Rights Reserved.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script></body>
+</html>

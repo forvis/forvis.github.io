@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Giới thiệu về R Markdown</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.50" />
+	<meta property="og:title" content="Giới thiệu về R Markdown" />
+<meta property="og:description" content="Nghiên cứu khoa học khả lặp - reproducible research đang là xu thế mới của giới khoa học và những package sẽ giúp người nghiên cứu khoa học hoàn toàn có thể viết báo cáo của mình bằng các mã nguồn R, tận dụng các thể mạnh tính toán data visualization của R, viết biểu thức toán với Latex và có thể tự động hoá quá trình.
+Đây là văn bản R Markdown." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-11-12-gioi-thieu-r-rmarkdown/" /><meta property="article:published_time" content="2018-11-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-12T00:00:00&#43;00:00"/>
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/cs.PNG">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128408660-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo" role="banner">
+			<a class="logo__link" href="/" title="Khoa học dữ liệu" rel="home">
+				<div class="logo__title">Khoa học dữ liệu</div>
+				<div class="logo__tagline">By Cuong Sai</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">About</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/r-tutorials/">R</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-tutorials/">Python</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/statistcics-tutorials/">STATISTICS</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/new/">News</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/my-project/">Projects</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<section class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Giới thiệu về R Markdown</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-12T00:00:00">November 12, 2018</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/rmarkdown" rel="category">rmarkdown</a></span>
+</div>
+</div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		
+	</div>
+</div>
+<div class="content post__content clearfix">
+			
+
+
+<p>Nghiên cứu khoa học khả lặp - reproducible research đang là xu thế mới của giới khoa học và những package sẽ giúp người nghiên cứu khoa học hoàn toàn có thể viết báo cáo của mình bằng các mã nguồn R, tận dụng các thể mạnh tính toán data visualization của R, viết biểu thức toán với Latex và có thể tự động hoá quá trình.</p>
+<p>Đây là văn bản <a href="http://rmarkdown.rstudio.com">R Markdown</a>. Khi bạn cần làm báo cáo với code mã nguồn
+kèm theo thì Rmarkdown và knirt sẽ là giải pháp vô cùng tuyệt vời trong R.</p>
+<div id="rmarkdown-lam-vic-nhu-th-nao" class="section level3">
+<h3>1. Rmarkdown làm việc như thế nào?</h3>
+<p>Đây là một file R Markdown với định dạng là .Rmd:</p>
+<p><img src="/img/rmarkdown/1.png" /></p>
+<p>File này gồm 3 thành phần chính:</p>
+<ul>
+<li>Tiêu đề: —s</li>
+<li>R code chunks: ```s</li>
+<li>Văn bản text bình thường</li>
+</ul>
+<p>Để xuất báo cáo ra từ .Rmd file này ta dùng lệnh <strong>render</strong>:</p>
+<pre class="r"><code>library(rmarkdown)
+render(&quot;tên-của-file.Rmd&quot;)</code></pre>
+<p>R markdown sẽ xuất ra file mới có chứa text, code, và kết quả từ .Rmd file. File mới này có thể là
+<a href="https://rmarkdown.rstudio.com/html_document_format.html">web page</a>, <a href="https://rmarkdown.rstudio.com/pdf_document_format.html">PDF</a>,<a href="https://rmarkdown.rstudio.com/word_document_format.html">MS Word</a> văn bản, <a href="https://rmarkdown.rstudio.com/ioslides_presentation_format.html">slide show</a>, <a href="https://rmarkdown.rstudio.com/r_notebooks.html">notebook</a>, <a href="https://rmarkdown.rstudio.com/tufte_handout_format.html">handout</a>, <a href="https://bookdown.org/">book</a>,
+<a href="https://rmarkdown.rstudio.com/flexdashboard/index.html">dashboard</a>, <a href="https://rmarkdown.rstudio.com/package_vignette_format.html">package Vinette(html)</a>, hay là <a href="https://rmarkdown.rstudio.com/formats.html">các định dạng khác</a>.</p>
+<p>Quá trình làm việc sẽ diễn ra như sau:</p>
+<p><img src="/img/rmarkdown/2.png" /></p>
+<p>Khi bạn chạy lệnh <strong>render</strong> R Markdown sẽ cấp cho <strong>knirt</strong> file .Rmd. <strong>knirt</strong> sẽ thi hành tất cả các code chunks trong văn bản và tạo ra một file mới với định dạng .md bao gồm code mã nguồn và kết qur thực hiện code chunks.</p>
+<p>File mardown này đươc được khởi tạo bằng <strong>knirt</strong> và sau đó được xử lý bằng <strong>pandoc</strong> để tạo ra file cuối cùng.</p>
+<p>Quá trình này nghe có vẻ phức tạp nhưng R Markdown thực hiện nó vô cùng đơn giản bằng các đóng gói tất xả các quy trình trên bằng một hàm <strong>render</strong>.</p>
+</div>
+<div id="code-chunks" class="section level3">
+<h3>2. Code chunks</h3>
+<p>ví dụ 1 R Markdown file dưới đây bao gồm 3 code chunks:</p>
+<p><img src="/img/rmarkdown/3.png" /></p>
+<p>Để thêm một chunk mới bạn có thể click vào <em>insert chunk</em> hoặc dùng tổ hợp phím <em>Ctrl+Alt+</em>I hoặc tạo thủ công:</p>
+<pre class="r"><code># ```{r} và ```</code></pre>
+<p>Để thi hành code chunk này thì bạn click <em>run</em> hoặc nhấn tổ hợp phím <em>Ctrl+Shift+Enter</em>.</p>
+<p>Khi bạn lưu file notebook hay HTML có chứa code thì kết quả được lưu lại kèm theo nó là nút <em>Preview</em> hoặc tổ phím <em>Ctrl+Shift+K</em> giúp cho chúng ta có thể xem trước kết qủa của văn bản.</p>
+<div id="code-chunks-co-nhng-tuy-chon-cuc-b-sau" class="section level4">
+<h4>Code chunks có những tùy chọn cục bộ sau:</h4>
+<ul>
+<li>include = FALSE prevents code and results from appearing in the finished file. R Markdown still runs the code in the chunk, and the results can be used by other chunks.</li>
+<li>echo = FALSE prevents code, but not the results from appearing in the finished file. This is a useful way to embed figures.</li>
+<li>message = FALSE prevents messages that are generated by code from appearing in the finished file.</li>
+<li>warning = FALSE prevents warnings that are generated by code from appearing in the finished.</li>
+<li>fig.cap = “…” adds a caption to graphical results.</li>
+</ul>
+<p>Có thể xem thêm các tùy chọn cho code chunks ở <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">Markdown Reference Guide</a></p>
+<p>Ví dụ với tùy chọn <strong>include</strong>:</p>
+<p><img src="/img/rmarkdown/4.png" /></p>
+</div>
+<div id="tuy-chon-toan-cuc-cho-code-chunks" class="section level4">
+<h4>Tùy chọn toàn cục cho Code chunks:</h4>
+<p>Để áp dụng tùy chọn cho tất cả các code chunks có trong văn bản của bạn hay còn gọi là thiết lập toàn cục, các bạn gọi <em>knitr::opts_chunk$set</em>.</p>
+<p>Ví dụ:</p>
+<pre class="r"><code>#```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+#```</code></pre>
+</div>
+</div>
+<div id="line-code-trong-r-markdown" class="section level3">
+<h3>3. Line code trong R Markdown</h3>
+<p>Kết quả thực hiện code có thể chèn trực tiếp vào text của một file .Rmd bằng cú pháp sau</p>
+<pre class="r"><code># ` r function`</code></pre>
+<p>Ví dụ dưới đây gọi <em>colorFunc</em>, và trả về kết quả là <em>heat.colors.</em>:</p>
+<p><img src="/img/rmarkdown/5.png" /></p>
+<p>Điều này thực sự có ích khi chúng ta cần cập nhật báo cáo với một function khác:</p>
+<p><img src="/img/rmarkdown/6.png" /></p>
+<p>R Markdown sẽ luôn luôn:</p>
+<ul>
+<li>Hiển thị kết quả của line code, chứ không hiện thị code</li>
+<li>Sử dụng text liên quan để hiện thị kết quả</li>
+</ul>
+</div>
+<div id="code-languages" class="section level3">
+<h3>4. Code Languages</h3>
+<p><strong>Knirt</strong> có thể thực thi code của rất nhiều ngôn ngữ khác chứ không chỉ riêng R như là:</p>
+<ul>
+<li>Python</li>
+<li>Python</li>
+<li>SQL</li>
+<li>Bash</li>
+<li>Rcpp</li>
+<li>Stan</li>
+<li>JavaScript</li>
+<li>CSS</li>
+</ul>
+<p>Ví dụ thực thi code trong <strong>Bash</strong> và <strong>Python</strong>:</p>
+<p><img src="/img/rmarkdown/7.png" /></p>
+<p>Để tìm hiểu thêm về cách sử dụng các ngôn ngữ khác với R Markdown <a href="https://rmarkdown.rstudio.com/authoring_knitr_engines.html">ở đây</a></p>
+</div>
+<div id="s-dung-parameters-trong-r-markdown" class="section level3">
+<h3>5. Sử dụng Parameters trong R Markdown</h3>
+<p>R Markdown document có thể bao gồm một số tham số (parameters) được thiết lập khi làn báo cáo. Ví dụ dưới đây sử dụng data parameter để xác định data set cho việc tạo biểu đồ:</p>
+<p><img src="/img/rmarkdown/8.png" /></p>
+<div id="declaring-parameters" class="section level4">
+<h4>Declaring Parameters:</h4>
+<p>Parameters được tuyên bố bằng cách sử dụng trường params trong YAML header của văn bản. Ví dụ văn bản ở trên tạo parameter data và gán mặc định cho nó là “hawaii”</p>
+</div>
+<div id="s-dung-parameters-trong-code" class="section level4">
+<h4>Sử dụng parameters trong Code:</h4>
+<p>Các parameters đều sẵn sàng trong môi trường knit như là một danh sách chỉ để đọc với tên params. Để sử dụng parameter trong Code, cần gọi theo cú pháp sau:</p>
+<pre class="r"><code># params$&lt;parameter name&gt;</code></pre>
+</div>
+<div id="thit-lp-parameters-values" class="section level4">
+<h4>Thiết lập parameters values:</h4>
+<p>Thêm params argument vào <strong>render</strong> để tạo báo cáo sử dụng tập hợp parameter values mới. Đưới đâylà sửa đổi báo cáo sự dụng <em>aleutians data set</em>:</p>
+<pre class="r"><code>#render(&quot;5-parameters.Rmd&quot;, params = list(data = &quot;aleutians&quot;))</code></pre>
+<p><img src="/img/rmarkdown/9.png" /></p>
+<p>Tốt hơn, nhấn vào tùy chọn “Knit with Parameters” để thiết lập các parameters, render, và xem trước báo cáo trong 1 bước:</p>
+<p><img src="/img/rmarkdown/10.png" /></p>
+<p>Parameters thực sự hữu ích khi bạn muốn re-render một báo cáo tương tự với values đầu vào mới, ví dụ như:</p>
+<ul>
+<li>Chạy một báo cáo cụ thể đến một bộ phận hay địa lý khu vực.</li>
+<li>Chạy một bản báo cáo đó bao gồm một khoảng thời gian cụ thể trong thời gian.</li>
+<li>Chạy nhiều phiên bản của một báo cáo riêng biệt vơi bộ lõi giả định.</li>
+</ul>
+<p>Để tìm hiểu thêm về paramaterized reports <a href="https://rmarkdown.rstudio.com/developer_parameterized_reports.html">tại đây</a></p>
+</div>
+</div>
+<div id="cac-thit-lp-cho-bang-d-liu-trong-r-markdown" class="section level3">
+<h3>6. Các thiết lập cho bảng dữ liệu trong R Markdown</h3>
+<p>Với mặc định R Markdown hiển thị data frames và matrixes giống nhứ trong R terminal (in a monospaced font). Nếu bạn muốn dữ liệu của mình được hiển thị dưới dạng khác bạn có thể sử dụng hàm <strong>knirt::kable</strong> như ví dụ bên dưới:</p>
+<p><img src="/img/rmarkdown/11.png" /></p>
+<p>Nêu bạn sử dụng chunk tùy chọn <strong>results = ‘asis’</strong>. Điều này cần thiết để đảm bảo rằng kết quả table output không chỉ được xử lý đơn thuần bởi knirt.</p>
+</div>
+<div id="markdown-basics" class="section level3">
+<h3>7. Markdown Basics</h3>
+<p>Đinh dạng văn bản text trong R Markdown file với Pandoc’s Markdown:</p>
+<p><img src="/img/rmarkdown/12.png" /></p>
+<p>Bạn có thể sử dụng Pandoc’s Markdown để tạo:</p>
+<ul>
+<li>Headers</li>
+<li>Lists</li>
+<li>Links</li>
+<li>Images</li>
+<li>Block quotes</li>
+<li>Latex equations</li>
+<li>Horizontal rules</li>
+<li>Tables</li>
+<li>Footnotes</li>
+<li>Bibliographies and Citations</li>
+<li>Slide breaks</li>
+<li>Italicized text</li>
+<li>Bold text</li>
+<li>Superscripts</li>
+<li>Subscripts</li>
+<li>Strikethrough text</li>
+</ul>
+<p>Bạn có thể tìm hiểu thêm về Markdown ở <a href="https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html">Pandoc’s Markdown</a> hoặc <a href="https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf">R Markdown Cheatsheet</a></p>
+</div>
+<div id="vi-du" class="section level2">
+<h2>Ví dụ</h2>
+<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
+<p>You can embed an R code chunk like this:</p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<pre class="r"><code>fit &lt;- lm(dist ~ speed, data = cars)
+fit</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = dist ~ speed, data = cars)
+## 
+## Coefficients:
+## (Intercept)        speed  
+##     -17.579        3.932</code></pre>
+</div>
+<div id="including-plots" class="section level2">
+<h2>Including Plots</h2>
+<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
+<pre class="r"><code>par(mar = c(0, 1, 0, 1))
+pie(
+  c(280, 60, 20),
+  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
+  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
+  init.angle = -50, border = NA
+)</code></pre>
+<div class="figure"><span id="fig:pie"></span>
+<img src="/post/2018-11-12-gioi-thieu-r-rmarkdown_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
+<p class="caption">
+Figure 1: A fancy pie chart.
+</p>
+</div>
+</div>
+
+		</div>
+		
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Cuong Sai avatar" src="/img/my.PNG" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Cuong Sai</span>
+	</div>
+	<div class="authorbox__description">
+		PhD studen of CAD Department, Volgograd State Technical University, Volgograd, Russia.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/slice-dice/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Khái niệm slice and dice trong khoa học dữ liệu</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/r-va-machinelearning/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">R và Machine Learning</p></a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cuongsai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</section>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/svcuonghvktqs" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/forvis" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:svcuonghvktqs@gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>svcuonghvktqs@gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div><div id="newsletterbox">
+    <div class="white-border">
+    <div class="newsletterbox-wrap">
+    <h4>THEO DÕI BÀI VIẾT</h4>
+    <p>Hãy nhập mail của bạn để nhận được thông báo về những bài viết mới từ blog</p>
+    <form id="subscribe" onsubmit="window.open( 'http://feedburner.google.com/fb/a/mailverify?uri=KhoaHocDLiuViR', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
+    <input id="subbox" type="email" name="email" onblur="if ( this.value == '' ) { this.value = 'Nhập mail của bạn...' } " onfocus=" if ( this.value == 'Nhập mail của bạn...') { this.value = '' }" value="Nhập mail của bạn..." />
+    <input type="hidden" value="KhoaHocDLiuViR" name="uri"/>
+    <input type="hidden" value="en_US" name="loc"/>
+    <input id="subbutton" type="submit" value="Theo dõi"/>
+    </form>
+    </div>
+    </div>
+</div>
+
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/r-python/">Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/caret/">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/toan-tu-pipes-trong-r/">Tổng hợp các toán tử pipes trong R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/quan-ly-du-an-voi-rstudio/">Quản lý dự án với RStudio</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml-r/">Giới thiệu một số Machine Learning Datasets trên R</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/data-science">Data science</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/machine-learning">Machine learning</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/pipes">Pipes</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/project-management">Project management</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/r">R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/rmarkdown">Rmarkdown</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/basic-elements" title="Basic elements">Basic elements</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/classification" title="Classification">Classification</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css" title="Css">Css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-science" title="Data science">Data science</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datasets" title="Datasets">Datasets</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deep-learning" title="Deep learning">Deep learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go" title="Go">Go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html" title="Html">Html</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java" title="Java">Java</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/machine-learning" title="Machine learning">Machine learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/r" title="R">R</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/regression" title="Regression">Regression</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			Copyright &copy; 2018 Cuong Sai. All Rights Reserved.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script></body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Khoa học dữ liệu</title>
+    <link>/categories/data-science/</link>
+    <description>Recent content in Data Science on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</title>
+      <link>/post/r-python/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-python/</guid>
+      <description>Một câu hỏi thường hay đặt ra bởi nhiều nhà khoa học dữ liệu, đặc biệt là những người mới trong lĩnh vực này đó là: Python hay R tốt hơn cho khoa học dữ liệu? Thực ra còn nhiều ngôn ngữ khác cho khoa học dữ liệu như là: Java, C, Scala, Matlab, Julia,…nhưng Python và R đang dẫn đầu trong phần lớn thế giới khoa học dữ liệu.</description>
+    </item>
+    
+    <item>
+      <title>Quản lý dự án với RStudio</title>
+      <link>/post/quan-ly-du-an-voi-rstudio/</link>
+      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/quan-ly-du-an-voi-rstudio/</guid>
+      <description>Quá trình khoa học (scientific process) trong khoa học dữ liệu - Là một quá trình gia tăng tự nhiên với rất nhiều các projects được bắt đầu kèm theo code, sau đó là các bản thảo (manuscript),&amp;hellip; và cuối cùng là mọi thứ được pha trộn vào nhau một cách hỗn tạp.
+Quản lý dự án của bạn một cách khả lặp (reproducible) không chỉ làm cho khoa học của bạn khả lặp mà nó còn giúp cho công việc của các bạn đơn giản và dễ dàng hơn rất nhiều.</description>
+    </item>
+    
+    <item>
+      <title>Khái niệm slice and dice trong khoa học dữ liệu</title>
+      <link>/post/slice-dice/</link>
+      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/slice-dice/</guid>
+      <description>Slice có nghĩa là cắt lát, dice có nghĩa là rút ngắn. Vì vậy slice and dice là quá trình phân chia một khối dữ liệu thành các phần nhỏ hơn hoặc xem xét (nghiên cứu ) chúng tù những quan điểm, khía cạnh khác nhau để có thể hiểu nó rõ hơn.
+Ví dụ chúng ta có dữ liệu nhiều chiều (cube) (nếu dữ liệu có số chiều lớn hơn 3 thì nó được gọi là hypercube):</description>
+    </item>
+    
+    <item>
+      <title>Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản</title>
+      <link>/post/mo-dau-ve-datascience/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mo-dau-ve-datascience/</guid>
+      <description>Khoa học dữ liệu là gì? Khoa học dữ liệu (data science) là một trong những ngành đang có nhu cầu tuyển dụng cao ở thời điểm hiện tại cũng như trong tương lai xa. Nhà khoa học dữ liệu (Data Scientist) được Harvard Business Review đánh giá là “công việc hấp dẫn nhất thế kỷ 21”.
+Vậy khoa học dữ liệu là gì? Trong thực tế không một ai có thể xác định chính xác khoa học dữ liệu là gì, nói cách khác một định nghĩa chính xác về khoa học dữ liệu không tồn tại - đây là một khái niệm liên ngành và rất rộng.</description>
+    </item>
+    
+  </channel>
+</rss>

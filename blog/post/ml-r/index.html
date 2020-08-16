@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Giới thiệu một số Machine Learning Datasets trên R</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.50" />
+	<meta property="og:title" content="Giới thiệu một số Machine Learning Datasets trên R" />
+<meta property="og:description" content="Ở post này tôi sẽ giới thiệu một số Machine Learning Datasets trên R.
+Datasets là nguyên liệu vô cùng quan trọng giúp chúng ta có thể test, thực hành và thử nghiệm với các machine learning techniques và phát triển kỹ năng của mình với platform. Ở mục này các bạn sẽ được giới thiệu các cách để load các standard datasets dành cho bài toán classification và regression trên R." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/ml-r/" /><meta property="article:published_time" content="2018-11-13T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-13T00:00:00&#43;00:00"/>
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/cs.PNG">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128408660-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo" role="banner">
+			<a class="logo__link" href="/" title="Khoa học dữ liệu" rel="home">
+				<div class="logo__title">Khoa học dữ liệu</div>
+				<div class="logo__tagline">By Cuong Sai</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">About</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/r-tutorials/">R</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-tutorials/">Python</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/statistcics-tutorials/">STATISTICS</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/new/">News</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/my-project/">Projects</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<section class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Giới thiệu một số Machine Learning Datasets trên R</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-13T00:00:00">November 13, 2018</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/r" rel="category">R</a>, <a class="meta__link" href="/categories/machine-learning" rel="category">Machine Learning</a></span>
+</div>
+</div>
+		</header>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-package-dataset">1. Package dataset</a></li>
+<li><a href="#2-package-mlbench">2. Package: mlbench</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			
+
+<p>Ở post này tôi sẽ giới thiệu một số Machine Learning Datasets trên R.</p>
+
+<p>Datasets là <strong>nguyên liệu</strong> vô cùng quan trọng giúp chúng ta có thể
+test, thực hành và thử nghiệm với các machine learning techniques và
+phát triển kỹ năng của mình với platform. Ở mục này các bạn sẽ được giới
+thiệu các cách để load các standard datasets dành cho bài toán
+<strong>classification</strong> và <strong>regression</strong> trên R. Cụ thể là các bạn sẽ biết
+được:</p>
+
+<ul>
+<li><p>Các R packages mà các bạn có thể dùng để load standard machine
+learning datasets.</p></li>
+
+<li><p>Các datasets cụ thể mà bạn có thể sử dụng để thực hành machine
+learning.</p></li>
+</ul>
+
+<h4 id="1-package-dataset">1. Package dataset</h4>
+
+<p>Đầy là gói cơ sở đi kèm với R, điều này có nghĩa là các bạn không cần
+phải load package này. Nó bao gồm một số lượng lớn datasets mà bạn có
+thể sử dụng. Để load một dataset từ package này các bạn gõ lệnh sau:</p>
+
+<pre><code>data(TenCuaDataset)
+</code></pre>
+
+<p>Để kiểm tra danh sách tất cả các datasets có trong package các bạn gõ:</p>
+
+<pre><code># list all datasets in the package
+library(help = &quot;datasets&quot;)
+</code></pre>
+
+<p>Dưới đây là một số datasets có trong package này:</p>
+
+<p><strong>Iris Flowers Dataset</strong></p>
+
+<ul>
+<li>Mô tả: Dự báo các loài hoa Iris từ kích thước của hoa.</li>
+<li>Loại: Multi-class classification.</li>
+<li>Kích thước: 150 mẫu, 5 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Numeric.</li>
+<li>Đầu ra (output): Categorical, 3 class labels</li>
+<li>UCI Machine Learning
+Repository:<a href="https://archive.ics.uci.edu/ml/datasets/Iris" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Iris">https://archive.ics.uci.edu/ml/datasets/Iris</a></a>.</li>
+<li>Published accuracy results:
+<a href="http://www.is.umk.pl/projects/rules.html#Iris" class="uri"><a href="http://www.is.umk.pl/projects/rules.html#Iris">http://www.is.umk.pl/projects/rules.html#Iris</a></a>.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># iris flowers datasets
+data(iris)
+head(iris)
+
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 1          5.1         3.5          1.4         0.2  setosa
+## 2          4.9         3.0          1.4         0.2  setosa
+## 3          4.7         3.2          1.3         0.2  setosa
+## 4          4.6         3.1          1.5         0.2  setosa
+## 5          5.0         3.6          1.4         0.2  setosa
+## 6          5.4         3.9          1.7         0.4  setosa
+</code></pre>
+
+<p><strong>Longley’s Economic Regression Data</strong></p>
+
+<ul>
+<li>Mô tả: Dự báo số lượng người có việc làm từ các economic variables.</li>
+<li>Loại: Regression.</li>
+<li>Kích thước: 16 mẫu, 7 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Numeric.</li>
+<li>Đầu ra (output): Numeric.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Longley's Economic Regression Data
+data(longley)
+head(longley)
+
+##      GNP.deflator     GNP Unemployed Armed.Forces Population Year Employed
+## 1947         83.0 234.289      235.6        159.0    107.608 1947   60.323
+## 1948         88.5 259.426      232.5        145.6    108.632 1948   61.122
+## 1949         88.2 258.054      368.2        161.6    109.773 1949   60.171
+## 1950         89.5 284.599      335.1        165.0    110.929 1950   61.187
+## 1951         96.2 328.975      209.9        309.9    112.075 1951   63.221
+## 1952         98.1 346.999      193.2        359.4    113.270 1952   63.639
+</code></pre>
+
+<h4 id="2-package-mlbench">2. Package: mlbench</h4>
+
+<p>Mô tả package: Tập hợp (bộ sưu tập) các bài toán nhân tạo và thực tế về
+machine learning, bao gồm một số datasets từ UCI repository. Để tim hiểu
+thêm về mlbench package các bạn có thể tìm kiểm thông tin trên trang
+<strong>CRAN</strong>.</p>
+
+<p>Nếu chưa cài <strong>mlbench package</strong> các bạn có thể cài đặt bằng cách gõ
+lệnh sau:</p>
+
+<pre><code>install.packages(&quot;mlbench&quot;)
+</code></pre>
+
+<p>Và load package bằng cách:</p>
+
+<pre><code># load the package
+library(mlbench)
+</code></pre>
+
+<p>Để kiểm tra danh sách tất cả các datasets của package này:</p>
+
+<pre><code># list the contents of the package
+library(help = &quot;mlbench&quot;)
+</code></pre>
+
+<p>Dưới đây là một vài datasets từ package này:</p>
+
+<p><strong>Boston Housing Data</strong></p>
+
+<ul>
+<li>Mô tả: Dự báo giá trung bình của nhà ở vùng ngoại ô của Boston.</li>
+<li>Loại: Regression.</li>
+<li>Kích thước: 506 mẫu, 14 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Numeric.</li>
+<li>Đầu ra (output): Numeric</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Housing" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Housing">https://archive.ics.uci.edu/ml/datasets/Housing</a></a>.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Boston Housing Data
+data(BostonHousing)
+head(BostonHousing)
+
+##      crim zn indus chas   nox    rm  age    dis rad tax ptratio      b
+## 1 0.00632 18  2.31    0 0.538 6.575 65.2 4.0900   1 296    15.3 396.90
+## 2 0.02731  0  7.07    0 0.469 6.421 78.9 4.9671   2 242    17.8 396.90
+## 3 0.02729  0  7.07    0 0.469 7.185 61.1 4.9671   2 242    17.8 392.83
+## 4 0.03237  0  2.18    0 0.458 6.998 45.8 6.0622   3 222    18.7 394.63
+## 5 0.06905  0  2.18    0 0.458 7.147 54.2 6.0622   3 222    18.7 396.90
+## 6 0.02985  0  2.18    0 0.458 6.430 58.7 6.0622   3 222    18.7 394.12
+##   lstat medv
+## 1  4.98 24.0
+## 2  9.14 21.6
+## 3  4.03 34.7
+## 4  2.94 33.4
+## 5  5.33 36.2
+## 6  5.21 28.7
+</code></pre>
+
+<p><strong>Wisconsin Breast Cancer Database</strong></p>
+
+<ul>
+<li>Mô tả: Dự báo xem một mẫu mô là ác hay lành tính dựa vào các thuộc
+tính của nó.</li>
+<li>Loại: Binary Classification</li>
+<li>Kích thước: 699 mẫu, 11 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Integer (Nominal).</li>
+<li>Đầu ra (output): Categorical, 2 class labels.</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Breast+" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Breast+">https://archive.ics.uci.edu/ml/datasets/Breast+</a></a>
+Cancer+Wisconsin+(Original).</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Wisconsin Breast Cancer Database
+data(BreastCancer)
+head(BreastCancer)
+
+##        Id Cl.thickness Cell.size Cell.shape Marg.adhesion Epith.c.size
+## 1 1000025            5         1          1             1            2
+## 2 1002945            5         4          4             5            7
+## 3 1015425            3         1          1             1            2
+## 4 1016277            6         8          8             1            3
+## 5 1017023            4         1          1             3            2
+## 6 1017122            8        10         10             8            7
+##   Bare.nuclei Bl.cromatin Normal.nucleoli Mitoses     Class
+## 1           1           3               1       1    benign
+## 2          10           3               2       1    benign
+## 3           2           3               1       1    benign
+## 4           4           3               7       1    benign
+## 5           1           3               1       1    benign
+## 6          10           9               7       1 malignant
+</code></pre>
+
+<p><strong>Glass Identification Database</strong></p>
+
+<ul>
+<li>Mô tả: Dự đoán loại thủy tinh dựa vào tính chất hóa học.</li>
+<li>Loại: Regression.</li>
+<li>Kích thước: 214 mẫu, 10 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Integer (Nominal).</li>
+<li>Đầu ra (output): Categorical, 7 class labels.</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Glass+" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Glass+">https://archive.ics.uci.edu/ml/datasets/Glass+</a></a>
+Identification.</li>
+<li>Published accuracy results:
+<a href="http://www.is.umk.pl/projects/datasets.html#Other" class="uri"><a href="http://www.is.umk.pl/projects/datasets.html#Other">http://www.is.umk.pl/projects/datasets.html#Other</a></a>.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Glass Identification Database
+data(Glass)
+head(Glass)
+
+##        RI    Na   Mg   Al    Si    K   Ca Ba   Fe Type
+## 1 1.52101 13.64 4.49 1.10 71.78 0.06 8.75  0 0.00    1
+## 2 1.51761 13.89 3.60 1.36 72.73 0.48 7.83  0 0.00    1
+## 3 1.51618 13.53 3.55 1.54 72.99 0.39 7.78  0 0.00    1
+## 4 1.51766 13.21 3.69 1.29 72.61 0.57 8.22  0 0.00    1
+## 5 1.51742 13.27 3.62 1.24 73.08 0.55 8.07  0 0.00    1
+## 6 1.51596 12.79 3.61 1.62 72.97 0.64 8.07  0 0.26    1
+</code></pre>
+
+<p><strong>Johns Hopkins University Ionosphere database</strong></p>
+
+<ul>
+<li>Mô tả: Dự đoán high-energy structures trong khí quyển dựa vào
+antenna data.</li>
+<li>Loại: Regression.</li>
+<li>Kích thước: 351 mẫu, 35 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Integer (Nominal).</li>
+<li>Đầu ra (output): Categorical, 2 class labels.</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Ionosphere" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Ionosphere">https://archive.ics.uci.edu/ml/datasets/Ionosphere</a></a>.</li>
+<li>Published accuracy results:
+<a href="http://www.is.umk.pl/projects/datasets.html#Ionosphere" class="uri"><a href="http://www.is.umk.pl/projects/datasets.html#Ionosphere">http://www.is.umk.pl/projects/datasets.html#Ionosphere</a></a>.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Johns Hopkins University Ionosphere database
+data(Ionosphere)
+head(Ionosphere)
+
+##   V1 V2      V3       V4       V5       V6       V7       V8      V9
+## 1  1  0 0.99539 -0.05889  0.85243  0.02306  0.83398 -0.37708 1.00000
+## 2  1  0 1.00000 -0.18829  0.93035 -0.36156 -0.10868 -0.93597 1.00000
+## 3  1  0 1.00000 -0.03365  1.00000  0.00485  1.00000 -0.12062 0.88965
+## 4  1  0 1.00000 -0.45161  1.00000  1.00000  0.71216 -1.00000 0.00000
+## 5  1  0 1.00000 -0.02401  0.94140  0.06531  0.92106 -0.23255 0.77152
+## 6  1  0 0.02337 -0.00592 -0.09924 -0.11949 -0.00763 -0.11824 0.14706
+##        V10     V11      V12     V13      V14      V15      V16      V17
+## 1  0.03760 0.85243 -0.17755 0.59755 -0.44945  0.60536 -0.38223  0.84356
+## 2 -0.04549 0.50874 -0.67743 0.34432 -0.69707 -0.51685 -0.97515  0.05499
+## 3  0.01198 0.73082  0.05346 0.85443  0.00827  0.54591  0.00299  0.83775
+## 4  0.00000 0.00000  0.00000 0.00000  0.00000 -1.00000  0.14516  0.54094
+## 5 -0.16399 0.52798 -0.20275 0.56409 -0.00712  0.34395 -0.27457  0.52940
+## 6  0.06637 0.03786 -0.06302 0.00000  0.00000 -0.04572 -0.15540 -0.00343
+##        V18      V19      V20      V21      V22      V23      V24      V25
+## 1 -0.38542  0.58212 -0.32192  0.56971 -0.29674  0.36946 -0.47357  0.56811
+## 2 -0.62237  0.33109 -1.00000 -0.13151 -0.45300 -0.18056 -0.35734 -0.20332
+## 3 -0.13644  0.75535 -0.08540  0.70887 -0.27502  0.43385 -0.12062  0.57528
+## 4 -0.39330 -1.00000 -0.54467 -0.69975  1.00000  0.00000  0.00000  1.00000
+## 5 -0.21780  0.45107 -0.17813  0.05982 -0.35575  0.02309 -0.52879  0.03286
+## 6 -0.10196 -0.11575 -0.05414  0.01838  0.03669  0.01519  0.00888  0.03513
+##        V26      V27      V28      V29      V30      V31      V32      V33
+## 1 -0.51171  0.41078 -0.46168  0.21266 -0.34090  0.42267 -0.54487  0.18641
+## 2 -0.26569 -0.20468 -0.18401 -0.19040 -0.11593 -0.16626 -0.06288 -0.13738
+## 3 -0.40220  0.58984 -0.22145  0.43100 -0.17365  0.60436 -0.24180  0.56045
+## 4  0.90695  0.51613  1.00000  1.00000 -0.20099  0.25682  1.00000 -0.32382
+## 5 -0.65158  0.13290 -0.53206  0.02431 -0.62197 -0.05707 -0.59573 -0.04608
+## 6 -0.01535 -0.03240  0.09223 -0.07859  0.00732  0.00000  0.00000 -0.00039
+##        V34 Class
+## 1 -0.45300  good
+## 2 -0.02447   bad
+## 3 -0.38238  good
+## 4  1.00000   bad
+## 5 -0.65697  good
+## 6  0.12011   bad
+</code></pre>
+
+<p><strong>Pima Indians Diabetes Database</strong></p>
+
+<ul>
+<li>Mô tả: Predict the onset of diabetes in female Pima Indians from
+medical record data.</li>
+<li>Loại: Binary Classification.</li>
+<li>Kích thước: 768 mẫu, 9 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Numeric.</li>
+<li>Đầu ra (output):Categorical, 2 class labels.</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Pima+" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Pima+">https://archive.ics.uci.edu/ml/datasets/Pima+</a></a>
+Indians+Diabetes.</li>
+<li>Published accuracy results:
+<a href="http://www.is.umk.pl/projects/datasets.html#Diabetes" class="uri"><a href="http://www.is.umk.pl/projects/datasets.html#Diabetes">http://www.is.umk.pl/projects/datasets.html#Diabetes</a></a>.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Pima Indians Diabetes Database
+data(PimaIndiansDiabetes)
+head(PimaIndiansDiabetes)
+
+##   pregnant glucose pressure triceps insulin mass pedigree age diabetes
+## 1        6     148       72      35       0 33.6    0.627  50      pos
+## 2        1      85       66      29       0 26.6    0.351  31      neg
+## 3        8     183       64       0       0 23.3    0.672  32      pos
+## 4        1      89       66      23      94 28.1    0.167  21      neg
+## 5        0     137       40      35     168 43.1    2.288  33      pos
+## 6        5     116       74       0       0 25.6    0.201  30      neg
+</code></pre>
+
+<p><strong>Sonar, Mines vs. Rocks Dataset</strong></p>
+
+<ul>
+<li>Mô tả: Predict metal or rock returns from sonar return data.</li>
+<li>Loại: Binary Classification.</li>
+<li>Kích thước: 208 mẫu, 61 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Numeric.</li>
+<li>Đầu ra (output):Categorical, 2 class labels.</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Connectionist+" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Connectionist+">https://archive.ics.uci.edu/ml/datasets/Connectionist+</a></a>
+Bench+(Sonar,+Mines+vs.+Rocks).</li>
+<li>Published accuracy results:
+<a href="http://www.is.umk.pl/projects/datasets.html#Sonar" class="uri"><a href="http://www.is.umk.pl/projects/datasets.html#Sonar">http://www.is.umk.pl/projects/datasets.html#Sonar</a></a>.</li>
+</ul>
+
+<!-- -->
+
+<pre><code># Sonar, Mines vs. Rocks
+data(Sonar)
+head(Sonar)
+
+##       V1     V2     V3     V4     V5     V6     V7     V8     V9    V10
+## 1 0.0200 0.0371 0.0428 0.0207 0.0954 0.0986 0.1539 0.1601 0.3109 0.2111
+## 2 0.0453 0.0523 0.0843 0.0689 0.1183 0.2583 0.2156 0.3481 0.3337 0.2872
+## 3 0.0262 0.0582 0.1099 0.1083 0.0974 0.2280 0.2431 0.3771 0.5598 0.6194
+## 4 0.0100 0.0171 0.0623 0.0205 0.0205 0.0368 0.1098 0.1276 0.0598 0.1264
+## 5 0.0762 0.0666 0.0481 0.0394 0.0590 0.0649 0.1209 0.2467 0.3564 0.4459
+## 6 0.0286 0.0453 0.0277 0.0174 0.0384 0.0990 0.1201 0.1833 0.2105 0.3039
+##      V11    V12    V13    V14    V15    V16    V17    V18    V19    V20
+## 1 0.1609 0.1582 0.2238 0.0645 0.0660 0.2273 0.3100 0.2999 0.5078 0.4797
+## 2 0.4918 0.6552 0.6919 0.7797 0.7464 0.9444 1.0000 0.8874 0.8024 0.7818
+## 3 0.6333 0.7060 0.5544 0.5320 0.6479 0.6931 0.6759 0.7551 0.8929 0.8619
+## 4 0.0881 0.1992 0.0184 0.2261 0.1729 0.2131 0.0693 0.2281 0.4060 0.3973
+## 5 0.4152 0.3952 0.4256 0.4135 0.4528 0.5326 0.7306 0.6193 0.2032 0.4636
+## 6 0.2988 0.4250 0.6343 0.8198 1.0000 0.9988 0.9508 0.9025 0.7234 0.5122
+##      V21    V22    V23    V24    V25    V26    V27    V28    V29    V30
+## 1 0.5783 0.5071 0.4328 0.5550 0.6711 0.6415 0.7104 0.8080 0.6791 0.3857
+## 2 0.5212 0.4052 0.3957 0.3914 0.3250 0.3200 0.3271 0.2767 0.4423 0.2028
+## 3 0.7974 0.6737 0.4293 0.3648 0.5331 0.2413 0.5070 0.8533 0.6036 0.8514
+## 4 0.2741 0.3690 0.5556 0.4846 0.3140 0.5334 0.5256 0.2520 0.2090 0.3559
+## 5 0.4148 0.4292 0.5730 0.5399 0.3161 0.2285 0.6995 1.0000 0.7262 0.4724
+## 6 0.2074 0.3985 0.5890 0.2872 0.2043 0.5782 0.5389 0.3750 0.3411 0.5067
+##      V31    V32    V33    V34    V35    V36    V37    V38    V39    V40
+## 1 0.1307 0.2604 0.5121 0.7547 0.8537 0.8507 0.6692 0.6097 0.4943 0.2744
+## 2 0.3788 0.2947 0.1984 0.2341 0.1306 0.4182 0.3835 0.1057 0.1840 0.1970
+## 3 0.8512 0.5045 0.1862 0.2709 0.4232 0.3043 0.6116 0.6756 0.5375 0.4719
+## 4 0.6260 0.7340 0.6120 0.3497 0.3953 0.3012 0.5408 0.8814 0.9857 0.9167
+## 5 0.5103 0.5459 0.2881 0.0981 0.1951 0.4181 0.4604 0.3217 0.2828 0.2430
+## 6 0.5580 0.4778 0.3299 0.2198 0.1407 0.2856 0.3807 0.4158 0.4054 0.3296
+##      V41    V42    V43    V44    V45    V46    V47    V48    V49    V50
+## 1 0.0510 0.2834 0.2825 0.4256 0.2641 0.1386 0.1051 0.1343 0.0383 0.0324
+## 2 0.1674 0.0583 0.1401 0.1628 0.0621 0.0203 0.0530 0.0742 0.0409 0.0061
+## 3 0.4647 0.2587 0.2129 0.2222 0.2111 0.0176 0.1348 0.0744 0.0130 0.0106
+## 4 0.6121 0.5006 0.3210 0.3202 0.4295 0.3654 0.2655 0.1576 0.0681 0.0294
+## 5 0.1979 0.2444 0.1847 0.0841 0.0692 0.0528 0.0357 0.0085 0.0230 0.0046
+## 6 0.2707 0.2650 0.0723 0.1238 0.1192 0.1089 0.0623 0.0494 0.0264 0.0081
+##      V51    V52    V53    V54    V55    V56    V57    V58    V59    V60
+## 1 0.0232 0.0027 0.0065 0.0159 0.0072 0.0167 0.0180 0.0084 0.0090 0.0032
+## 2 0.0125 0.0084 0.0089 0.0048 0.0094 0.0191 0.0140 0.0049 0.0052 0.0044
+## 3 0.0033 0.0232 0.0166 0.0095 0.0180 0.0244 0.0316 0.0164 0.0095 0.0078
+## 4 0.0241 0.0121 0.0036 0.0150 0.0085 0.0073 0.0050 0.0044 0.0040 0.0117
+## 5 0.0156 0.0031 0.0054 0.0105 0.0110 0.0015 0.0072 0.0048 0.0107 0.0094
+## 6 0.0104 0.0045 0.0014 0.0038 0.0013 0.0089 0.0057 0.0027 0.0051 0.0062
+##   Class
+## 1     R
+## 2     R
+## 3     R
+## 4     R
+## 5     R
+## 6     R
+</code></pre>
+
+<p><strong>Soybean Database</strong></p>
+
+<ul>
+<li>Mô tả: Predict problems with soybean crops from crop data.</li>
+<li>Loại: Multi-Class Classification</li>
+<li>Kích thước: 683 mẫu, 26 thuộc tính (atributes).</li>
+<li>Đầu vào (inputs): Integer (Nominal).</li>
+<li>Đầu ra (output): Categorical, 19 class labels</li>
+<li>UCI Machine Learning Repository:
+<a href="https://archive.ics.uci.edu/ml/datasets/Connectionist+" class="uri"><a href="https://archive.ics.uci.edu/ml/datasets/Connectionist+">https://archive.ics.uci.edu/ml/datasets/Connectionist+</a></a>
+Bench+(Sonar,+Mines+vs.+Rocks).</li>
+<li>Published accuracy results:
+<a href="http://www.is.umk.pl/projects/datasets.html#Sonar" class="uri"><a href="http://www.is.umk.pl/projects/datasets.html#Sonar">http://www.is.umk.pl/projects/datasets.html#Sonar</a></a>.</li>
+</ul>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16"><path d="M16 9.5c0 .373-.24.74-.5 1l-5 5c-.275.26-.634.5-1 .5-.373 0-.74-.24-1-.5L1 8a2.853 2.853 0 0 1-.7-1C.113 6.55 0 5.973 0 5.6V1.4C0 1.034.134.669.401.401.67.134 1.034 0 1.4 0h4.2c.373 0 .95.113 1.4.3.45.187.732.432 1 .7l7.5 7.502c.26.274.5.632.5.998zM3.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/r/" rel="tag">R</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/machine-learning/" rel="tag">Machine Learning</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/datasets/" rel="tag">datasets</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Cuong Sai avatar" src="/img/my.PNG" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Cuong Sai</span>
+	</div>
+	<div class="authorbox__description">
+		PhD studen of CAD Department, Volgograd State Technical University, Volgograd, Russia.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/he-sinh-thai-tidyverse/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Hệ sinh thái tidyverse cho data science với R</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/quan-ly-du-an-voi-rstudio/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Quản lý dự án với RStudio</p></a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cuongsai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</section>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/svcuonghvktqs" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/forvis" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:svcuonghvktqs@gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>svcuonghvktqs@gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div><div id="newsletterbox">
+    <div class="white-border">
+    <div class="newsletterbox-wrap">
+    <h4>THEO DÕI BÀI VIẾT</h4>
+    <p>Hãy nhập mail của bạn để nhận được thông báo về những bài viết mới từ blog</p>
+    <form id="subscribe" onsubmit="window.open( 'http://feedburner.google.com/fb/a/mailverify?uri=KhoaHocDLiuViR', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
+    <input id="subbox" type="email" name="email" onblur="if ( this.value == '' ) { this.value = 'Nhập mail của bạn...' } " onfocus=" if ( this.value == 'Nhập mail của bạn...') { this.value = '' }" value="Nhập mail của bạn..." />
+    <input type="hidden" value="KhoaHocDLiuViR" name="uri"/>
+    <input type="hidden" value="en_US" name="loc"/>
+    <input id="subbutton" type="submit" value="Theo dõi"/>
+    </form>
+    </div>
+    </div>
+</div>
+
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/r-python/">Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/caret/">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/toan-tu-pipes-trong-r/">Tổng hợp các toán tử pipes trong R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/quan-ly-du-an-voi-rstudio/">Quản lý dự án với RStudio</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml-r/">Giới thiệu một số Machine Learning Datasets trên R</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/data-science">Data science</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/machine-learning">Machine learning</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/pipes">Pipes</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/project-management">Project management</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/r">R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/rmarkdown">Rmarkdown</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/basic-elements" title="Basic elements">Basic elements</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/classification" title="Classification">Classification</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css" title="Css">Css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-science" title="Data science">Data science</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datasets" title="Datasets">Datasets</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deep-learning" title="Deep learning">Deep learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go" title="Go">Go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html" title="Html">Html</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java" title="Java">Java</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/machine-learning" title="Machine learning">Machine learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/r" title="R">R</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/regression" title="Regression">Regression</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			Copyright &copy; 2018 Cuong Sai. All Rights Reserved.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script></body>
+</html>

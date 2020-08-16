@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project Management on Khoa học dữ liệu</title>
+    <link>/categories/project-management/</link>
+    <description>Recent content in Project Management on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/project-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quản lý dự án với RStudio</title>
+      <link>/post/quan-ly-du-an-voi-rstudio/</link>
+      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/quan-ly-du-an-voi-rstudio/</guid>
+      <description>Quá trình khoa học (scientific process) trong khoa học dữ liệu - Là một quá trình gia tăng tự nhiên với rất nhiều các projects được bắt đầu kèm theo code, sau đó là các bản thảo (manuscript),&amp;hellip; và cuối cùng là mọi thứ được pha trộn vào nhau một cách hỗn tạp.
+Quản lý dự án của bạn một cách khả lặp (reproducible) không chỉ làm cho khoa học của bạn khả lặp mà nó còn giúp cho công việc của các bạn đơn giản và dễ dàng hơn rất nhiều.</description>
+    </item>
+    
+  </channel>
+</rss>

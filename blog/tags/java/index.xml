@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Khoa học dữ liệu</title>
+    <link>/tags/java/</link>
+    <description>Recent content in Java on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản</title>
+      <link>/post/mo-dau-ve-datascience/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mo-dau-ve-datascience/</guid>
+      <description>Khoa học dữ liệu là gì? Khoa học dữ liệu (data science) là một trong những ngành đang có nhu cầu tuyển dụng cao ở thời điểm hiện tại cũng như trong tương lai xa. Nhà khoa học dữ liệu (Data Scientist) được Harvard Business Review đánh giá là “công việc hấp dẫn nhất thế kỷ 21”.
+Vậy khoa học dữ liệu là gì? Trong thực tế không một ai có thể xác định chính xác khoa học dữ liệu là gì, nói cách khác một định nghĩa chính xác về khoa học dữ liệu không tồn tại - đây là một khái niệm liên ngành và rất rộng.</description>
+    </item>
+    
+  </channel>
+</rss>

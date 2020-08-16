@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pipes on Khoa học dữ liệu</title>
+    <link>/categories/pipes/</link>
+    <description>Recent content in Pipes on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/pipes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tổng hợp các toán tử pipes trong R</title>
+      <link>/post/toan-tu-pipes-trong-r/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/toan-tu-pipes-trong-r/</guid>
+      <description>Sự ra đời của các toán tử pipes trong package magrittr đã tạo ra những thay đổi lớn mang tính cách mạng cho ngôn ngư R. Nhũng người phát triển magrittr đặt ra mục đích cho mình: rút ngắn thời gian viết code và làm cho code dễ đọc và bảo trì hơn. Ý tưởng để phát triển package magrittr trên R là từ operator |&amp;gt; trong ngôn ngữ F# và pipes trong Unix</description>
+    </item>
+    
+  </channel>
+</rss>

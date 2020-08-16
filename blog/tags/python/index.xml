@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Khoa học dữ liệu</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</title>
+      <link>/post/r-python/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-python/</guid>
+      <description>Một câu hỏi thường hay đặt ra bởi nhiều nhà khoa học dữ liệu, đặc biệt là những người mới trong lĩnh vực này đó là: Python hay R tốt hơn cho khoa học dữ liệu? Thực ra còn nhiều ngôn ngữ khác cho khoa học dữ liệu như là: Java, C, Scala, Matlab, Julia,…nhưng Python và R đang dẫn đầu trong phần lớn thế giới khoa học dữ liệu.</description>
+    </item>
+    
+    <item>
+      <title>Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản</title>
+      <link>/post/mo-dau-ve-datascience/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mo-dau-ve-datascience/</guid>
+      <description>Khoa học dữ liệu là gì? Khoa học dữ liệu (data science) là một trong những ngành đang có nhu cầu tuyển dụng cao ở thời điểm hiện tại cũng như trong tương lai xa. Nhà khoa học dữ liệu (Data Scientist) được Harvard Business Review đánh giá là “công việc hấp dẫn nhất thế kỷ 21”.
+Vậy khoa học dữ liệu là gì? Trong thực tế không một ai có thể xác định chính xác khoa học dữ liệu là gì, nói cách khác một định nghĩa chính xác về khoa học dữ liệu không tồn tại - đây là một khái niệm liên ngành và rất rộng.</description>
+    </item>
+    
+  </channel>
+</rss>

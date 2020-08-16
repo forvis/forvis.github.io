@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tổng hợp các toán tử pipes trong R</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.50" />
+	<meta property="og:title" content="Tổng hợp các toán tử pipes trong R" />
+<meta property="og:description" content="Sự ra đời của các toán tử pipes trong package magrittr đã tạo ra những thay đổi lớn mang tính cách mạng cho ngôn ngư R. Nhũng người phát triển magrittr đặt ra mục đích cho mình: rút ngắn thời gian viết code và làm cho code dễ đọc và bảo trì hơn. Ý tưởng để phát triển package magrittr trên R là từ operator |&gt; trong ngôn ngữ F# và pipes trong Unix" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/toan-tu-pipes-trong-r/" /><meta property="article:published_time" content="2018-11-17T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-17T00:00:00&#43;00:00"/>
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/cs.PNG">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128408660-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo" role="banner">
+			<a class="logo__link" href="/" title="Khoa học dữ liệu" rel="home">
+				<div class="logo__title">Khoa học dữ liệu</div>
+				<div class="logo__tagline">By Cuong Sai</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">About</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/r-tutorials/">R</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-tutorials/">Python</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/statistcics-tutorials/">STATISTICS</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/new/">News</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/my-project/">Projects</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<section class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Tổng hợp các toán tử pipes trong R</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-17T00:00:00">November 17, 2018</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/pipes" rel="category">pipes</a></span>
+</div>
+</div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/img/pipe.png" alt="Tổng hợp các toán tử pipes trong R">
+		</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-toa-n-tư-gt-forward-pipe-operator">1. Toán tử %&gt;% (forward-pipe operator)</a>
+<ul>
+<li><a href="#1-1-chuyê-n-lhs-tha-nh-argument-đâ-u-tiên-trong-rhs">1.1 Chuyển lhs thành argument đầu tiên trong rhs:</a></li>
+<li><a href="#1-2-chuyê-n-lhs-tha-nh-argument-trong-rhs-ơ-vi-theo-y-muô-n-du-ng">1.2 Chuyển lhs thành argument trong rhs ở vị theo ý muốn dùng <code>.</code>:</a></li>
+<li><a href="#1-3-ta-o-functions-mơ-i">1.3 Tạo functions mới</a></li>
+</ul></li>
+<li><a href="#2-toa-n-tư-lt-gt-compound-assignment-pipe-operator">2. Toán tử %&lt;&gt;% (compound assignment pipe-operator)</a></li>
+<li><a href="#3-toa-n-tư-t-tee-operator">3. Toán tử %T% ( tee operator)</a></li>
+<li><a href="#4-toa-n-tư-exposition-pipe-operator">4. Toán tử %$% (exposition pipe-operator)</a></li>
+</ul></li>
+</ul>
+</nav>
+	</div>
+</div>
+<div class="content post__content clearfix">
+			
+
+<p>Sự ra đời của các toán tử <code>pipes</code> trong package
+<a href="https://magrittr.tidyverse.org/reference/index.html">magrittr</a> đã tạo
+ra những thay đổi lớn mang tính cách mạng cho ngôn ngư R. Nhũng người
+phát triển <strong>magrittr</strong> đặt ra mục đích cho mình: rút ngắn thời gian
+viết code và làm cho code dễ đọc và bảo trì hơn. Ý tưởng để phát triển
+package magrittr trên R là từ operator |&gt; trong ngôn ngữ F# và pipes
+trong Unix</p>
+
+<p><strong>magrittr</strong> chứa tập hợp các operators và hàm hỗ trợ giúp cho:</p>
+
+<ul>
+<li><p>Tránh gọi lồng các hàm</p></li>
+
+<li><p>Giảm việc tạo và sử dụng các biến trung gian</p></li>
+
+<li><p>Tổ chức tập hợp các câu lệnh thành một chuỗi thống nhất, dễ hiểu.</p></li>
+</ul>
+
+<p>Package <strong>magrittr</strong> được tích hợp vào trong hệ sinh thái <strong>tidyverse</strong>
+đã được giới thiệu ở post trước (nếu các bạn chưa đọc thì hãy đọc ở
+<a href="(https://svcuonghvktqs.github.io/post/he-sinh-thai-tidyverse/)">đây</a>):</p>
+
+<pre><code>library(tidyverse)
+tidyverse_packages()
+
+##  [1] &quot;broom&quot;       &quot;cli&quot;         &quot;crayon&quot;      &quot;dplyr&quot;       &quot;dbplyr&quot;     
+##  [6] &quot;forcats&quot;     &quot;ggplot2&quot;     &quot;haven&quot;       &quot;hms&quot;         &quot;httr&quot;       
+## [11] &quot;jsonlite&quot;    &quot;lubridate&quot;   &quot;magrittr&quot;    &quot;modelr&quot;      &quot;purrr&quot;      
+## [16] &quot;readr&quot;       &quot;readxl\n(&gt;=&quot; &quot;reprex&quot;      &quot;rlang&quot;       &quot;rstudioapi&quot; 
+## [21] &quot;rvest&quot;       &quot;stringr&quot;     &quot;tibble&quot;      &quot;tidyr&quot;       &quot;xml2&quot;       
+## [26] &quot;tidyverse&quot;
+</code></pre>
+
+<p>Vì vậy để làm việc với các toán tử này chúng ta có thể load package
+magrittr:</p>
+
+<pre><code>library(magrittr)
+</code></pre>
+
+<p>Hoặc load hệ sinh thái tidyverse:</p>
+
+<pre><code>library(tidyverse)
+</code></pre>
+
+<p>Trong post này, tôi sẽ giới thiệu với các bạn 4 toán tử hay sử dụng nhất
+trong package magrittr</p>
+
+<h2 id="1-toa-n-tư-gt-forward-pipe-operator">1. Toán tử %&gt;% (forward-pipe operator)</h2>
+
+<hr />
+
+<p>Đây là pipe được sử dụng nhiều nhất, hầu như mỗi công việc thực hiện
+trên R tôi đều phải sử dụng nó rất nhiều lần.</p>
+
+<p><strong>Nguyên lý cốt lõi</strong> của toán tử này là chuyển toàn bộ vế bên trái (có
+thể là kết quả của hàm đi trước) (left-hand side, lhs) thành dữ liệu đầu
+vào cho hàm bên phải (right-hand side, rhs) tạo thành một dòng chảy dữ
+liệu từ trái qua phải.</p>
+
+<p>Cách dùng toán tử này như sau:</p>
+
+<h3 id="1-1-chuyê-n-lhs-tha-nh-argument-đâ-u-tiên-trong-rhs">1.1 Chuyển lhs thành argument đầu tiên trong rhs:</h3>
+
+<p>Trong trường hợp hàm bên phải sử dụng nhiều arguments thì theo mặc định
+toán tử %&gt;% sẽ chuyển lhs thành argument đầu tiên trong rhs:</p>
+
+<pre><code>x %&gt;% f(y) tương đương với f(x, y)
+# hay phức tạp hơn:
+x %&gt;% f %&gt;% g %&gt;% h tương đương với h(g(f(x)))
+</code></pre>
+
+<p>chúng ta hãy cùng so sánh 2 ví dụ dưới đây sử dụng các hàm từ package
+`dplyr’: ví dụ 1 - dùng theo cách truyền thống, ví dụ 2- dùng toán tử
+%&gt;%:</p>
+
+<pre><code>hourly_delay &lt;- filter( 
+    summarise(
+        group_by(
+            filter(
+                flights,
+                !is.na(dep_delay)
+            ),
+            date, hour
+        ),
+        delay = mean(dep_delay),
+        n = n()
+    ),
+    n &gt; 10
+)
+</code></pre>
+
+<p>và:</p>
+
+<pre><code>hourly_delay &lt;- flights %&gt;% 
+    filter(!is.na(dep_delay)) %&gt;% 
+    group_by(date, hour) %&gt;% 
+    summarise( 
+        delay = mean(dep_delay), 
+        n = n() ) %&gt;% 
+    filter(n &gt; 10)
+</code></pre>
+
+<p>Đến đây có lẽ không cần suy nghĩ, các bạn cũng đã có câu trả lời cho câu
+hỏi cách viết code nào dễ hiểu và ngắn gọn hơn.</p>
+
+<h3 id="1-2-chuyê-n-lhs-tha-nh-argument-trong-rhs-ơ-vi-theo-y-muô-n-du-ng">1.2 Chuyển lhs thành argument trong rhs ở vị theo ý muốn dùng <code>.</code>:</h3>
+
+<pre><code>y %&gt;% f(x, .) tương đương với f(x, y)
+# Hay
+z %&gt;% f(x, y, arg = .) tương đương với f(x, y, arg = z)
+</code></pre>
+
+<p>ví dụ:</p>
+
+<pre><code>&quot;khoa hoc du lieu voi R&quot; %&gt;% gsub(&quot;R&quot;, &quot;Python&quot;, .)
+
+## [1] &quot;khoa hoc du lieu voi Python&quot;
+
+1:5 %&gt;% letters[.]
+
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;
+</code></pre>
+
+<p>Nếu sử dụng <code>.</code> trong trong trườn hợp gọi lồng các hàm thì lhs trước hết
+vẫn ở vị trí đầu tiên:</p>
+
+<pre><code>1:5 %&gt;% paste(letters[.])
+
+## [1] &quot;1 a&quot; &quot;2 b&quot; &quot;3 c&quot; &quot;4 d&quot; &quot;5 e&quot;
+</code></pre>
+
+<p>sẽ tương đương với:</p>
+
+<pre><code>1:5 %&gt;% paste(., letters[.])
+
+## [1] &quot;1 a&quot; &quot;2 b&quot; &quot;3 c&quot; &quot;4 d&quot; &quot;5 e&quot;
+</code></pre>
+
+<p>Nếu ta muốn loại bỏ việc chuyển lhs thành first argument ở rhs, thì ta
+chỉ việc thêm vào biểu thức ở vế phải dấu <code>{}</code>:</p>
+
+<pre><code>1:5 %&gt;% { paste(letters[.]) }
+
+## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot; &quot;d&quot; &quot;e&quot;
+</code></pre>
+
+<p>Một chú ý quan trọng nữa là: <code>.</code> sẽ không bị xung đột với dấu “.” được
+sử dụng trong công thức để chỉ những thuộc tính còn lại:</p>
+
+<pre><code>npk %&gt;% aov(yield ~., data = .) %&gt;% summary
+
+##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+## block        5  343.3   68.66   4.288 0.01272 * 
+## N            1  189.3  189.28  11.821 0.00366 **
+## P            1    8.4    8.40   0.525 0.47999   
+## K            1   95.2   95.20   5.946 0.02767 * 
+## Residuals   15  240.2   16.01                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</code></pre>
+
+<p>Hoặc đơn giản chỉ cần:</p>
+
+<pre><code>npk %&gt;% aov(formula = yield ~.) %&gt;% summary
+
+##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
+## block        5  343.3   68.66   4.288 0.01272 * 
+## N            1  189.3  189.28  11.821 0.00366 **
+## P            1    8.4    8.40   0.525 0.47999   
+## K            1   95.2   95.20   5.946 0.02767 * 
+## Residuals   15  240.2   16.01                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</code></pre>
+
+<h3 id="1-3-ta-o-functions-mơ-i">1.3 Tạo functions mới</h3>
+
+<p>Package <code>magrittr</code> cho phép tạo những functions đơn giản với 1 argument
+bằng cách sử dụng <code>.</code> và toán tử %&gt;% :</p>
+
+<pre><code>f &lt;- . %&gt;% cos %&gt;% sin
+</code></pre>
+
+<p>hoặc tương đương với:</p>
+
+<pre><code>f &lt;- function(.) sin(cos(.))
+</code></pre>
+
+<p>Chúng ta cũng có thể sử dụng cấu trúc này để làm việc với họ hàm apply()
+- được sử dụng rất phổ biến:</p>
+
+<pre><code>dataset %&gt;%
+    lapply(. %&gt;% abs %&gt;% mean(na.rm = TRUE))
+</code></pre>
+
+<p>tương đương với cách viết truyền thống:</p>
+
+<pre><code>lapply(dataset, function(.) mean(abs(.), na.rm = TRUE))
+</code></pre>
+
+<p>Khi chúng ta cần thực hiện một chuỗi các tính toán trung gian, rất
+thường xuyên sử dụng hàm không tên:</p>
+
+<pre><code>iris %&gt;%
+    {
+        n &lt;- sample(1:10, size = 1)
+        H &lt;- head(., n)
+        T &lt;- tail(., n)
+        rbind(H, T)
+    } %&gt;%
+    summary
+</code></pre>
+
+<p>Để dễ hiểu, viết lại chúng dưới dạng:</p>
+
+<pre><code>iris %&gt;%
+    (function(.) {
+        n &lt;- sample(1:10, size = 1)
+        H &lt;- head(., n)
+        T &lt;- tail(., n)
+        rbind(H, T)
+    }) %&gt;%
+    summary
+</code></pre>
+
+<p>Nếu sử dụng cấu trúc truyền thống thì:</p>
+
+<pre><code>summary({
+    n &lt;- sample(1:10, size = 1)
+    H &lt;- head(iris, n)
+    T &lt;- tail(iris, n)
+    rbind(H, T)
+})
+</code></pre>
+
+<h2 id="2-toa-n-tư-lt-gt-compound-assignment-pipe-operator">2. Toán tử %&lt;&gt;% (compound assignment pipe-operator)</h2>
+
+<hr />
+
+<p>Công dụng của toán tử này ngoài việc thực hiện như <code>%&gt;%</code> thì kết quả
+cuối cùng của dòng dữ liệu sẽ được gán ngược lại vào đối tượng đầu tiên nằm ngoài
+cùng bên trái của chuỗi.</p>
+
+<p>Ví dụ:</p>
+
+<pre><code>x %&lt;&gt;% abs %&gt;% sort
+</code></pre>
+
+<p>tương đương với:</p>
+
+<pre><code>x &lt;- sort(abs(x))
+</code></pre>
+
+<p>Toán từ này khi kết hợp với toán tử <code>%&gt;%</code> sẽ tạo thành một hợp nhất rất hữu ích trong các chuỗi biến đổi dài mà thường xuyên gặp trong các biến đổi dữ liệu sử dụng<code>dplyr</code>và <code>tidyr</code> packages.</p>
+
+<h2 id="3-toa-n-tư-t-tee-operator">3. Toán tử %T% ( tee operator)</h2>
+
+<hr />
+
+<p>Nguyên lý làm việc của toápipe <code>%T%</code> có thể được hình dung như một dòng chảy dữ liệu hình chữ T, tức là dữ liệu đầu vào của 1 hàm đi trước sẽ được
+truyền cho 2 nhánh tương ứng ở phía sau đó</p>
+
+<p>Ví dụ:</p>
+
+<pre><code>rnorm(200) %&gt;%
+    matrix(ncol = 2) %T&gt;%
+    plot %&gt;%
+    colSums
+</code></pre>
+
+<p><img src="/img/toan-tu-pipes-trong-r_files/figure-markdown_strict/unnamed-chunk-24-1.png" alt="" /></p>
+
+<pre><code>## [1] -0.5855720 -0.1994706
+</code></pre>
+
+<p>Tương đương với:</p>
+
+<pre><code>rnorm(200) %&gt;%
+    matrix(ncol = 2) %&gt;%
+    { plot(.); . } %&gt;%
+    colSums
+</code></pre>
+
+<p><img src="/img/toan-tu-pipes-trong-r_files/figure-markdown_strict/unnamed-chunk-25-1.png" alt="" /></p>
+
+<pre><code>## [1]   3.080746 -11.588671
+</code></pre>
+
+<p>Hoặc viết theo cách truyền thống:</p>
+
+<pre><code>m &lt;- matrix(rnorm(200), ncol = 2)
+plot(m)
+</code></pre>
+
+<p><img src="/img/toan-tu-pipes-trong-r_files/figure-markdown_strict/unnamed-chunk-26-1.png" alt="" /></p>
+
+<pre><code>colSums(m)
+
+## [1] 13.415176  4.282403
+</code></pre>
+
+<h2 id="4-toa-n-tư-exposition-pipe-operator">4. Toán tử %$% (exposition pipe-operator)</h2>
+
+<hr />
+
+<p>Toán tử %$% cho phép trích xuất đích danh một đối tượng trong kết quả
+của hàm đi trước để sử dụng như dữ liệu đầu vào cho hàm đi sau. Như vậy
+nó có tính định hướng 1 chiều nhưng chuyên biệt.</p>
+
+<p>Ví dụ:</p>
+
+<pre><code>library(magrittr)
+
+## 
+## Attaching package: 'magrittr'
+
+## The following object is masked from 'package:purrr':
+## 
+##     set_names
+
+## The following object is masked from 'package:tidyr':
+## 
+##     extract
+
+iris %&gt;%
+    subset(Sepal.Length &gt; mean(Sepal.Length)) %$%
+    cor(Sepal.Length, Sepal.Width)
+
+## [1] 0.3361992
+</code></pre>
+
+<p>Tương đương với việc sử dụng hàm with():</p>
+
+<pre><code>with(subset(iris, Sepal.Length &gt; mean(Sepal.Length)),
+     cor(Sepal.Length, Sepal.Width))
+
+## [1] 0.3361992
+</code></pre>
+
+<p>Thuận tiện khi sử dụng tên của thuộc tính khi vẽ đồ thị:</p>
+
+<pre><code>data.frame(z = rnorm(100)) %$%
+    ts.plot(z)
+</code></pre>
+
+<p><img src="toan-tu-pipes-trong-r_files/figure-markdown_strict/unnamed-chunk-29-1.png" alt="" /></p>
+
+<p>Tương tự với with():</p>
+
+<pre><code>with(data.frame(z = rnorm(100)),
+     ts.plot(z))
+</code></pre>
+
+<p><img src="toan-tu-pipes-trong-r_files/figure-markdown_strict/unnamed-chunk-30-1.png" alt="" /></p>
+
+<p>Một ví dụ khác:</p>
+
+<pre><code>npk %$% aov(yield ~ N * P * K) %&gt;% summary
+
+##             Df Sum Sq Mean Sq F value Pr(&gt;F)  
+## N            1  189.3  189.28   6.161 0.0245 *
+## P            1    8.4    8.40   0.273 0.6082  
+## K            1   95.2   95.20   3.099 0.0975 .
+## N:P          1   21.3   21.28   0.693 0.4175  
+## N:K          1   33.1   33.14   1.078 0.3145  
+## P:K          1    0.5    0.48   0.016 0.9019  
+## N:P:K        1   37.0   37.00   1.204 0.2887  
+## Residuals   16  491.6   30.72                 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+</code></pre>
+
+<p>Sử dụng <code>.</code> trong công thức đã không thể được trong trường hợp này</p>
+
+<p><strong>Tài liệu tham khảo</strong>:</p>
+
+<p><a href="https://magrittr.tidyverse.org/reference/index.html" class="uri"><a href="https://magrittr.tidyverse.org/reference/index.html">https://magrittr.tidyverse.org/reference/index.html</a></a>
+<a href="http://r.psylab.info/blog/2015/04/21/magrittr/" class="uri"><a href="http://r.psylab.info/blog/2015/04/21/magrittr/">http://r.psylab.info/blog/2015/04/21/magrittr/</a></a></p>
+
+		</div>
+		
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Cuong Sai avatar" src="/img/my.PNG" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Cuong Sai</span>
+	</div>
+	<div class="authorbox__description">
+		PhD studen of CAD Department, Volgograd State Technical University, Volgograd, Russia.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/quan-ly-du-an-voi-rstudio/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Quản lý dự án với RStudio</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/caret/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</p></a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cuongsai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</section>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/svcuonghvktqs" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/forvis" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:svcuonghvktqs@gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>svcuonghvktqs@gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div><div id="newsletterbox">
+    <div class="white-border">
+    <div class="newsletterbox-wrap">
+    <h4>THEO DÕI BÀI VIẾT</h4>
+    <p>Hãy nhập mail của bạn để nhận được thông báo về những bài viết mới từ blog</p>
+    <form id="subscribe" onsubmit="window.open( 'http://feedburner.google.com/fb/a/mailverify?uri=KhoaHocDLiuViR', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
+    <input id="subbox" type="email" name="email" onblur="if ( this.value == '' ) { this.value = 'Nhập mail của bạn...' } " onfocus=" if ( this.value == 'Nhập mail của bạn...') { this.value = '' }" value="Nhập mail của bạn..." />
+    <input type="hidden" value="KhoaHocDLiuViR" name="uri"/>
+    <input type="hidden" value="en_US" name="loc"/>
+    <input id="subbutton" type="submit" value="Theo dõi"/>
+    </form>
+    </div>
+    </div>
+</div>
+
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/r-python/">Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/caret/">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/toan-tu-pipes-trong-r/">Tổng hợp các toán tử pipes trong R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/quan-ly-du-an-voi-rstudio/">Quản lý dự án với RStudio</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml-r/">Giới thiệu một số Machine Learning Datasets trên R</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/data-science">Data science</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/machine-learning">Machine learning</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/pipes">Pipes</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/project-management">Project management</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/r">R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/rmarkdown">Rmarkdown</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/basic-elements" title="Basic elements">Basic elements</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/classification" title="Classification">Classification</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css" title="Css">Css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-science" title="Data science">Data science</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datasets" title="Datasets">Datasets</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deep-learning" title="Deep learning">Deep learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go" title="Go">Go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html" title="Html">Html</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java" title="Java">Java</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/machine-learning" title="Machine learning">Machine learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/r" title="R">R</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/regression" title="Regression">Regression</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			Copyright &copy; 2018 Cuong Sai. All Rights Reserved.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script></body>
+</html>

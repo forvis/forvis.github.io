@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta name="generator" content="Hugo 0.50" />
+	<meta property="og:title" content="Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R" />
+<meta property="og:description" content="Sử dụng các machine learning (hay statistical learning) algorithms ngày càng phổ biến trong nhiều lĩnh vực khác nhau - từ trong nghiên cứu cho đến các hoạt động kinh doanh. Ngôn ngữ R khác biệt bởi số lượng rất lớn các packages chuyên dụng khác nhau cho phép xây dựng các mô hình dự báo. Tuy nhiên đây cũng chính là khuyết điểm, khi có quá nhiều các packages triển khai các algorithms khác nhau dưới dạng các functions sẽ làm cho các nhà phân tích khó khăn trong việc nhớ những đặc trưng sử dụng và cú pháp của từng function." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/caret/" /><meta property="article:published_time" content="2018-11-21T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2018-11-21T00:00:00&#43;00:00"/>
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="shortcut icon" href="/cs.PNG">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-128408660-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo" role="banner">
+			<a class="logo__link" href="/" title="Khoa học dữ liệu" rel="home">
+				<div class="logo__title">Khoa học dữ liệu</div>
+				<div class="logo__tagline">By Cuong Sai</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/about/">About</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/r-tutorials/">R</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/python-tutorials/">Python</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/statistcics-tutorials/">STATISTICS</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/new/">News</a>
+		</li>
+		<li class="menu__item">
+			<a class="menu__link" href="/my-project/">Projects</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<section class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 16 16"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+	<time class="meta__text" datetime="2018-11-21T00:00:00">November 21, 2018</time>
+</div>
+
+<div class="meta__item-categories meta__item">
+	<svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg>
+	<span class="meta__text"><a class="meta__link" href="/categories/machine-learning" rel="category">machine learning</a></span>
+</div>
+</div>
+		</header>
+		<figure class="post__thumbnail">
+			<img src="/img/caret1.jpg" alt="Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R">
+		</figure>
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		
+	</div>
+</div>
+<div class="content post__content clearfix">
+			<p>Sử dụng các machine learning (hay statistical learning) algorithms ngày
+càng phổ biến trong nhiều lĩnh vực khác nhau - từ trong nghiên cứu cho
+đến các hoạt động kinh doanh. Ngôn ngữ R khác biệt bởi số lượng rất lớn
+các packages chuyên dụng khác nhau cho phép xây dựng các mô hình dự báo.
+Tuy nhiên đây cũng chính là khuyết điểm, khi có quá nhiều các packages
+triển khai các algorithms khác nhau dưới dạng các functions sẽ làm cho
+các nhà phân tích khó khăn trong việc nhớ những đặc trưng sử dụng và cú
+pháp của từng function. Ngoài ra các functions được sử dụng để xây dựng
+các mô hình dự báo thường “rải rác” từ các packages khác nhau, điều này
+đòi hỏi ta cần có nhiều thời gian để tìm kiếm và nắm vững cách sử dụng
+của từng function.</p>
+
+<p>Để giải quyết vấn đề này Max Kuhn đã xây dựng một giao diện phổ quát cho
+phép truy cập và sử dụng các machine learning algorithms cơ bản được
+triển khai trên ngôn ngữ R. Kết quả chính là package
+<a href="https://cran.r-project.org/web/packages/caret/caret.pdf">caret</a> (viết
+tắt từ Classification and Regression Training), được công bố đầu tiên
+vào năm 2008 tại tạp chí phần mềm thống kê (<a href="https://www.jstatsoft.org/article/view/v028i05">Journal of Statistical
+Software</a>)</p>
+
+<p><strong>Những đặc trưng cơ bản của package <code>caret</code>:</strong></p>
+
+<ul>
+<li><p>sử dụng cú pháp lệnh chung (phổ quát) không phụ thuộc vào cú pháp
+của functions gốc (functions triển khai các machine learning
+algorithms)</p></li>
+
+<li><p>Tự động tìm kiếm những giá trị tối ưu cho các hyperparameters của mô
+hình (“tuning parameters”)</p></li>
+
+<li><p>có khả năng tổ chức tính toán song song để tăng đáng kể tốc độ quá
+trình huấn luyện mô hình</p></li>
+</ul>
+
+<p><strong>Caret gồm các tools cho phép:</strong></p>
+
+<ul>
+<li><p>data splitting</p></li>
+
+<li><p>pre-processing</p></li>
+
+<li><p>feature selection</p></li>
+
+<li><p>model tuning using resampling</p></li>
+
+<li><p>variable importance estimation</p></li>
+</ul>
+
+<p><strong>Dưới đây là một số functions cơ bản có trong package <code>caret</code> đảm bảo một chu trình xây dựng các
+predictive models hoàn chỉnh:</strong></p>
+
+<ul>
+<li><p><code>featurePlot()</code>: Thực hiện phân tích thăm dò dữ liệu dưới dạng biểu đồ</p></li>
+
+<li><p><code>createDataPartion</code>(): Phân chia dữ liệu thành training set và test set</p></li>
+
+<li><p><code>nearZeroVar()</code>: Xác định các predictors (biến độc lập trong dự báo) mà phương sai của chúng xấp xỉ bằng 0 (có thể loại bỏ các biến này, vì nó không mạng lại rất ít thậm chí là không thông tin có ích)</p></li>
+
+<li><p><code>findCorrelation()</code>: Xác định các predictors tương quan cao với các predictors khác. Rất nhiều các mô hình thống kê rất nhạy cảm với những biến này và thường cho kết quả kém, do đó những predictors có tương quan cao với nhau cũng cần loại bỏ khỏi dữ liệu.</p></li>
+
+<li><p><code>preProcess()</code>: Cho phép thực hện các biến đổi dữ liệu trước khi đưa vào huấn luyện mô hình</p></li>
+
+<li><p><code>train()</code>: Một trong những công cụ chính trong package <strong>caret</strong>. Nó được sử dụng để:</p>
+
+<ol>
+<li><p>Đánh giá, sừ dụng resampling, ảnh hưởng của model tuning parameters
+tới hiệu suất</p></li>
+
+<li><p>Chọn mô hình <em>optimal</em> dựa vào các parameters</p></li>
+
+<li><p>Đánh giá hiệu suất của mô hình trên tập training set</p></li>
+</ol></li>
+</ul>
+
+<p>Quá trình tìm kiếm các giá trị tối ưu cho các parameters sử dụng
+function <em>train()</em> được thể hiện dưới dạng tổng quát trong sơ đồ dưới
+đây:</p>
+
+<p><img src="/img/caret.PNG" alt="" /></p>
+
+<p>Trước khi sử dụng <strong>train()</strong> để huấn luyện mô hình ta cần phải xác định
+algorithm thích hợp và tập hợp các điều kiện cho qua trình tối ưu bằng
+các sử dụng function <strong>trainControl()</strong></p>
+
+<pre><code>trainControl(method = &quot;boot&quot;,
+             number = ifelse(grepl(&quot;cv&quot;, method), 10, 25),
+             p = 0.75,
+             repeats = ifelse(grepl(&quot;cv&quot;, method), 1, number),
+             search = &quot;grid&quot;, 
+             initialWindow = NULL, 
+             horizon = 1,
+             fixedWindow = TRUE, 
+             verboseIter = FALSE, 
+             returnData = TRUE,
+             returnResamp = &quot;final&quot;, 
+             savePredictions = FALSE,
+             classProbs = FALSE, 
+             summaryFunction = defaultSummary,
+             selectionFunction = &quot;best&quot;, 
+             seeds = NA,
+             preProcOptions = list(thresh = 0.95, 
+                                   ICAcomp = 3, 
+                                   k = 5),
+             sampling = NULL, 
+             index = NULL, 
+             indexOut = NULL,
+             timingSamps = 0, 
+             predictionBounds = rep(FALSE, 2),
+             adaptive = list(min = 5, 
+                             alpha = 0.05,
+                             method = &quot;gls&quot;, 
+                             complete = TRUE), 
+             trim = FALSE, 
+             allowParallel = TRUE)
+</code></pre>
+
+<p>Mô tả một số arguments quan trọng của hàm này các bạn có thể xem ở
+<a href="https://www.rdocumentation.org/packages/caret/versions/6.0-80/topics/trainControl">đây</a></p>
+
+<p>Ví dụ tạo một đối tượng ctrl:</p>
+
+<pre><code>ctrl &lt;- trainControl(method = &quot;repeatedcv&quot;, number = 10, repeats = 10)
+</code></pre>
+
+<p>Thông số cài đặt cho cross-validation trên có nghĩa là:</p>
+
+<ul>
+<li><p>method = “repeatedcv”</p></li>
+
+<li><p>number = 10 có nhĩa là quá trình cross-validation cần chia dữ liệu
+gốc thành 10 phần bằng nhau</p></li>
+
+<li><p>repeats = 10 có nhĩa là quá trình cross-validation sẽ hoàn thành sau
+10 lần</p></li>
+</ul>
+
+<p>-<code>predict.train()</code>: Cho phép thu nhận các giá trị dự báo trên cơ sở dữ liệu mới đưa vào mô hình.</p>
+
+<p>-<code>confusionMatrix()</code>: Khi làm việc với các mô hình phân loại đây là phương thức tổng quát hóa chất lượng mô hình dự báo. Kết quả được thể hiện dưới dạng matrix (confusion matrix)</p>
+
+<p>-<code>varImp()</code>: Cho phép đánh giá mức độ quan trọng của các predictors trên cơ sở các mô hình hình được xây dựng.</p>
+
+<p>Ở các post sau tôi sẽ đi sâu vào các bước xây dựng một chu trình machine learning sử dụng package <strong>caret</strong>.</p>
+
+<p><strong>Tài liệu tham khảo</strong></p>
+
+<p><a href="https://cran.r-project.org/web/packages/caret/vignettes/caret.html" class="uri"><a href="https://cran.r-project.org/web/packages/caret/vignettes/caret.html">https://cran.r-project.org/web/packages/caret/vignettes/caret.html</a></a></p>
+
+<p><a href="https://www.machinelearningplus.com/machine-learning/caret-package/" class="uri"><a href="https://www.machinelearningplus.com/machine-learning/caret-package/">https://www.machinelearningplus.com/machine-learning/caret-package/</a></a></p>
+
+		</div>
+		
+<div class="post__tags tags clearfix">
+	<svg class="icon icon-tag" width="16" height="16" viewBox="0 0 16 16"><path d="M16 9.5c0 .373-.24.74-.5 1l-5 5c-.275.26-.634.5-1 .5-.373 0-.74-.24-1-.5L1 8a2.853 2.853 0 0 1-.7-1C.113 6.55 0 5.973 0 5.6V1.4C0 1.034.134.669.401.401.67.134 1.034 0 1.4 0h4.2c.373 0 .95.113 1.4.3.45.187.732.432 1 .7l7.5 7.502c.26.274.5.632.5.998zM3.5 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item"><a class="tags__link btn" href="/tags/classification/" rel="tag">classification</a></li>
+		<li class="tags__item"><a class="tags__link btn" href="/tags/regression/" rel="tag">regression</a></li>
+	</ul>
+</div>
+	</article>
+</main>
+
+<div class="authorbox clearfix">
+	<figure class="authorbox__avatar">
+		<img alt="Cuong Sai avatar" src="/img/my.PNG" class="avatar" height="90" width="90">
+	</figure>
+	<div class="authorbox__header">
+		<span class="authorbox__name">About Cuong Sai</span>
+	</div>
+	<div class="authorbox__description">
+		PhD studen of CAD Department, Volgograd State Technical University, Volgograd, Russia.
+	</div>
+</div>
+
+<nav class="post-nav flex">
+	<div class="post-nav__item post-nav__item--prev">
+		<a class="post-nav__link" href="/post/toan-tu-pipes-trong-r/" rel="prev"><span class="post-nav__caption">«&thinsp;Previous</span><p class="post-nav__post-title">Tổng hợp các toán tử pipes trong R</p></a>
+	</div>
+	<div class="post-nav__item post-nav__item--next">
+		<a class="post-nav__link" href="/post/r-python/" rel="next"><span class="post-nav__caption">Next&thinsp;»</span><p class="post-nav__post-title">Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</p></a>
+	</div>
+</nav>
+
+<section class="comments">
+	<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "cuongsai" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+			</section>
+			<aside class="sidebar">
+<div class="widget-social widget">
+	<h4 class="widget-social__title widget__title">Social</h4>
+	<div class="widget-social__content widget__content">
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Facebook" rel="noopener noreferrer" href="https://facebook.com/svcuonghvktqs" target="_blank">
+				<svg class="widget-social__link-icon icon-facebook" viewBox="0 0 352 352" width="24" height="24" fill="#fff"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5 0 32-14.5 32-32v-288c0-17.5-14.5-32-32-32h-288c-17.5 0-32 14.5-32 32zm320 0v288h-83v-108h41.5l6-48h-47.5v-31c0-14 3.5-23.5 23.5-23.5h26v-43.5c-4.4-.6-19.8-1.5-37.5-1.5-36.9 0-62 22.2-62 63.5v36h-42v48h42v108h-155v-288z"/></svg>
+				<span>Facebook</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="GitHub" rel="noopener noreferrer" href="https://github.com/forvis" target="_blank">
+				<svg class="widget-social__link-icon icon-github" viewBox="0 0 384 374" width="24" height="24" fill="#fff"><path d="m192 0c-106.1 0-192 85.8-192 191.7 0 84.7 55 156.6 131.3 181.9 9.6 1.8 13.1-4.2 13.1-9.2 0-4.6-.2-16.6-.3-32.6-53.4 11.6-64.7-25.7-64.7-25.7-8.7-22.1-21.3-28-21.3-28-17.4-11.9 1.3-11.6 1.3-11.6 19.3 1.4 29.4 19.8 29.4 19.8 17.1 29.3 44.9 20.8 55.9 15.9 1.7-12.4 6.7-20.8 12.2-25.6-42.6-4.8-87.5-21.3-87.5-94.8 0-20.9 7.5-38 19.8-51.4-2-4.9-8.6-24.3 1.9-50.7 0 0 16.1-5.2 52.8 19.7 15.3-4.2 31.7-6.4 48.1-6.5 16.3.1 32.7 2.2 48.1 6.5 36.7-24.8 52.8-19.7 52.8-19.7 10.5 26.4 3.9 45.9 1.9 50.7 12.3 13.4 19.7 30.5 19.7 51.4 0 73.7-44.9 89.9-87.7 94.6 6.9 5.9 13 17.6 13 35.5 0 25.6-.2 46.3-.2 52.6 0 5.1 3.5 11.1 13.2 9.2 76.2-25.5 131.2-97.3 131.2-182 0-105.9-86-191.7-192-191.7z"/></svg>
+				<span>GitHub</span>
+			</a>
+		</div>
+		<div class="widget-social__item widget__item">
+			<a class="widget-social__link widget__link btn" title="Email" href="mailto:svcuonghvktqs@gmail.com">
+				<svg class="widget-social__link-icon icon-mail" viewBox="0 0 416 288" width="24" height="24" fill="#fff"><path d="m0 16v256 16h16 384 16v-16-256-16h-16-384-16zm347 16-139 92.5-139-92.5zm-148 125.5 9 5.5 9-5.5 167-111.5v210h-352v-210z"/></svg>
+				<span>svcuonghvktqs@gmail.com</span>
+			</a>
+		</div>
+	</div>
+</div><div id="newsletterbox">
+    <div class="white-border">
+    <div class="newsletterbox-wrap">
+    <h4>THEO DÕI BÀI VIẾT</h4>
+    <p>Hãy nhập mail của bạn để nhận được thông báo về những bài viết mới từ blog</p>
+    <form id="subscribe" onsubmit="window.open( 'http://feedburner.google.com/fb/a/mailverify?uri=KhoaHocDLiuViR', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" target="popupwindow" method="post" action="http://feedburner.google.com/fb/a/mailverify">
+    <input id="subbox" type="email" name="email" onblur="if ( this.value == '' ) { this.value = 'Nhập mail của bạn...' } " onfocus=" if ( this.value == 'Nhập mail của bạn...') { this.value = '' }" value="Nhập mail của bạn..." />
+    <input type="hidden" value="KhoaHocDLiuViR" name="uri"/>
+    <input type="hidden" value="en_US" name="loc"/>
+    <input id="subbutton" type="submit" value="Theo dõi"/>
+    </form>
+    </div>
+    </div>
+</div>
+
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/post/r-python/">Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/caret/">Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/toan-tu-pipes-trong-r/">Tổng hợp các toán tử pipes trong R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/quan-ly-du-an-voi-rstudio/">Quản lý dự án với RStudio</a></li>
+			<li class="widget__item"><a class="widget__link" href="/post/ml-r/">Giới thiệu một số Machine Learning Datasets trên R</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/categories/data-science">Data science</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/development">Development</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/machine-learning">Machine learning</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/pipes">Pipes</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/project-management">Project management</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/r">R</a></li>
+			<li class="widget__item"><a class="widget__link" href="/categories/rmarkdown">Rmarkdown</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/basic-elements" title="Basic elements">Basic elements</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/classification" title="Classification">Classification</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/css" title="Css">Css</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/data-science" title="Data science">Data science</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datasets" title="Datasets">Datasets</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/deep-learning" title="Deep learning">Deep learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go" title="Go">Go</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/html" title="Html">Html</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/java" title="Java">Java</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/machine-learning" title="Machine learning">Machine learning</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/python" title="Python">Python</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/r" title="R">R</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/regression" title="Regression">Regression</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			Copyright &copy; 2018 Cuong Sai. All Rights Reserved.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script></body>
+</html>

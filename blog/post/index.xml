@@ -1,44 +1,145 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on A Hugo website</title>
+    <title>Posts on Khoa học dữ liệu</title>
     <link>/post/</link>
-    <description>Recent content in Posts on A Hugo website</description>
+    <description>Recent content in Posts on Khoa học dữ liệu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A Plain Markdown Post</title>
-      <link>/2016/12/30/a-plain-markdown-post/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <title>Sử dụng kết hợp R và Python trong dự án phân tích dữ liệu</title>
+      <link>/post/r-python/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2016/12/30/a-plain-markdown-post/</guid>
-      <description>This is a post written in plain Markdown (*.md) instead of R Markdown (*.Rmd). The major differences are:
- You cannot run any R code in a plain Markdown document, whereas in an R Markdown document, you can embed R code chunks (```{r}); A plain Markdown post is rendered through Blackfriday, and an R Markdown document is compiled by rmarkdown and Pandoc.  There are many differences in syntax between Blackfriday&amp;rsquo;s Markdown and Pandoc&amp;rsquo;s Markdown.</description>
+      <guid>/post/r-python/</guid>
+      <description>Một câu hỏi thường hay đặt ra bởi nhiều nhà khoa học dữ liệu, đặc biệt là những người mới trong lĩnh vực này đó là: Python hay R tốt hơn cho khoa học dữ liệu? Thực ra còn nhiều ngôn ngữ khác cho khoa học dữ liệu như là: Java, C, Scala, Matlab, Julia,…nhưng Python và R đang dẫn đầu trong phần lớn thế giới khoa học dữ liệu.</description>
     </item>
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</title>
+      <link>/post/caret/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/post/caret/</guid>
+      <description>Sử dụng các machine learning (hay statistical learning) algorithms ngày càng phổ biến trong nhiều lĩnh vực khác nhau - từ trong nghiên cứu cho đến các hoạt động kinh doanh. Ngôn ngữ R khác biệt bởi số lượng rất lớn các packages chuyên dụng khác nhau cho phép xây dựng các mô hình dự báo. Tuy nhiên đây cũng chính là khuyết điểm, khi có quá nhiều các packages triển khai các algorithms khác nhau dưới dạng các functions sẽ làm cho các nhà phân tích khó khăn trong việc nhớ những đặc trưng sử dụng và cú pháp của từng function.</description>
     </item>
     
     <item>
-      <title>Lorem Ipsum</title>
-      <link>/2015/01/01/lorem-ipsum/</link>
-      <pubDate>Thu, 01 Jan 2015 13:09:13 -0600</pubDate>
+      <title>Tổng hợp các toán tử pipes trong R</title>
+      <link>/post/toan-tu-pipes-trong-r/</link>
+      <pubDate>Sat, 17 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2015/01/01/lorem-ipsum/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
+      <guid>/post/toan-tu-pipes-trong-r/</guid>
+      <description>Sự ra đời của các toán tử pipes trong package magrittr đã tạo ra những thay đổi lớn mang tính cách mạng cho ngôn ngư R. Nhũng người phát triển magrittr đặt ra mục đích cho mình: rút ngắn thời gian viết code và làm cho code dễ đọc và bảo trì hơn. Ý tưởng để phát triển package magrittr trên R là từ operator |&amp;gt; trong ngôn ngữ F# và pipes trong Unix</description>
+    </item>
+    
+    <item>
+      <title>Quản lý dự án với RStudio</title>
+      <link>/post/quan-ly-du-an-voi-rstudio/</link>
+      <pubDate>Thu, 15 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/quan-ly-du-an-voi-rstudio/</guid>
+      <description>Quá trình khoa học (scientific process) trong khoa học dữ liệu - Là một quá trình gia tăng tự nhiên với rất nhiều các projects được bắt đầu kèm theo code, sau đó là các bản thảo (manuscript),&amp;hellip; và cuối cùng là mọi thứ được pha trộn vào nhau một cách hỗn tạp.
+Quản lý dự án của bạn một cách khả lặp (reproducible) không chỉ làm cho khoa học của bạn khả lặp mà nó còn giúp cho công việc của các bạn đơn giản và dễ dàng hơn rất nhiều.</description>
+    </item>
+    
+    <item>
+      <title>Giới thiệu một số Machine Learning Datasets trên R</title>
+      <link>/post/ml-r/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ml-r/</guid>
+      <description>Ở post này tôi sẽ giới thiệu một số Machine Learning Datasets trên R.
+Datasets là nguyên liệu vô cùng quan trọng giúp chúng ta có thể test, thực hành và thử nghiệm với các machine learning techniques và phát triển kỹ năng của mình với platform. Ở mục này các bạn sẽ được giới thiệu các cách để load các standard datasets dành cho bài toán classification và regression trên R.</description>
+    </item>
+    
+    <item>
+      <title>Hệ sinh thái tidyverse cho data science với R</title>
+      <link>/post/he-sinh-thai-tidyverse/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/he-sinh-thai-tidyverse/</guid>
+      <description>Hệ sinh thái tidyverse (hay còn gọi là Hadleyverse) là một tổ hợp công cụ lớn chứa nhiều packages chuyên dụng khác nhau giúp chúng ta triển khai một chu trình phân tích dữ liệu hoàn chỉnh, từ khâu nhập dữ liệu vào (readr, readxl), định hình (tibble) làm sạc và biến đổi dữ liệu (tidyr, dplyr, …) đến khâu thăm dò và trực quan hóa dữ liệu (ggplot2). Package tidyverse được tạo ra bởi Hadley Wickham - Một nhà khoa học rất nổi tiểng trong làng R, giáo sư thống kê tại 3 trường: University of Auckland, Stanford University, và Rice University.</description>
+    </item>
+    
+    <item>
+      <title>Load machine learning datasets trong R</title>
+      <link>/post/load-data/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/load-data/</guid>
+      <description>Dữ liệu là nguyên liệu vô cung quan trọng giúp chúng ta thực hành và thử nghiệm các mô hình cũng như làm data science. Ở post này các bạn sẽ được làm quen với các cách load dữ liệu từ các files txt, csv, Excel (xls, xlsx) cơ bản vào môi trường R.
+Hầu hết dữ liệu cho machine learning ở dạng csv (comma separated value). CSV - là một loại định dạng văn bản đơn giản mà trong đó, các giá trị được ngăn cách với nhau bằng dấu phẩy.</description>
+    </item>
+    
+    <item>
+      <title>R và Machine Learning</title>
+      <link>/post/r-va-machinelearning/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-va-machinelearning/</guid>
+      <description>R là một trong những platforms mạnh nhất để triển khai các mô hình machine learning hiện nay, và được sử dụng bới các nhà khoa học dữ liệu hàng đầu trên thế gới. Hàng năm, số lượng người dùng R tăng hơn 40% và ngày càng có nhiều cơ quan và tổ chức sử dụng R trong hoạt động phân tích thường nhật.Ở post này bạn sẽ được giới thiệu về R và biết tại sao nên sử dụng R cho machine learning.</description>
+    </item>
+    
+    <item>
+      <title>Giới thiệu về R Markdown</title>
+      <link>/post/2018-11-12-gioi-thieu-r-rmarkdown/</link>
+      <pubDate>Mon, 12 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-11-12-gioi-thieu-r-rmarkdown/</guid>
+      <description>Nghiên cứu khoa học khả lặp - reproducible research đang là xu thế mới của giới khoa học và những package sẽ giúp người nghiên cứu khoa học hoàn toàn có thể viết báo cáo của mình bằng các mã nguồn R, tận dụng các thể mạnh tính toán data visualization của R, viết biểu thức toán với Latex và có thể tự động hoá quá trình.
+Đây là văn bản R Markdown.</description>
+    </item>
+    
+    <item>
+      <title>Khái niệm slice and dice trong khoa học dữ liệu</title>
+      <link>/post/slice-dice/</link>
+      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/slice-dice/</guid>
+      <description>Slice có nghĩa là cắt lát, dice có nghĩa là rút ngắn. Vì vậy slice and dice là quá trình phân chia một khối dữ liệu thành các phần nhỏ hơn hoặc xem xét (nghiên cứu ) chúng tù những quan điểm, khía cạnh khác nhau để có thể hiểu nó rõ hơn.
+Ví dụ chúng ta có dữ liệu nhiều chiều (cube) (nếu dữ liệu có số chiều lớn hơn 3 thì nó được gọi là hypercube):</description>
+    </item>
+    
+    <item>
+      <title>Mở đầu về khoa học dữ liệu. Các khái niệm cơ bản</title>
+      <link>/post/mo-dau-ve-datascience/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/mo-dau-ve-datascience/</guid>
+      <description>Khoa học dữ liệu là gì? Khoa học dữ liệu (data science) là một trong những ngành đang có nhu cầu tuyển dụng cao ở thời điểm hiện tại cũng như trong tương lai xa. Nhà khoa học dữ liệu (Data Scientist) được Harvard Business Review đánh giá là “công việc hấp dẫn nhất thế kỷ 21”.
+Vậy khoa học dữ liệu là gì? Trong thực tế không một ai có thể xác định chính xác khoa học dữ liệu là gì, nói cách khác một định nghĩa chính xác về khoa học dữ liệu không tồn tại - đây là một khái niệm liên ngành và rất rộng.</description>
+    </item>
+    
+    <item>
+      <title>Basic HTML Elements</title>
+      <link>/post/basic-elements/</link>
+      <pubDate>Mon, 16 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/basic-elements/</guid>
+      <description>&lt;p&gt;The main purpose of this article is to make sure that all basic HTML Elements are decorated with CSS so as to not miss any possible elements when creating new themes for Hugo.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Example</title>
+      <link>/post/example/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/post/example/</guid>
+      <description>&lt;p&gt;Hugo uses the excellent &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt; &lt;a href=&#34;https://golang.org/pkg/html/template/&#34;&gt;html/template&lt;/a&gt; library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic. In our experience that it is just the right amount of
+logic to be able to create a good static website. If you have used other
+template systems from different languages or frameworks you will find a lot of
+similarities in Go templates.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

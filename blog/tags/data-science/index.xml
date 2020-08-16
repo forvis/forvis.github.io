@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data Science on Khoa học dữ liệu</title>
+    <link>/tags/data-science/</link>
+    <description>Recent content in Data Science on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hệ sinh thái tidyverse cho data science với R</title>
+      <link>/post/he-sinh-thai-tidyverse/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/he-sinh-thai-tidyverse/</guid>
+      <description>Hệ sinh thái tidyverse (hay còn gọi là Hadleyverse) là một tổ hợp công cụ lớn chứa nhiều packages chuyên dụng khác nhau giúp chúng ta triển khai một chu trình phân tích dữ liệu hoàn chỉnh, từ khâu nhập dữ liệu vào (readr, readxl), định hình (tibble) làm sạc và biến đổi dữ liệu (tidyr, dplyr, …) đến khâu thăm dò và trực quan hóa dữ liệu (ggplot2). Package tidyverse được tạo ra bởi Hadley Wickham - Một nhà khoa học rất nổi tiểng trong làng R, giáo sư thống kê tại 3 trường: University of Auckland, Stanford University, và Rice University.</description>
+    </item>
+    
+  </channel>
+</rss>

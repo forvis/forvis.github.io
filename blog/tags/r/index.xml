@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Khoa học dữ liệu</title>
+    <link>/tags/r/</link>
+    <description>Recent content in R on Khoa học dữ liệu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Giới thiệu một số Machine Learning Datasets trên R</title>
+      <link>/post/ml-r/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ml-r/</guid>
+      <description>Ở post này tôi sẽ giới thiệu một số Machine Learning Datasets trên R.
+Datasets là nguyên liệu vô cùng quan trọng giúp chúng ta có thể test, thực hành và thử nghiệm với các machine learning techniques và phát triển kỹ năng của mình với platform. Ở mục này các bạn sẽ được giới thiệu các cách để load các standard datasets dành cho bài toán classification và regression trên R.</description>
+    </item>
+    
+    <item>
+      <title>Hệ sinh thái tidyverse cho data science với R</title>
+      <link>/post/he-sinh-thai-tidyverse/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/he-sinh-thai-tidyverse/</guid>
+      <description>Hệ sinh thái tidyverse (hay còn gọi là Hadleyverse) là một tổ hợp công cụ lớn chứa nhiều packages chuyên dụng khác nhau giúp chúng ta triển khai một chu trình phân tích dữ liệu hoàn chỉnh, từ khâu nhập dữ liệu vào (readr, readxl), định hình (tibble) làm sạc và biến đổi dữ liệu (tidyr, dplyr, …) đến khâu thăm dò và trực quan hóa dữ liệu (ggplot2). Package tidyverse được tạo ra bởi Hadley Wickham - Một nhà khoa học rất nổi tiểng trong làng R, giáo sư thống kê tại 3 trường: University of Auckland, Stanford University, và Rice University.</description>
+    </item>
+    
+    <item>
+      <title>Load machine learning datasets trong R</title>
+      <link>/post/load-data/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/load-data/</guid>
+      <description>Dữ liệu là nguyên liệu vô cung quan trọng giúp chúng ta thực hành và thử nghiệm các mô hình cũng như làm data science. Ở post này các bạn sẽ được làm quen với các cách load dữ liệu từ các files txt, csv, Excel (xls, xlsx) cơ bản vào môi trường R.
+Hầu hết dữ liệu cho machine learning ở dạng csv (comma separated value). CSV - là một loại định dạng văn bản đơn giản mà trong đó, các giá trị được ngăn cách với nhau bằng dấu phẩy.</description>
+    </item>
+    
+    <item>
+      <title>R và Machine Learning</title>
+      <link>/post/r-va-machinelearning/</link>
+      <pubDate>Tue, 13 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/r-va-machinelearning/</guid>
+      <description>R là một trong những platforms mạnh nhất để triển khai các mô hình machine learning hiện nay, và được sử dụng bới các nhà khoa học dữ liệu hàng đầu trên thế gới. Hàng năm, số lượng người dùng R tăng hơn 40% và ngày càng có nhiều cơ quan và tổ chức sử dụng R trong hoạt động phân tích thường nhật.Ở post này bạn sẽ được giới thiệu về R và biết tại sao nên sử dụng R cho machine learning.</description>
+    </item>
+    
+  </channel>
+</rss>

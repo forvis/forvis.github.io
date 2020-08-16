@@ -1,25 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>regression on A Hugo website</title>
+    <title>Regression on Khoa học dữ liệu</title>
     <link>/tags/regression/</link>
-    <description>Recent content in regression on A Hugo website</description>
+    <description>Recent content in Regression on Khoa học dữ liệu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/regression/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Caret - giao diện phổ quát cho phép truy cập các machine learning algorithms trên R</title>
+      <link>/post/caret/</link>
+      <pubDate>Wed, 21 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>/post/caret/</guid>
+      <description>Sử dụng các machine learning (hay statistical learning) algorithms ngày càng phổ biến trong nhiều lĩnh vực khác nhau - từ trong nghiên cứu cho đến các hoạt động kinh doanh. Ngôn ngữ R khác biệt bởi số lượng rất lớn các packages chuyên dụng khác nhau cho phép xây dựng các mô hình dự báo. Tuy nhiên đây cũng chính là khuyết điểm, khi có quá nhiều các packages triển khai các algorithms khác nhau dưới dạng các functions sẽ làm cho các nhà phân tích khó khăn trong việc nhớ những đặc trưng sử dụng và cú pháp của từng function.</description>
     </item>
     
   </channel>
